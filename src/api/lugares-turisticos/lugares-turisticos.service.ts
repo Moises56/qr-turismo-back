@@ -8,7 +8,7 @@ export class LugaresTuristicosService {
   constructor(private prisma: PrismaService) {}
 
   async create(createDto: CreateLugaresTuristicoDto) {
-    return this.prisma.lugaresTuristicos.create({
+    const lugar = await this.prisma.lugaresTuristicos.create({
       data: {
         key: createDto.key,
         nombre: createDto.nombre,
@@ -19,8 +19,24 @@ export class LugaresTuristicosService {
         horarioSalida: createDto.horarioSalida,
         historia: createDto.historia,
         baner: createDto.baner,
+
+        // Crear las relaciones con locales (usando LocalRel)
+        locales: {
+          create: createDto.locales?.map((local) => ({
+            localId: local.localId, // Crear relación con el ID del local
+          })),
+        },
+
+        // Crear las relaciones con eventos (usando EventoRel)
+        eventos: {
+          create: createDto.eventos?.map((evento) => ({
+            eventoId: evento.eventoId, // Crear relación con el ID del evento
+          })),
+        },
       },
     });
+
+    return lugar;
   }
 
   async findAll() {
@@ -61,7 +77,24 @@ export class LugaresTuristicosService {
   async update(id: string, updateDto: UpdateLugaresTuristicoDto) {
     return this.prisma.lugaresTuristicos.update({
       where: { id },
-      data: updateDto,
+      data: {
+        ...updateDto,
+        locales: updateDto.locales
+          ? {
+              connect: updateDto.locales.map((local) => ({
+                id: local.localId, // Aquí nos aseguramos de que estamos usando el ID del local para conectar
+              })),
+            }
+          : undefined,
+
+        eventos: updateDto.eventos
+          ? {
+              connect: updateDto.eventos.map((evento) => ({
+                id: evento.eventoId, // Aquí usamos el ID del evento para conectarlo
+              })),
+            }
+          : undefined,
+      },
     });
   }
 

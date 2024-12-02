@@ -1,4 +1,4 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, IsArray } from 'class-validator';
 
 export class CreateLugaresTuristicoDto {
   @IsString()
@@ -33,6 +33,16 @@ export class CreateLugaresTuristicoDto {
   @IsString()
   @IsOptional()
   baner?: string;
+
+  // Agregar locales (relación con Local)
+  @IsArray()
+  @IsOptional()
+  locales?: { localId: string }[];
+
+  // Agregar eventos (relación con Evento)
+  @IsArray()
+  @IsOptional()
+  eventos?: { eventoId: string }[];
 }
 
 export class UpdateLugaresTuristicosDto extends CreateLugaresTuristicoDto {}

@@ -41,7 +41,7 @@ export class TipoLocalService {
 
   // get filter-by-description
   async filterByDescription(descripcion: string) {
-    console.log(descripcion);
+    // console.log(descripcion);
     return await this.prisma.tipoLocal.findMany({
       where: {
         descripcion: {
