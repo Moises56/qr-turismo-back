@@ -1,37 +1,41 @@
-import {
-  IsString,
-  IsDate,
-  IsArray,
-  ArrayNotEmpty,
-  IsUrl,
-} from 'class-validator';
+import { IsString, IsOptional, IsDate, IsUrl, IsArray } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateEventoDto {
   @IsString()
-  nombreEvento: string;
+  @IsOptional()
+  nombreEvento?: string;
 
   @IsString()
-  descripcionEvento: string;
+  @IsOptional()
+  descripcionEvento?: string;
 
   @IsDate()
-  fechaEvento: Date;
+  @Type(() => Date) // Convierte automáticamente a tipo `Date` si se proporciona
+  @IsOptional()
+  fechaEvento?: Date;
 
   @IsString()
-  tipoEvento: string;
+  @IsOptional()
+  tipoEvento?: string;
 
   @IsString()
-  organizador: string;
+  @IsOptional()
+  organizador?: string;
 
   @IsString()
-  invitados: string;
+  @IsOptional()
+  invitados?: string;
 
   @IsUrl()
-  banerEvento: string; // Ahora obligatorio
+  @IsOptional()
+  banerEvento?: string;
 
   @IsString()
-  direccionEvento: string;
+  @IsOptional()
+  direccionEvento?: string;
 
   @IsArray()
-  @ArrayNotEmpty()
-  lugaresIds: string[];
+  @IsOptional()
+  lugaresIds?: string[];
 }

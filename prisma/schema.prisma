@@ -69,14 +69,14 @@ model TipoLocal {
 
 model Evento {
   idEvento        String   @id @default(auto()) @map("_id") @db.ObjectId
-  nombreEvento    String
-  descripcionEvento String
-  fechaEvento     DateTime
-  tipoEvento      String
-  organizador     String
-  invitados       String
-  banerEvento     String
-  direccionEvento String
+   nombreEvento   String? // Cambiado a opcional
+  descripcionEvento String?
+  fechaEvento    DateTime?
+  tipoEvento     String?
+  organizador    String?
+  invitados      String?
+  banerEvento    String?
+  direccionEvento String?
   lugares         EventoRel[] // Relación explícita con modelo intermedio
   createdAt      DateTime    @default(now()) // Fecha de creación
   updatedAt      DateTime    @updatedAt      // Fecha de actualización automática
