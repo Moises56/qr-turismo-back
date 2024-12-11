@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model LugaresTuristicos {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  key            String   @unique
+  nombre         String?
+  ubicacion      String?
+  latitud        String?
+  longitud       String?
+  descripcion    String?
+  dias           String?
+  horarioEntrada String?
+  horarioSalida  String?
+  historia       String?
+  baner          String?
+  locales        LocalRel[] // Relación explícita con modelo intermedio
+  eventos        EventoRel[] // Relación explícita con modelo intermedio
+  galeria        ImageItem[]  // Nueva relación con ImageItem
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model ImageItem {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  url         String
+  name        String
+  description String?
+  lugarId     String
+  lugar       LugaresTuristicos @relation(fields: [lugarId], references: [id])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Local {
+  idLocal       String   @id @default(auto()) @map("_id") @db.ObjectId
+  nombre        String?
+  descripcion   String?
+  horario       String?
+  telefono      String?
+  banerLocal    String?
+  tipoLocal     TipoLocal @relation(fields: [tipoLocalId], references: [id])
+  tipoLocalId   String    @db.ObjectId
+  lugares       LocalRel[] // Relación explícita con modelo intermedio
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model TipoLocal {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  nombreTipo  String?
+  icoTipo     String?
+  descripcion String?
+  locales     Local[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Evento {
+  idEvento        String   @id @default(auto()) @map("_id") @db.ObjectId
+  nombreEvento    String?
+  descripcionEvento String?
+  fechaEvento     DateTime?
+  tipoEvento      String?
+  organizador     String?
+  invitados       String?
+  banerEvento     String?
+  direccionEvento String?
+  lugares         EventoRel[] // Relación explícita con modelo intermedio
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model LocalRel {
+  id              String           @id @default(auto()) @map("_id") @db.ObjectId
+  lugarTuristico  LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
+  lugarTuristicoId String          @db.ObjectId
+  local           Local            @relation(fields: [localId], references: [idLocal])
+  localId         String           @db.ObjectId
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([lugarTuristicoId])
+  @@index([localId])
+}
+
+model EventoRel {
+  id              String           @id @default(auto()) @map("_id") @db.ObjectId
+  lugarTuristico  LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
+  lugarTuristicoId String          @db.ObjectId
+  evento          Evento           @relation(fields: [eventoId], references: [idEvento])
+  eventoId        String           @db.ObjectId
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([lugarTuristicoId])
+  @@index([eventoId])
+}
