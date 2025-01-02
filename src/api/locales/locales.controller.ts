@@ -20,6 +20,12 @@ export class LocalesController {
     return this.localesService.create(createLocaleDto);
   }
 
+  //get all locales
+  @Get()
+  findAll() {
+    return this.localesService.findAll();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.localesService.findOne(id);
@@ -33,5 +39,11 @@ export class LocalesController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.localesService.remove(id);
+  }
+
+  // Nueva ruta para buscar por tipoLocalId
+  @Get('tipoLocal/:tipoLocalId')
+  getByTipoLocal(@Param('tipoLocalId') tipoLocalId: string) {
+    return this.localesService.findByTipoLocal(tipoLocalId);
   }
 }

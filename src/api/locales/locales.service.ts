@@ -81,4 +81,17 @@ export class LocalesService {
   async remove(id: string) {
     return this.prisma.local.delete({ where: { idLocal: id } });
   }
+
+  // Método para buscar locales por tipoLocalId
+  async findByTipoLocal(tipoLocalId: string) {
+    return this.prisma.local.findMany({
+      where: {
+        tipoLocalId: tipoLocalId,
+      },
+      include: {
+        tipoLocal: true, // Incluir información del tipoLocal
+        lugares: true, // Opcional: incluir la relación con lugares
+      },
+    });
+  }
 }
