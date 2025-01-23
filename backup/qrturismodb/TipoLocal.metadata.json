@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"165ef9ed9dd445d9a30fb664b9e1d8b2","collectionName":"TipoLocal","type":"collection"}

@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"lugarTuristicoId":{"$numberInt":"1"}},"name":"LocalRel_lugarTuristicoId_idx"},{"v":{"$numberInt":"2"},"key":{"localId":{"$numberInt":"1"}},"name":"LocalRel_localId_idx"}],"uuid":"4932320b26cc4423abaa7f448ea1b335","collectionName":"LocalRel","type":"collection"}

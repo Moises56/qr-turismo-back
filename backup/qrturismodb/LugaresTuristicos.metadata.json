@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"key":{"$numberInt":"1"}},"name":"LugaresTuristicos_key_key","unique":true}],"uuid":"44556d7c85bb4220a8d3a42c4a75f384","collectionName":"LugaresTuristicos","type":"collection"}

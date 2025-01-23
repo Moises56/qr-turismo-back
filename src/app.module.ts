@@ -7,6 +7,7 @@ import { TipoLocalModule } from './api/tipo-local/tipo-local.module';
 import { EventosModule } from './api/eventos/eventos.module';
 import { PrismaService } from './prisma/prisma.service';
 import { ImageItemModule } from './api/image-item/image-item.module';
+import { SuscribeModule } from './api/suscribe/suscribe.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ImageItemModule } from './api/image-item/image-item.module';
     TipoLocalModule,
     EventosModule,
     ImageItemModule,
+    SuscribeModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
