@@ -18,6 +18,10 @@ export class CreateLocaleDto {
   telefono?: string;
 
   @IsString()
+  @IsOptional()
+  direccion?: string;
+
+  @IsString()
   tipoLocalId: string;
 
   @IsString()

@@ -15,8 +15,9 @@ export class LocalesService {
         descripcion: createLocalDto.descripcion,
         horario: createLocalDto.horario,
         telefono: createLocalDto.telefono,
+        direccion: createLocalDto.direccion,
         banerLocal: createLocalDto.banerLocal,
-        // Si también necesitas manejar la relación con LugaresTuristicos (a través de LocalRel), puedes hacerlo así:
+        // relación con LugaresTuristicos (a través de LocalRel)
         lugares: {
           create: createLocalDto.lugares?.map((lugar) => ({
             lugarTuristico: { connect: { id: lugar.lugarTuristicoId } },
@@ -62,6 +63,7 @@ export class LocalesService {
         descripcion: updateLocalDto.descripcion,
         horario: updateLocalDto.horario,
         telefono: updateLocalDto.telefono,
+        direccion: updateLocalDto.direccion,
         banerLocal: updateLocalDto.banerLocal,
         lugares: {
           upsert: updateLocalDto.lugares?.map((lugar) => ({

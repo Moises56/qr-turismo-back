@@ -44,6 +44,7 @@ model Local {
   descripcion   String?
   horario       String?
   telefono      String?
+  direccion     String?
   banerLocal    String?
   tipoLocal     TipoLocal @relation(fields: [tipoLocalId], references: [id])
   tipoLocalId   String    @db.ObjectId
