@@ -1,0 +1,53 @@
+// backu de la base de datos local y guaradar en C:\LEs\db
+mongodump --host localhost --port 27017 --db qrturismodb --out C:\LEs\db
+
+
+// restaurar la base de datos local
+mongorestore --host localhost --port 27017 --db qrturismodb C:\LEs\db\qrturismodb
+
+
+
+///////////////////************************************
+
+
+
+mongodump --host <localhost> --port <27017> --db <qrturismodb> --out <output_directory>
+mongodump --host localhost --port 27017 --db mydatabase --out ./backup
+
+
+
+
+
+
+restore
+mongorestore --host <localhost> --port <27017> --db <qrturismodb> <backup_directory>/<qrturismodb>
+mongorestore --host localhost --port 27017 --db qrturismodb ./backup/qrturismodb
+
+
+
+# de atlas
+mongodump --uri "mongodb+srv://<username>:<password>@<cluster>/<database>" --out ./backup
+mongodump --uri "mongodb+srv://mougrind:Na7cmuBaH9j1cWWd@qrt.f1bf0.mongodb.net/qrturismodb?retryWrites=true&w=majority&appName=qrT" --out ./backup
+
+mongodb://qruseramdc:QrTurismoAmdc2024@127.0.0.1:27017/qrturismodb?authSource=admin
+mongodb+srv://mougrind:Na7cmuBaH9j1cWWd@qrt.f1bf0.mongodb.net/qrturismodb?retryWrites=true&w=majority&appName=qrT
+
+
+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
+
+
+
+> npx prisma db push -- es para enviar los cambios al servidor de la base de datos
+> npx prisma generate -- es para generar los modelos de la base de datos
+> npx prisma migrate dev --name init -- es para crear una migracion
+> npx prisma init -- es para inicializar prisma
+> npx prisma introspect -- es para inspeccionar la base de datos
+> npx prisma studio -- es para abrir el prisma studio
+> npx prisma format -- es para formatear el schema.prisma
+> npx prisma db pull -- es para traer los cambios del servidor de la base de datos
+> npx prisma db push -- es para enviar los cambios al servidor de la base de datos
+> npx prisma db seed -- es para sembrar la base de datos
+
+
+C:\Program Files\MongoDB\Server\<versión>\bin\mongosh.exe
+C:\Program Files\MongoDB\Server\8.0\bin\mongod.exe
