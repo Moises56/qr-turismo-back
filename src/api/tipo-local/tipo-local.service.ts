@@ -40,18 +40,44 @@ export class TipoLocalService {
   }
 
   // get filter-by-description
+
   async filterByDescription(descripcion: string) {
-    // console.log(descripcion);
-    return await this.prisma.tipoLocal.findMany({
-      where: {
-        descripcion: {
-          contains: descripcion,
-          mode: 'insensitive', // Case-insensitive
+    console.log(descripcion);
+    const searchTerm = descripcion.trim();
+
+    try {
+      return await this.prisma.tipoLocal.findMany({
+        where: {
+          descripcion: {
+            contains: searchTerm,
+            mode: 'insensitive',
+          },
         },
-      },
-      include: { locales: true }, // Incluye la relación con Local
-    });
+        include: {
+          locales: true,
+        },
+        orderBy: {
+          descripcion: 'asc',
+        },
+      });
+    } catch (error) {
+      console.error('Error en filterByDescription:', error);
+      return [];
+    }
   }
+
+  // async filterByDescription(descripcion: string) {
+  //   console.log(descripcion);
+  //   return await this.prisma.tipoLocal.findMany({
+  //     where: {
+  //       descripcion: {
+  //         contains: descripcion,
+  //         mode: 'insensitive', // Case-insensitive
+  //       },
+  //     },
+  //     include: { locales: true }, // Incluye la relación con Local
+  //   });
+  // }
 
   // async filterByDescription(descripcion: string) {
   //   const regex = new RegExp(descripcion, 'i'); // 'i' para insensibilidad a mayúsculas/minúsculas

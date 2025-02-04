@@ -59,8 +59,11 @@ model TipoLocal {
   icoTipo     String?
   descripcion String?
   locales     Local[]
-  createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
+  createdAt   DateTime    @default(now())
+
+  @@index([descripcion])
+  
 }
 
 model Evento {
