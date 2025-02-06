@@ -23,6 +23,14 @@ model LugaresTuristicos {
   locales        LocalRel[] // Relación explícita con modelo intermedio
   eventos        EventoRel[] // Relación explícita con modelo intermedio
   galeria        ImageItem[]  // Nueva relación con ImageItem
+  email          String?
+  urlWeb         String?
+  urlWhatsapp    String?   
+  urlTiktok      String?  
+  urlInstagram   String?      
+  urlFacebook    String?    
+  urlX           String?
+
   createdAt      DateTime    @default(now())
   updatedAt      DateTime    @updatedAt
 }
@@ -46,9 +54,19 @@ model Local {
   telefono      String?
   direccion     String?
   banerLocal    String?
+  email         String?
+  latitud       String?
+  longitud      String?
+  urlWeb        String?
+  urlWhatsapp   String?   
+  urlTiktok     String?  
+  urlInstagram  String?      
+  urlFacebook   String?    
+  urlX          String?
   tipoLocal     TipoLocal @relation(fields: [tipoLocalId], references: [id])
   tipoLocalId   String    @db.ObjectId
   lugares       LocalRel[] // Relación explícita con modelo intermedio
+  
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
@@ -72,10 +90,13 @@ model Evento {
   descripcionEvento String?
   fechaEvento     DateTime?
   tipoEvento      String?
+  email           String?
   organizador     String?
   invitados       String?
   banerEvento     String?
   direccionEvento String?
+  latitud         String?
+  longitud        String?
   lugares         EventoRel[] // Relación explícita con modelo intermedio
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
@@ -110,18 +131,26 @@ model EventoRel {
 
 model Suscripcion {
   id            String   @id @default(auto()) @map("_id") @db.ObjectId
-  firstName     String
-  lastName      String
-  email         String   @unique
-  phone         String
+  firstName     String?
+  lastName      String?
+  email         String?
+  phone         String?
   artisticName  String?
-  dni           String
-  artistType    String
-  lugarEvento   String
-  address       String
-  eventDate     DateTime
-  eventTime     String
+  dni           String?
+  artistType    String?
+  lugarEvento   String?
+  address       String?
+  eventDate     DateTime?
+  eventTime     String?
   banerEvent    String?
+  latitud       String?
+  longitud      String?
+  urlWeb        String?
+  urlWhatsapp   String?   
+  urlTiktok     String?  
+  urlInstagram  String?      
+  urlFacebook   String?    
+  urlX          String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }

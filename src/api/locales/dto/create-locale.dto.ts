@@ -28,6 +28,34 @@ export class CreateLocaleDto {
   @IsOptional()
   banerLocal?: string;
 
+  @IsString()
+  @IsOptional()
+  email?: string;
+
+  @IsString()
+  @IsOptional()
+  urlWeb?: string;
+
+  @IsString()
+  @IsOptional()
+  urlWhatsapp?: string;
+
+  @IsString()
+  @IsOptional()
+  urlFacebook?: string;
+
+  @IsString()
+  @IsOptional()
+  urlInstagram?: string;
+
+  @IsString()
+  @IsOptional()
+  urlTiktok?: string;
+
+  @IsString()
+  @IsOptional()
+  urlX?: string;
+
   lugares?: { lugarTuristicoId: string }[]; // Relación many-to-many con LugaresTuristicos
 }
 

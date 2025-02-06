@@ -17,6 +17,13 @@ export class LocalesService {
         telefono: createLocalDto.telefono,
         direccion: createLocalDto.direccion,
         banerLocal: createLocalDto.banerLocal,
+        email: createLocalDto.email,
+        urlWeb: createLocalDto.urlWeb,
+        urlWhatsapp: createLocalDto.urlWhatsapp,
+        urlFacebook: createLocalDto.urlFacebook,
+        urlInstagram: createLocalDto.urlInstagram,
+        urlTiktok: createLocalDto.urlTiktok,
+        urlX: createLocalDto.urlX,
         // relación con LugaresTuristicos (a través de LocalRel)
         lugares: {
           create: createLocalDto.lugares?.map((lugar) => ({

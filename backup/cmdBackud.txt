@@ -1,3 +1,5 @@
+-> Git: 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
+
 // backu de la base de datos local y guaradar en C:\LEs\db
 mongodump --host localhost --port 27017 --db qrturismodb --out C:\LEs\db
 

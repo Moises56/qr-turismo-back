@@ -58,6 +58,35 @@ export class CreateLugaresTuristicoDto {
   @IsArray()
   @IsOptional()
   galeria?: { url: string; name: string; description?: string }[];
+
+  @IsArray()
+  @IsOptional()
+  email?: string;
+
+  //redeSocial
+  @IsArray()
+  @IsOptional()
+  urlWeb?: string;
+
+  @IsArray()
+  @IsOptional()
+  urlWhatsapp?: string;
+
+  @IsArray()
+  @IsOptional()
+  urlTiktok?: string;
+
+  @IsArray()
+  @IsOptional()
+  urlInstagram?: string;
+
+  @IsArray()
+  @IsOptional()
+  urlFacebook?: string;
+
+  @IsArray()
+  @IsOptional()
+  urlX?: string;
 }
 
 export class UpdateLugaresTuristicosDto extends CreateLugaresTuristicoDto {}

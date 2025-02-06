@@ -21,6 +21,13 @@ export class LugaresTuristicosService {
         horarioSalida: createDto.horarioSalida,
         historia: createDto.historia,
         baner: createDto.baner,
+        email: createDto.email,
+        urlWeb: createDto.urlWeb,
+        urlWhatsapp: createDto.urlWeb,
+        urlTiktok: createDto.urlWeb,
+        urlInstagram: createDto.urlWeb,
+        urlFacebook: createDto.urlWeb,
+        urlX: createDto.urlWeb,
 
         // Crear las relaciones con locales (usando LocalRel)
         locales: {
