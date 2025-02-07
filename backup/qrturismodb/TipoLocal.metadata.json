@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ac657745398541db9c18841640644ba8","collectionName":"TipoLocal","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"descripcion":{"$numberInt":"1"}},"name":"TipoLocal_descripcion_idx"}],"uuid":"ac657745398541db9c18841640644ba8","collectionName":"TipoLocal","type":"collection"}
