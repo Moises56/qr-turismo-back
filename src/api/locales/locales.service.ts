@@ -18,6 +18,8 @@ export class LocalesService {
         direccion: createLocalDto.direccion,
         banerLocal: createLocalDto.banerLocal,
         email: createLocalDto.email,
+        latitud: createLocalDto.latitud,
+        longitud: createLocalDto.longitud,
         urlWeb: createLocalDto.urlWeb,
         urlWhatsapp: createLocalDto.urlWhatsapp,
         urlFacebook: createLocalDto.urlFacebook,

@@ -1,0 +1,276 @@
+// //* SERVICIOS
+
+          // Transportes
+
+
+          {
+            "nombre": "Transportes Cristina",
+            "descripcion": "La empresa de Transportes Cristina nace en 1996 con la finalidad de ofrecer el servicio de transporte interurbano de pasajeros. Viaja desde Tegucigalpa hasta las principales ciudades turísticas como ser: San Pedro Sula, Tela, La Ceiba, El Progreso, Siguatepeque, San Juan Pueblo y Olanchito. Cuentan con el servicio de encomiendas más rápido del país y servicio de viaje expreso de media noche; ayudando a miles de personas a diario a transportarse de manera cómoda y segura a sus destinos.",
+            "horario": "Lunes a Domingo\\tde 05:00 am a 11:00 pm",
+            "telefono": "(+504) 3285-2353, Transportes Cristina – Descubriendo nuevos destinos, info@transportescristina.com, Transportes_cristina@yahoo.com",
+            "direccion": "Colonia Tiloarque, Boulevard Fuerzas, Armadas, Tegucigalpa, M.D.C.",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/locales/pny6wvsahd5z2dynzygy",
+            "tipoLocalId": "679a59cde9592e4c021d5b38" 
+          }
+
+
+          // SALUD
+
+
+
+
+
+          // AGENCIAS DE VIAJES
+
+
+
+// * GASTRONOMIA
+
+          // RESTAURANTES
+
+          {
+            "nombre": "Restaurante Duncan Maya",
+            "descripcion": "Es un restaurante que alberga una fascinante historia, enraizada profundamente en el corazón de Tegucigalpa. A lo largo de generaciones, su valor cultural se ha mantenido vivo, y en el corazón del Casco Histórico de la Capital, persiste con el mismo amor y añoranza que nos transporta a memorables encuentros con amigos y familia. En cuanto a la oferta culinaria, el menú presenta una amplia variedad de platos, tanto nacionales como internacionales y una exquisita selección de cócteles.",
+            "horario": "Lunes a Sabado: 9:00 pm - 12:00 am, Domingo: 12 a.m a 6 p.m",
+            "telefono": "(+504) 2237-2672",
+            "direccion": "Barrio El Centro, Ave. Cristóbal Colón, Tegucigalpa, M.D.C.",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/w0hz7i8w5hkfzss2eflq",
+            "email": "",
+            "tipoLocalId": "6745ed2e74ae572e50d72f6d",
+            "latitud": "14.106186303385982",
+            "longitud": "-87.20331966036237",
+            "urlWeb": "",
+            "urlWhatsapp": "",
+            "urlTiktok": "",
+            "urlInstagram": "https://www.instagram.com/explore/locations/64307543/duncan-maya/",
+            "urlFacebook": "https://www.facebook.com/p/Duncan-Mayan-HN-100063455951351/?locale=es_LA",
+            "urlX": ""
+          }
+
+
+
+          // CAFETERIAS
+
+          {
+            "nombre": "Café Paradiso",
+            "descripcion": "Fue fundado por el poeta Rigoberto Paredes y su esposa, la escritora Anarella Vélez Osejo. Un establecimiento cultural donde se sirve y degusta café, preparado de diferentes maneras y con la mejor materia prima: café hondureño de altura, de las regiones de Marcala y Santa Bárbara. Consecuentes con su visión, han propiciado las condiciones y logísticas para que allí se forjen los movimientos literarios de nuestro tiempo.",
+            "horario": "Lunes a Miércoles:2:00 pm - 10:00 pm, Jueves a Sábado: 2:00 pm - 12:00 am, Domingo: Cerrado",
+            "telefono": "(+504) 9627-4456",
+            "direccion": "Barrio La Plazuela, Ave.Paz Barahona, Tegucigalpa, M.D.C.",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/fnng4ivwpizw5bb8zuwt",
+            "email": "",
+            "tipoLocalId": "6745ed2e74ae572e50d72f6d",
+            "latitud": "14.105320085115912",
+            "longitud": "-87.19976295823007",
+            "urlWeb": "",
+            "urlWhatsapp": "",
+            "urlTiktok": "",
+            "urlInstagram": "https://www.instagram.com/cafeparadisohn/?hl=es",
+            "urlFacebook": "https://www.facebook.com/cafeparadisotegucigalpa/?locale=es_LA",
+            "urlX": ""
+          },
+
+          {
+            "nombre": "Café Con Libros",
+            "descripcion": "Es un espacio con un concepto nuevo en Tegucigalpa, su decoración invita a disfrutar una buena taza de café con algún bocadillo, mientras lee su libro preferido. Lo que encanta de este lugar además de su exquisito café, son los libros que puede leer el cliente y música jazz. Un espacio perfecto para los amantes del buen café y la lectura. ",
+            "horario": "Lunes a Sábado: 9:00 am - 7:30 pm, Domingo Cerrado",
+            "telefono": "(+504) 9411-2630",
+            "direccion": "Barrio El Centro, Calle Adolfo Zúniga, Tegucigalpa, M.D.C.",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/jldugolrruuk5k99cvqq",
+            "email": "",
+            "tipoLocalId": "6745ed2e74ae572e50d72f6d",
+            "latitud": "14.105866109364685",
+            "longitud": "-87.20340146137175",
+            "urlWeb": "https://cafe-bistro-y-pizzeria.ola.click/",
+            "urlWhatsapp": "https://api.whatsapp.com/send?phone=50494112630&text=%F0%9F%91%8B%20Hola%2C%20vengo%20de%20https%3A%2F%2Fcafe-bistro-y-pizzeria.ola.click%20%0ADeseo%20realizar%20el%20siguiente%20pedido%3A%0A",
+            "urlTiktok": "https://www.tiktok.com/@cafeconlibroshn",
+            "urlInstagram": "https://www.instagram.com/cafeconlibroshn",
+            "urlFacebook": "https://www.facebook.com/cafeconlibroshn",
+            "urlX": ""
+          },
+
+          // BARES
+
+          {
+            "nombre": "Beer Box Beer Garden",
+            "descripcion": "El mejor lugar de Tegucigalpa para disfrutar de la cerveza más fría de la ciudad. Este es el primer y único jardín cervecero de Tegucigalpa. Aquí encontrarás más de 150 estilos de cerveza en un ambiente muy novedoso, con buena música y un menú delicioso. Cuenta con una decoración super chill que hará que te sientas cómodo por horas.",
+            "horario": "Lunes a Miércoles: 4:00 pm - 12:00 am, Jueves a Sábado: 4:00 pm - 2:00 am, Domingo: Cerrado",
+            "telefono": "(+504) 9986-1193",
+            "direccion": "Clarion Hotel Real, Bulevar Juan Pablo II, Colonia Alameda, Tegucigalpa, M.D.C.",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/jdgtsszyuzuevj7lus8i",
+            "email": "",
+            "tipoLocalId": "6745ed3574ae572e50d72f6e",
+            "latitud": "14.090681150713646",
+            "longitud": "-87.19350943920828",
+            "urlWeb": "https://linktr.ee/reservacionesthefunplace?utm_source=linktree_profile_share&ltsid=681c2cf1-87eb-44d0-939c-f0a13dcc9790",
+            "urlWhatsapp": "",
+            "urlTiktok": "https://tiktok.com/@thefunplace_by_clarion",
+            "urlInstagram": "https://instagram.com/thefunplace_byclarion",
+            "urlFacebook": "",
+            "urlX": ""
+          }
+          ,
+
+          {
+            "nombre": "La Ronda Rooftop",
+            "descripcion": "Sumérgete en el ambiente urbano con buena música, cocteles creativos y una vibra única. El espacio perfecto para, conectarte, relajarte y vivir lo alternativo también deléitate con nuestra selección de platos, desde opciones ligeras, hasta comidas completas y llenas de sabor, perfecto para acompañar tus bebidas o disfrutar en cualquier momento.",
+            "horario": "Lunes 5:00 pm - 11:00 pm, Martes 9:00 am - 11:00 pm, Miércoles y Jueves, 9:00 am - 12:00 am, Sábado 9:00 am - 1:00 am, Domingo 4:00 pm - 10:00 pm",
+            "telefono": "(+504) 9586-2509",
+            "direccion": "Barrio La Ronda, esquina de Ave. Jerez y  Calle La Ronda, entre Taco Mex, y Barberia Alex, Tegucigalpa, M.D.C. ",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/oyflfv3gwubkff9jwlto",
+            "email": "",
+            "tipoLocalId": "6745ed3574ae572e50d72f6e",
+            "latitud": "14.10688899738631",
+            "longitud": "-87.20144124686789",
+            "urlWeb": "https://www.distritolaronda.com/la-ronda-rooftop",
+            "urlWhatsapp": "https://web.whatsapp.com/send/?phone=50495862509&text=Estas+comunic%C3%A1ndote+con+La+Ronda&type=phone_number&app_absent=0",
+            "urlTiktok": "",
+            "urlInstagram": "https://www.instagram.com/larondarooftop/",
+            "urlFacebook": "https://m.facebook.com/La.Ronda.bar/events/?ref=page_internal&locale=es_LA",
+            "urlX": ""
+          },
+
+          {
+            "nombre": "Bar Tito Aguacate",
+            "descripcion": "Es reconocido por sus famosos 'calambres'. Esta bebida se prepara a base de ginebra, vino tinto, jugo de limón, hielo y azúcar. El apodo de \"Tito Aguacate\" surgió como una combinación del apodo de José Valentín Pereira, 'Tito', y 'Aguacate', ya que una rebanada de aguacate, servida con queso, huevo duro y papa, es parte del menú del bar ubicado en el corazón del Distrito Histórico de la capital.",
+            "horario": "Lunes a Sábado 11:00 am - 8:40 pm, Domingo Cerrado",
+            "telefono": "(+504) 9635-0687",
+            "direccion": "Barrio El Centro, Calle Matute, Tegucigalpa, M.D.C.",
+            "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/mozdspwaxfga2f1mxuwg",
+            "email": "",
+            "tipoLocalId": "6745ed3574ae572e50d72f6e",
+            "latitud": "14.106451792492665",
+            "longitud": "-87.20379991803273",
+            "urlWeb": "",
+            "urlWhatsapp": "",
+            "urlTiktok": "",
+            "urlInstagram": "",
+            "urlFacebook": "https://www.facebook.com/p/Tito-Aguacate-100076119488823/?locale=es_LA",
+            "urlX": ""
+          }
+          
+          
+          
+          	
+// SECTION Alojamiento
+
+// HOTELES
+
+{
+  "nombre": "Hotel MacArthur",
+  "descripcion": "Es un hotel familiar ubicado en el Casco Histórico y colonial de Tegucigalpa. Se encuentra cerca de atracciones populares como la Catedral San Miguel Arcángel, la Iglesia Santa María de Los Dolores y el Parque La Concordia. El hotel le ofrece habitaciones cómodas con escritorio, TV de pantalla plana y armario, tiene piscina al aire libre, desayuno, estacionamiento gratuito, recepción las 24 horas, WiFi gratuito, áreas sociales, jardín y salón de fiestas.",
+  "horario": "Check In 12:00 pm - 12:00 am, Check Out 10:30 am - 11:30 am",
+  "telefono": "(+504) 9714-5282, (+504) 2238-0414 ",
+  "direccion": "Barrio Abajo, Ave. Lempira, Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/tiq20pgcrixp4gmin9ez",
+  "email": "info@hotelmacarthur.com",
+  "tipoLocalId": "6745ed0674ae572e50d72f6c",
+  "latitud": "14.10965327999273",
+  "longitud": "-87.20634121534069",
+  "urlWeb": "http://www.hotelmacarthur.com/",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "",
+  "urlFacebook": "https://www.facebook.com/HotelMacArthur/",
+  "urlX": ""
+}
+								
+
+
+
+
+//? SECTION Cultura
+
+
+// * Iglesias
+{
+  "nombre": "Catedral San Miguel Arcángel",
+  "descripcion": "La majestuosa catedral San Miguel Arcángel es una joya arquitectónica, fue declarada Monumento Nacional de   Honduras en el año 1967. La obra fue dirigida por el arquitecto José Gregorio Nacianceno Quiroz, de origen guatemalteco, e inaugurada por Fray Antonio de San Miguel en el año 1782. La construción es estilo colonial barroco.",
+  "horario": "Lunes a Domingo de 6:30 am - 6:00 pm",
+  "telefono": "(+504) 2237-2076",
+  "direccion": "Avenida Miguel de Cervantes, frente Parque Central, Centro Histórico de Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/r7pyb4efwilsswnwytv8",
+  "email": "",
+  "tipoLocalId": "67a26a10988ef0aa01ddea2b",
+  "latitud": "14.105496",
+  "longitud": "-87.204346",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "",
+  "urlFacebook": "https://www.facebook.com/CatedralSanMiguelArcangelhn/?locale=es_LA",
+  "urlX": ""
+}
+{
+  "nombre": "Basílica de Nuestra Señora de Suyapa",
+  "descripcion": "La Basílica, nombrada cariñosamente como 'Nuestra Señora de Suyapa', tiene sus raíces en el siglo XVIII, cuando se descubrió y comenzó a venerarse una imagen de la Virgen de Suyapa. La Virgen fue proclamada patrona de Honduras e 1925 por el pontífice Pío XII. La Basílica es considerada desde 1993 uno de los monumentos más importantes de Honduras Es la máxima construcción de la feligresía católica en la república de Honduras, Fecha de la imagen: Hallada en 1747.",
+  "horario": "Lunes a Domingo: 6:30 am - 6:00 pm",
+  "telefono": "(+504) 2257-1651",
+  "direccion": "Boulevard Suyapa, Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/cccsypd1u6amysa6okfz",
+  "email": "",
+  "tipoLocalId": "67a26a10988ef0aa01ddea2b",
+  "latitud": "14.080608332973583",
+  "longitud": "-87.15743291534292",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "https://www.instagram.com/basilicadesuyapa.hn/?hl=es",
+  "urlFacebook": "https://www.facebook.com/basilicadesuyapahn/?locale=es_LA",
+  "urlX": ""
+}
+
+//* Bibliotecas
+{
+  "nombre": "Biblioteca Nacional Juan Ramón Molina",
+  "descripcion": "Es la primera casa cultural del país que contiene patrimonio bibliográfico desde el siglo XIX. Fue fundada en el año 1880 con el objetivo de fomentar la literatura y la cultura en la sociedad hondureña. Actualmente, la Biblioteca cuenta con más de 60 mil volúmenes de colecciones nacionales e internacionales, cuenta con una colección infantil y una unidad de audiovisuales.",
+  "horario": "Lunes a Viernes de 8:00 am - 4:00 pm",
+  "telefono": "(+504) 2222-8577",
+  "direccion": "Avenida Miguel de Cervantes, Centro Histórico de Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/cccsypd1u6amysa6okfz",
+  "email": "bibliotecanacional@gmail.com",
+  "tipoLocalId": "67a672c0d25cad300afeb5e9",
+  "latitud": "14.10528186573629",
+  "longitud": "-87.20305705582133",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "",
+  "urlFacebook": "",
+  "urlX": ""
+}
+
+								
+
+//* Museos
+
+{
+  "nombre": "Museo Casa de Morazán",
+  "descripcion": "Fue construida en 1761, cuenta con casi 260 años de historia. En 1792, la familia Morazán se mudó a vivir al inmueble y permaneció ahí por más de 50 años. Se conoce que después el inmueble tuvo distintos dueños, pero fue hasta 1954 cuando el Estado de Honduras decidió comprar la vivienda para convertirla en Biblioteca y Archivo Nacional. La Casa de Morazán es creada mediante Decreto Ejecutivo 030-2008 en el 2008 para promover y difundir la vida y obra del General Francisco Morazán.",
+  "horario": "Lunes a Viernes de 8:00 am - 4:00 pm",
+  "telefono": "(+504) 2238-3247, (+504) 2238-3269",
+  "direccion": "Barrio El Centro, Avenida Cristóbal Colón, frente antiguo Cine Variedades, Centro Histórico de Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/icon/gurp98qnxbw2umt6hfh6",
+  "email": "casademorazan@gmail.com",
+  "tipoLocalId": "6745ed3d74ae572e50d72f6f",
+  "latitud": "14.106746271767516",
+  "longitud": "-87.2059341776276",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "https://www.instagram.com/casademorazan/",
+  "urlFacebook": "https://www.facebook.com/casademorazan11",
+  "urlX": ""
+}
+
+
+		
+
+
+	
+	
+	
+
+
+
+		

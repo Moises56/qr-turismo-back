@@ -90,3 +90,4 @@ export class CreateLugaresTuristicoDto {
 }
 
 export class UpdateLugaresTuristicosDto extends CreateLugaresTuristicoDto {}
+

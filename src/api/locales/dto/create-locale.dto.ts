@@ -34,6 +34,14 @@ export class CreateLocaleDto {
 
   @IsString()
   @IsOptional()
+  latitud?: string;
+
+  @IsString()
+  @IsOptional()
+  longitud?: string;
+
+  @IsString()
+  @IsOptional()
   urlWeb?: string;
 
   @IsString()
