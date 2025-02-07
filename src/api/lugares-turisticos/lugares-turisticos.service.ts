@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateLugaresTuristicoDto } from './dto/create-lugares-turistico.dto';
 import { UpdateLugaresTuristicoDto } from './dto/update-lugares-turistico.dto';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -57,22 +57,101 @@ export class LugaresTuristicosService {
     return lugar;
   }
 
-  async findAll() {
-    return this.prisma.lugaresTuristicos.findMany({
-      include: {
-        locales: {
-          include: {
-            local: true,
-          },
+  // async findAll() {
+  //   return this.prisma.lugaresTuristicos.findMany({
+  //     include: {
+  //       locales: {
+  //         include: {
+  //           local: true,
+  //         },
+  //       },
+  //       eventos: {
+  //         include: {
+  //           evento: true,
+  //         },
+  //       },
+  //       galeria: true, // Incluir las imágenes de la galería
+  //     },
+  //   });
+  // }
+
+  // async findAll(queryParams: {
+  //   page?: number;
+  //   limit?: number;
+  //   search?: string;
+  // }) {
+  //   const { page = 1, limit = 10, search = '' } = queryParams;
+  //   const skip = (page - 1) * limit;
+
+  //   return this.prisma.lugaresTuristicos.findMany({
+  //     where: {
+  //       OR: search
+  //         ? [
+  //             { nombre: { contains: search, mode: 'insensitive' } },
+  //             { ubicacion: { contains: search, mode: 'insensitive' } },
+  //             { descripcion: { contains: search, mode: 'insensitive' } },
+  //           ]
+  //         : undefined,
+  //     },
+  //     skip,
+  //     take: limit,
+  //     include: {
+  //       locales: { include: { local: true } },
+  //       eventos: { include: { evento: true } },
+  //       galeria: true,
+  //     },
+  //   });
+  // }
+
+  async findAll(queryParams: {
+    page?: number;
+    limit?: number;
+    search?: string;
+  }) {
+    const { page = 1, limit = 10, search = '' } = queryParams;
+
+    // Validación
+    if (page < 1) throw new BadRequestException('La página debe ser mayor a 0');
+    if (limit < 1 || limit > 100)
+      throw new BadRequestException('El límite debe estar entre 1 y 100');
+
+    const skip = (page - 1) * limit;
+
+    // Corregir estructura de condiciones
+    const whereConditions = search
+      ? {
+          OR: [
+            { nombre: { contains: search, mode: 'insensitive' as const } },
+            { ubicacion: { contains: search, mode: 'insensitive' as const } },
+            { descripcion: { contains: search, mode: 'insensitive' as const } },
+          ],
+        }
+      : {};
+
+    const [total, resultados] = await Promise.all([
+      this.prisma.lugaresTuristicos.count({ where: whereConditions }),
+      this.prisma.lugaresTuristicos.findMany({
+        where: whereConditions,
+        skip,
+        take: limit,
+        include: {
+          locales: { include: { local: true } },
+          eventos: { include: { evento: true } },
+          galeria: true,
         },
-        eventos: {
-          include: {
-            evento: true,
-          },
-        },
-        galeria: true, // Incluir las imágenes de la galería
+      }),
+    ]);
+
+    return {
+      data: resultados,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+        hasNextPage: page * limit < total,
       },
-    });
+    };
   }
 
   async findOne(id: string) {

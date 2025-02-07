@@ -6,6 +6,9 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
+  DefaultValuePipe,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { LugaresTuristicosService } from './lugares-turisticos.service';
 import { CreateLugaresTuristicoDto } from './dto/create-lugares-turistico.dto';
@@ -22,9 +25,47 @@ export class LugaresTuristicosController {
     return this.lugaresTuristicosService.create(createLugaresTuristicoDto);
   }
 
+  // @Get()
+  // findAll(
+  //   @Query('page') page = 1,
+  //   @Query('limit') limit = 10,
+  //   @Query('search') search = '',
+  // ) {
+  //   // Ensure limit does not exceed a reasonable maximum
+  //   limit = Math.min(limit, 100);
+  //   return this.lugaresTuristicosService.findAll({
+  //     page: Number(page),
+  //     limit: Number(limit),
+  //     search,
+  //   });
+  // }
+
+  // @Get()
+  // async findAll(
+  //   @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
+  //   @Query('limit', new DefaultValuePipe(10), ParseIntPipe)
+  //   limit: number = 10,
+  //   @Query('search') search: string = '',
+  // ) {
+  //   return this.lugaresTuristicosService.findAll({
+  //     page,
+  //     limit,
+  //     search,
+  //   });
+  // }
+
   @Get()
-  findAll() {
-    return this.lugaresTuristicosService.findAll();
+  async findAll(
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe)
+    limit: number = 10,
+    @Query('search') search: string = '',
+  ) {
+    return this.lugaresTuristicosService.findAll({
+      page,
+      limit,
+      search,
+    });
   }
 
   @Get(':id')
