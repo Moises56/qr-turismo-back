@@ -266,7 +266,19 @@
 
 		
 
+/******************************************************/
+//* Eventos
 
+{
+  "nombreEvento": "Concierto de Rock",
+  "descripcionEvento": "Música en Vivo",
+  "fechaEvento": "2025-02-14",
+  "tipoEvento": "Arte",
+  "organizador": "MouGrind LEs",
+  "invitados": "Arte locales",
+  "banerEvento": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/samples/coffee",
+  "direccionEvento": "Auditorio Nacional",
+}
 	
 	
 	

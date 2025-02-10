@@ -9,24 +9,26 @@ export class EventosService {
 
   // Crear un evento con los lugares asociados
   async create(createEventoDto: CreateEventoDto) {
-    // Asegúrate de que Prisma reciba el formato correcto
-    const evento = await this.prisma.evento.create({
+    return this.prisma.evento.create({
       data: {
         nombreEvento: createEventoDto.nombreEvento,
         descripcionEvento: createEventoDto.descripcionEvento,
         fechaEvento: createEventoDto.fechaEvento,
         tipoEvento: createEventoDto.tipoEvento,
+        email: createEventoDto.email,
         organizador: createEventoDto.organizador,
         invitados: createEventoDto.invitados,
-        banerEvento: createEventoDto.banerEvento || '', // Valor por defecto si es opcional
+        banerEvento: createEventoDto.banerEvento || '',
         direccionEvento: createEventoDto.direccionEvento,
-        lugares: {
-          connect: createEventoDto.lugaresIds.map((id) => ({ id: id })),
-        },
+        latitud: createEventoDto.latitud,
+        longitud: createEventoDto.longitud,
+        lugares: createEventoDto.lugaresIds?.length
+          ? {
+              connect: createEventoDto.lugaresIds.map((id) => ({ id })),
+            }
+          : undefined, // No intenta conectar si no hay IDs
       },
     });
-
-    return evento;
   }
 
   // Obtener todos los eventos

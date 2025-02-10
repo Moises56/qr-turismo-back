@@ -21,6 +21,10 @@ export class CreateEventoDto {
 
   @IsString()
   @IsOptional()
+  email?: string;
+
+  @IsString()
+  @IsOptional()
   organizador?: string;
 
   @IsString()
@@ -34,6 +38,14 @@ export class CreateEventoDto {
   @IsString()
   @IsOptional()
   direccionEvento?: string;
+
+  @IsString()
+  @IsOptional()
+  latitud?: string;
+
+  @IsString()
+  @IsOptional()
+  longitud?: string;
 
   @IsArray()
   @IsOptional()
