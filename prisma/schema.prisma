@@ -50,7 +50,7 @@ model Local {
   idLocal       String   @id @default(auto()) @map("_id") @db.ObjectId
   nombre        String?
   descripcion   String?
-  horario       String?
+  horario       Json? 
   telefono      String?
   direccion     String?
   banerLocal    String?

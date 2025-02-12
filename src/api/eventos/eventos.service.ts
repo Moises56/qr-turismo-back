@@ -8,6 +8,29 @@ export class EventosService {
   constructor(private prisma: PrismaService) {}
 
   // Crear un evento con los lugares asociados
+  // async create(createEventoDto: CreateEventoDto) {
+  //   return this.prisma.evento.create({
+  //     data: {
+  //       nombreEvento: createEventoDto.nombreEvento,
+  //       descripcionEvento: createEventoDto.descripcionEvento,
+  //       fechaEvento: createEventoDto.fechaEvento,
+  //       tipoEvento: createEventoDto.tipoEvento,
+  //       email: createEventoDto.email,
+  //       organizador: createEventoDto.organizador,
+  //       invitados: createEventoDto.invitados,
+  //       banerEvento: createEventoDto.banerEvento || '',
+  //       direccionEvento: createEventoDto.direccionEvento,
+  //       latitud: createEventoDto.latitud,
+  //       longitud: createEventoDto.longitud,
+  //       lugares: createEventoDto.lugaresIds?.length
+  //         ? {
+  //             connect: createEventoDto.lugaresIds.map((id) => ({ id })),
+  //           }
+  //         : undefined, // No intenta conectar si no hay IDs
+  //     },
+  //   });
+  // }
+
   async create(createEventoDto: CreateEventoDto) {
     return this.prisma.evento.create({
       data: {
@@ -22,11 +45,14 @@ export class EventosService {
         direccionEvento: createEventoDto.direccionEvento,
         latitud: createEventoDto.latitud,
         longitud: createEventoDto.longitud,
-        lugares: createEventoDto.lugaresIds?.length
-          ? {
-              connect: createEventoDto.lugaresIds.map((id) => ({ id })),
-            }
-          : undefined, // No intenta conectar si no hay IDs
+        lugares: {
+          create: createEventoDto.lugaresIds?.map((id) => ({
+            lugarTuristico: { connect: { id } }, // Conectar con un lugar turístico existente
+          })),
+        },
+      },
+      include: {
+        lugares: true, // Incluir los registros creados en EventoRel
       },
     });
   }
