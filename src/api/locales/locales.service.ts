@@ -28,10 +28,13 @@ export class LocalesService {
         urlX: createLocalDto.urlX,
         // relación con LugaresTuristicos (a través de LocalRel)
         lugares: {
-          create: createLocalDto.lugares?.map((lugar) => ({
-            lugarTuristico: { connect: { id: lugar.lugarTuristicoId } },
+          create: createLocalDto.lugaresIds?.map((id) => ({
+            lugarTuristico: { connect: { id } },
           })),
         },
+      },
+      include: {
+        lugares: true, // Incluir los registros creados en EventoRel
       },
     });
   }
@@ -75,15 +78,7 @@ export class LocalesService {
         direccion: updateLocalDto.direccion,
         banerLocal: updateLocalDto.banerLocal,
         lugares: {
-          upsert: updateLocalDto.lugares?.map((lugar) => ({
-            where: { id: lugar.lugarTuristicoId }, // Verifica si el lugar ya existe
-            create: {
-              lugarTuristico: { connect: { id: lugar.lugarTuristicoId } },
-            },
-            update: {
-              lugarTuristico: { connect: { id: lugar.lugarTuristicoId } },
-            },
-          })),
+          connect: updateLocalDto.lugaresIds.map((id) => ({ id: id })),
         },
       },
     });

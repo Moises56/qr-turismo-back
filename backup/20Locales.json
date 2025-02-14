@@ -1,0 +1,1601 @@
+ALOJAMIENTOS, 
+{
+  "nombre": "Hotel MacArthur",
+  "descripcion": "Es un hotel familiar ubicado en el Casco Histórico y colonial de Tegucigalpa. Se encuentra cerca de atracciones populares como la Catedral San Miguel Arcángel, la Iglesia Santa María de Los Dolores y el Parque La Concordia. El hotel le ofrece habitaciones cómodas con escritorio, TV de pantalla plana y armario, tiene piscina al aire libre, desayuno, estacionamiento gratuito, recepción las 24 horas, WiFi gratuito, áreas sociales, jardín y salón de fiestas.",
+  "horario": [
+    {
+      "dia": "lunes",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    },
+    {
+      "dia": "martes",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    },
+    {
+      "dia": "miercoles",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    },
+    {
+      "dia": "jueves",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    },
+    {
+      "dia": "viernes",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    },
+    {
+      "dia": "sabado",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    },
+    {
+      "dia": "domingo",
+      "apertura": "12PM-12AM",
+      "cierre": "10:30AM-11:30AM"
+    }
+  ],
+  "telefono": "(+504) 9714-5282, (+504) 2238-0414 ",
+  "direccion": "Barrio Abajo, Ave. Lempira, Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/tiq20pgcrixp4gmin9ez",
+  "email": "info@hotelmacarthur.com",
+  "latitud": "14.10965327999273",
+  "longitud": "-87.20634121534069",
+  "urlWeb": "http://www.hotelmacarthur.com/",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "",
+  "urlFacebook": "https://www.facebook.com/HotelMacArthur/",
+  "urlX": "",
+  "tipoLocalId": "6745ed0674ae572e50d72f6c",
+  "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+}
+
+{
+  "nombre": "Hotel Honduras Maya",
+  "descripcion": "Hotel icono de Tegucigalpa, para aquellos que buscan tranquilidad y descanso dentro de un entorno privilegiado, perfecto para familias, parejas, negocios y escapadas de fin de semana. Ha recibido importantes galardones en el sector turístico nacional e internacional. Sus instalaciones se completan con una piscina semi olímpica, piscina para niños, jacuzzi, sauna, gimnasio, casino, salones para eventos, amplio parqueo y área comercial.",
+   "horario": [
+    {
+      "dia": "lunes",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    },
+    {
+      "dia": "martes",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    },
+    {
+      "dia": "miercoles",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    },
+    {
+      "dia": "jueves",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    },
+    {
+      "dia": "viernes",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    },
+    {
+      "dia": "sabado",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    },
+    {
+      "dia": "domingo",
+      "apertura": "3PM-Check In",
+      "cierre": "1PM-Check Out"
+    }
+  ],
+  "telefono": "(+504) 3175-9588, (+504) 2280-5000",
+  "direccion": "Colonia Palmira, Ave. República de Chile, Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/m6lc0lu6zehrqsiohlwy",
+  "email": "",
+  "latitud": "14.103934916599355",
+  "longitud": "-87.19722598650552",
+  "urlWeb": "https://hondurasmaya.hn",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "",
+  "urlFacebook": "",
+  "urlX": "",
+  "tipoLocalId": "6745ed0674ae572e50d72f6c",
+  "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+}
+
+
+
+//* gastronomia
+
+//cafeterias
+{
+  "nombre": "Café Paradiso",
+  "descripcion": "Fue fundado por el poeta Rigoberto Paredes y su esposa, la escritora Anarella Vélez Osejo. Un establecimiento cultural donde se sirve y degusta café, preparado de diferentes maneras y con la mejor materia prima: café hondureño de altura, de las regiones de Marcala y Santa Bárbara. Consecuentes con su visión, han propiciado las condiciones y logísticas para que allí se forjen los movimientos literarios de nuestro tiempo.",
+  "horario": [
+    {
+      "dia": "lunes",
+      "apertura": "2:00 P.M",
+      "cierre": "10:00 P.M"
+    },
+    {
+      "dia": "martes",
+      "apertura": "2:00 P.M",
+      "cierre": "10:00 P.M"
+    },
+    {
+      "dia": "miercoles",
+      "apertura": "2:00 P.M",
+      "cierre": "10:00 P.M"
+    },
+    {
+      "dia": "jueves",
+      "apertura": "2:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "viernes",
+      "apertura": "2:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "sabado",
+      "apertura": "2:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "domingo",
+      "apertura": "Cerrado",
+      "cierre": "Cerrado"
+    }
+  ],
+  "telefono": "(+504) 9627-4456",
+  "direccion": "Barrio La Plazuela, Ave.Paz Barahona, Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/fnng4ivwpizw5bb8zuwt",
+  "email": "",
+  "latitud": "14.105320085115912",
+  "longitud": "-87.19976295823007",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "https://www.instagram.com/cafeparadisohn/?hl=es",
+  "urlFacebook": "https://www.facebook.com/cafeparadisotegucigalpa/?locale=es_LA",
+  "urlX": "",
+  "tipoLocalId": "67a26832988ef0aa01ddea2a",
+  "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+},
+
+{
+  "nombre": "Café Con Libros",
+  "descripcion": "Es un espacio con un concepto nuevo en Tegucigalpa, su decoración invita a disfrutar una buena taza de café con algún bocadillo, mientras lee su libro preferido. Lo que encanta de este lugar además de su exquisito café, son los libros que puede leer el cliente y música jazz. Un espacio perfecto para los amantes del buen café y la lectura. ",
+  "horario": [
+    {
+      "dia": "lunes",
+      "apertura": "9:00 A.M",
+      "cierre": "7:30 P.M"
+    },
+    {
+      "dia": "martes",
+      "apertura": "9:00 A.M",
+      "cierre": "7:30 P.M"
+    },
+    {
+      "dia": "miercoles",
+      "apertura": "9:00 A.M",
+      "cierre": "7:30 P.M"
+    },
+    {
+      "dia": "jueves",
+      "apertura": "9:00 A.M",
+      "cierre": "7:30 A.M"
+    },
+    {
+      "dia": "viernes",
+      "apertura": "9:00 A.M",
+      "cierre": "7:30 A.M"
+    },
+    {
+      "dia": "sabado",
+      "apertura": "9:00 A.M",
+      "cierre": "7:30 A.M"
+    },
+    {
+      "dia": "domingo",
+      "apertura": "Cerrado",
+      "cierre": "Cerrado"
+    }
+  ],
+  "telefono": "(+504) 9411-2630",
+  "direccion": "Barrio El Centro, Calle Adolfo Zúniga, Tegucigalpa, M.D.C.",
+  "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/bzypjk170e8rqyhsokt9",
+  "email": "",
+  "latitud": "14.105866109364685",
+  "longitud": "-87.20340146137175",
+  "urlWeb": "https://cafe-bistro-y-pizzeria.ola.click/",
+  "urlWhatsapp": "https://api.whatsapp.com/send?phone=50494112630&text=%F0%9F%91%8B%20Hola%2C%20vengo%20de%20https%3A%2F%2Fcafe-bistro-y-pizzeria.ola.click%20%0ADeseo%20realizar%20el%20siguiente%20pedido%3A%0A",
+  "urlTiktok": "https://www.tiktok.com/@cafeconlibroshn",
+  "urlInstagram": "https://www.instagram.com/cafeconlibroshn",
+  "urlFacebook": "https://www.facebook.com/cafeconlibroshn",
+  "urlX": "",
+  "tipoLocalId": "67a26832988ef0aa01ddea2a",
+  "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+},
+
+
+// Restaurantes
+
+{
+    "nombre": "Restaurante Duncan Maya",
+    "descripcion": "Es un restaurante que alberga una fascinante historia, enraizada profundamente en el corazón de Tegucigalpa. A lo largo de generaciones, su valor cultural se ha mantenido vivo, y en el corazón del Casco Histórico de la Capital, persiste con el mismo amor y añoranza que nos transporta a memorables encuentros con amigos y familia. En cuanto a la oferta culinaria, el menú presenta una amplia variedad de platos, tanto nacionales como internacionales y una exquisita selección de cócteles.",
+    "horario": [
+    {
+      "dia": "lunes",
+      "apertura": "9:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "martes",
+      "apertura": "9:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "miercoles",
+      "apertura": "9:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "jueves",
+      "apertura": "9:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "viernes",
+      "apertura": "9:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "sabado",
+      "apertura": "9:00 M.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "domingo",
+      "apertura": "12:00 A.M",
+      "cierre": "Cerrado"
+    }
+  ],
+    "telefono": "(+504) 2237-2672",
+    "direccion": "Barrio El Centro, Ave. Cristóbal Colón, Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/w0hz7i8w5hkfzss2eflq",
+    "email": "",
+    "latitud": "14.106186303385982",
+    "longitud": "-87.20331966036237",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/explore/locations/64307543/duncan-maya/",
+    "urlFacebook": "https://www.facebook.com/p/Duncan-Mayan-HN-100063455951351/?locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "6745ed2e74ae572e50d72f6d",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+
+  // Bares
+
+  {
+    "nombre": "Beer Box Beer Garden",
+    "descripcion": "El mejor lugar de Tegucigalpa para disfrutar de la cerveza más fría de la ciudad. Este es el primer y único jardín cervecero de Tegucigalpa. Aquí encontrarás más de 150 estilos de cerveza en un ambiente muy novedoso, con buena música y un menú delicioso. Cuenta con una decoración super chill que hará que te sientas cómodo por horas.",
+    "horario": [
+    {
+      "dia": "lunes",
+      "apertura": "4:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "martes",
+      "apertura": "4:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "miercoles",
+      "apertura": "4:00 P.M",
+      "cierre": "12:00 A.M"
+    },
+    {
+      "dia": "jueves",
+      "apertura": "2:00 P.M",
+      "cierre": "2:00 A.M"
+    },
+    {
+      "dia": "viernes",
+      "apertura": "2:00 P.M",
+      "cierre": "2:00 A.M"
+    },
+    {
+      "dia": "sabado",
+      "apertura": "2:00 P.M",
+      "cierre": "2:00 A.M"
+    },
+    {
+      "dia": "domingo",
+      "apertura": "Cerrado",
+      "cierre": "Cerrado"
+    }
+  ],
+    "telefono": "(+504) 9986-1193",
+    "direccion": "Clarion Hotel Real, Bulevar Juan Pablo II, Colonia Alameda, Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/jdgtsszyuzuevj7lus8i",
+    "email": "",
+    "latitud": "14.090681150713646",
+    "longitud": "-87.19350943920828",
+    "urlWeb": "https://linktr.ee/reservacionesthefunplace?utm_source=linktree_profile_share&ltsid=681c2cf1-87eb-44d0-939c-f0a13dcc9790",
+    "urlWhatsapp": "",
+    "urlTiktok": "https://tiktok.com/@thefunplace_by_clarion",
+    "urlInstagram": "https://instagram.com/thefunplace_byclarion",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "6745ed3574ae572e50d72f6e",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  {
+    "nombre": "La Ronda Rooftop",
+    "descripcion": "Sumérgete en el ambiente urbano con buena música, cocteles creativos y una vibra única. El espacio perfecto para, conectarte, relajarte y vivir lo alternativo también deléitate con nuestra selección de platos, desde opciones ligeras, hasta comidas completas y llenas de sabor, perfecto para acompañar tus bebidas o disfrutar en cualquier momento.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "09:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "09:00 A.M",
+        "cierre": "12:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "09:00 A.M",
+        "cierre": "12:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "09:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "09:00 A.M",
+        "cierre": "01:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "04:00 P.M",
+        "cierre": "10:00 P.M"
+      }
+    ],
+    "telefono": "(+504) 9586-2509",
+    "direccion": "Barrio La Ronda, esquina de Ave. Jerez y  Calle La Ronda, entre Taco Mex, y Barberia Alex, Tegucigalpa, M.D.C. ",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/oyflfv3gwubkff9jwlto",
+    "email": "",
+    "latitud": "14.10688899738631",
+    "longitud": "-87.20144124686789",
+    "urlWeb": "https://www.distritolaronda.com/la-ronda-rooftop",
+    "urlWhatsapp": "https://web.whatsapp.com/send/?phone=50495862509&text=Estas+comunic%C3%A1ndote+con+La+Ronda&type=phone_number&app_absent=0",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/larondarooftop/",
+    "urlFacebook": "https://m.facebook.com/La.Ronda.bar/events/?ref=page_internal&locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "6745ed3574ae572e50d72f6e",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+
+  {
+    "nombre": "Bar Tito Aguacate",
+    "descripcion": "Es reconocido por sus famosos 'calambres'. Esta bebida se prepara a base de ginebra, vino tinto, jugo de limón, hielo y azúcar. El apodo de \"Tito Aguacate\" surgió como una combinación del apodo de José Valentín Pereira, 'Tito', y 'Aguacate', ya que una rebanada de aguacate, servida con queso, huevo duro y papa, es parte del menú del bar ubicado en el corazón del Distrito Histórico de la capital.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "11:00 A.M",
+        "cierre": "8:40 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "11:00 A.M",
+        "cierre": "8:40 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "11:00 A.M",
+        "cierre": "8:40 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "11:00 A.M",
+        "cierre": "8:40 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "11:00 A.M",
+        "cierre": "8:40 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "11:00 A.M",
+        "cierre": "8:40 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "(+504) 9635-0687",
+    "direccion": "Barrio El Centro, Calle Matute, Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/mozdspwaxfga2f1mxuwg",
+    "email": "",
+    "latitud": "14.106451792492665",
+    "longitud": "-87.20379991803273",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "https://www.facebook.com/p/Tito-Aguacate-100076119488823/?locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "6745ed3574ae572e50d72f6e",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+
+  //* Cultura
+  //? Iglesias
+
+  {
+    "nombre": "Catedral San Miguel Arcángel",
+    "descripcion": "La majestuosa catedral San Miguel Arcángel es una joya arquitectónica, fue declarada Monumento Nacional de   Honduras en el año 1967. La obra fue dirigida por el arquitecto José Gregorio Nacianceno Quiroz, de origen guatemalteco, e inaugurada por Fray Antonio de San Miguel en el año 1782. La construción es estilo colonial barroco.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      }
+    ],
+    "telefono": "(+504) 2237-2076",
+    "direccion": "Avenida Miguel de Cervantes, frente Parque Central, Centro Histórico de Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/r7pyb4efwilsswnwytv8",
+    "email": "",
+    "latitud": "14.105695709524106",
+    "longitud": "-87.20438281349206",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "https://www.facebook.com/CatedralSanMiguelArcangelhn/?locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "67a26a10988ef0aa01ddea2b",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  {
+    "nombre": "Basílica de Nuestra Señora de Suyapa",
+    "descripcion": "La Basílica, nombrada cariñosamente como 'Nuestra Señora de Suyapa', tiene sus raíces en el siglo XVIII, cuando se descubrió y comenzó a venerarse una imagen de la Virgen de Suyapa. La Virgen fue proclamada patrona de Honduras e 1925 por el pontífice Pío XII. La Basílica es considerada desde 1993 uno de los monumentos más importantes de Honduras Es la máxima construcción de la feligresía católica en la república de Honduras, Fecha de la imagen: Hallada en 1747.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "6:30 A.M",
+        "cierre": "6:00 P.M"
+      }
+    ],
+    "telefono": "(+504) 2257-1651",
+    "direccion": "Boulevard Suyapa, Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/logosLocales/cccsypd1u6amysa6okfz",
+    "email": "",
+    "latitud": "14.080608332973583",
+    "longitud": "-87.15743291534292",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/basilicadesuyapa.hn/?hl=es",
+    "urlFacebook": "https://www.facebook.com/basilicadesuyapahn/?locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "67a26a10988ef0aa01ddea2b",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  //? bibliotecas
+
+
+  {
+    "nombre": "Biblioteca Nacional Juan Ramón Molina",
+    "descripcion": "Es la primera casa cultural del país que contiene patrimonio bibliográfico desde el siglo XIX. Fue fundada en el año 1880 con el objetivo de fomentar la literatura y la cultura en la sociedad hondureña. Actualmente, la Biblioteca cuenta con más de 60 mil volúmenes de colecciones nacionales e internacionales, cuenta con una colección infantil y una unidad de audiovisuales.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "(+504) 2222-8577",
+    "direccion": "Avenida Miguel de Cervantes, Centro Histórico de Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/icon/qga9tkitcbnevzywedyg",
+    "email": "bibliotecanacional@gmail.com",
+    "latitud": "14.10528186573629",
+    "longitud": "-87.20305705582133",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "67a672c0d25cad300afeb5e9",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+  //? Teatros
+
+  {
+    "nombre": "Teatro Nacional Manuel Bonilla",
+    "descripcion": "El Teatro Nacional Manuel Bonilla es un centro cultural ubicado en la ciudad de Tegucigalpa, Honduras",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "(+504)8818-3474, 2222-4366",
+    "direccion": "Barrio Abajo, frente al Parque Herrera, Centro Histórico de Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/icon/uryevoevo1jj8wsbtvro",
+    "email": "",
+    "latitud": "14.106494603465881",
+    "longitud": "-87.20909274047837",
+    "urlWeb": "https://qr-turismo.amdc.hn/lugares/67489ebcf9ddd7c49b650aae",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/teatromanuelbonilla/?hl=es",
+    "urlFacebook": "https://www.facebook.com/TNManuelBonilla/?locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "6745ed4574ae572e50d72f70",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+
+  //? Museos
+
+  {
+    "nombre": "Museo de la Identidad Nacional",
+    "descripcion": "El Museo para la Identidad Nacional es un museo de antropología en Tegucigalpa, Honduras, ubicado en el antiguo Palacio de los Ministerios construido en el siglo XIX.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "1:00 P.M",
+        "cierre": "4:00 P.M"
+      }
+    ],
+    "telefono": "2238-7412",
+    "direccion": "Estamos ubicados en el Antiguo Palacio de los Ministerios, Calle El Telegrafo, Tegucigalpa, Francisco Morazán",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/locales/u2264emztfqnr9dravsp",
+    "email": "",
+    "latitud": "14.106871497403493",
+    "longitud": "-87.20829009297054",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "6745ed3d74ae572e50d72f6f",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+  {
+    "nombre": "Museo Casa de Morazán",
+    "descripcion": "Fue construida en 1761, cuenta con casi 260 años de historia. En 1792, la familia Morazán se mudó a vivir al inmueble y permaneció ahí por más de 50 años. Se conoce que después el inmueble tuvo distintos dueños, pero fue hasta 1954 cuando el Estado de Honduras decidió comprar la vivienda para convertirla en Biblioteca y Archivo Nacional. La Casa de Morazán es creada mediante Decreto Ejecutivo 030-2008 en el 2008 para promover y difundir la vida y obra del General Francisco Morazán.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "8:00 A.M",
+        "cierre": "4:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "(+504) 2238-3247, (+504) 2238-3269",
+    "direccion": "Barrio El Centro, Avenida Cristóbal Colón, frente antiguo Cine Variedades, Centro Histórico de Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/icon/gurp98qnxbw2umt6hfh6",
+    "email": "casademorazan@gmail.com",
+    "latitud": "14.106746271767516",
+    "longitud": "-87.2059341776276",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/casademorazan/",
+    "urlFacebook": "https://www.facebook.com/casademorazan11",
+    "urlX": "",
+    "tipoLocalId": "6745ed3d74ae572e50d72f6f",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+
+  //? Parques
+
+  {
+    "nombre": "Parque Central de Tegucigalpa",
+    "descripcion": "Dentro de los parques históricos de Tegucigalpa, La Leona destaca como uno de los favoritos, un espacio construido a principios del siglo XX e inaugurado en 1925 y mantiene el encanto con el que fue originalmente concebido. Este parque ofrece amenidades como una cancha de baloncesto, un sendero perimetral y caminos que lo cruzan en diferentes direcciones.  Lo más destacado es la vista panorámica a las ciudades de Tegucigalpa y Comayagüela que proporciona.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      }
+    ],
+    "telefono": "+(504)9860-8792",
+    "direccion": "Avenida Miguel de Cervantes, frente a la Iglesia Catedral San Miguel Arcángel, Centro Histórico de Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/lh96chjvrbxruxnbephx",
+    "email": "",
+    "latitud": "14.106040403870093",
+    "longitud": "-87.20473341349279",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "67aa100f5d5f14c6c52c0dbb",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  
+  {
+    "nombre": "Parque La Leona",
+    "descripcion": "Dentro de los parques históricos de Tegucigalpa, La Leona destaca como uno de los favoritos, un espacio construido a principios del siglo XX e inaugurado en 1925 y mantiene el encanto con el que fue originalmente concebido. Este parque ofrece amenidades como una cancha de baloncesto, un sendero perimetral y caminos que lo cruzan en diferentes direcciones. Lo más destacado es la vista panorámica a las ciudades de Tegucigalpa y Comayagüela que proporciona.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "05:00 A.M",
+        "cierre": "08:00 P.M"
+      }
+    ],
+    "telefono": "",
+    "direccion": "Barrio La Leona, Tegucigalpa, M.D.C.",
+    "banerLocal": "https://res.cloudinary.com/dcbdrzhh1/image/upload/f_auto,q_auto/v1/qr/he2a26wqeo4bqyhcvswv",
+    "email": "",
+    "latitud": "14.108835106586787",
+    "longitud": "-87.20290087116425",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "67aa100f5d5f14c6c52c0dbb",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+
+  //?Souvenirs
+
+  {
+    "nombre": "Souvenir Bazar Milla",
+    "descripcion": "Tienda de artesanias, ropa, calzado accesorios todo hecho en casa.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P..M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "+(504)2516-1013 / +(504)8792-8823",
+    "direccion": "Plaza Los Dolores, esquina opuesta a la iglesia los dolores, Tegucigalpa, Honduras",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/bazarMilla.jpg",
+    "email": "reservaciones@citytravelhn.com",
+    "latitud": "14.107845294390936",
+    "longitud": "-87.20601332197356",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "https://www.facebook.com/Souvenirbazar.milla/?locale=es_LA",
+    "urlX": "",
+    "tipoLocalId": "6745ed6774ae572e50d72f74",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  {
+    "nombre": "Típicos los inditos artesanías",
+    "descripcion": "Artesania tipica, trajes tipicos de Honduras, sandalias de cuero, hamacas",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "9:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "3394-8129",
+    "direccion": "Barrio los Dolores , frente a la plaza los Dolores, Tegucigalpa, Honduras",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/Souvenir+T%C3%ADpicos+Los+Inditos.jpg",
+    "email": "negricarola@yahoo.es",
+    "latitud": "14.098333416943975",
+    "longitud": "-87.1896107820936",
+    "urlWeb": "",
+    "urlWhatsapp": "https://wa.me/c/50433948129",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/tipicosartesanias/?hl=es",
+    "urlFacebook": "https://www.instagram.com/tipicosartesanias/?hl=es",
+    "urlX": "",
+    "tipoLocalId": "6745ed6774ae572e50d72f74",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+
+  //* Servicios
+
+  //? Transportes
+  {
+    "nombre": "Transportes Cristina",
+    "descripcion": "La empresa de Transportes Cristina nace en 1996 con la finalidad de ofrecer el servicio de transporte interurbano de pasajeros. Viaja desde Tegucigalpa hasta las principales ciudades turísticas como ser: San Pedro Sula, Tela, La Ceiba, El Progreso, Siguatepeque, San Juan Pueblo y Olanchito. Cuentan con el servicio de encomiendas más rápido del país y servicio de viaje expreso de media noche; ayudando a miles de personas a diario a transportarse de manera cómoda y segura a sus destinos.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "05:00 A.M",
+        "cierre": "11:00 P.M"
+      }
+    ],
+    "telefono": "(+504) 3285-2353",
+    "direccion": "Colonia Tiloarque, Boulevard Fuerzas, Armadas, Tegucigalpa, M.D.C.",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/transporte.jpg",
+    "email": "info@transportescristina.com, Transportes_cristina@yahoo.com",
+    "latitud": "14.078366115289016",
+    "longitud": "-87.21719510000001",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/transportescristinahn/",
+    "urlFacebook": "https://www.facebook.com/transportescristina",
+    "urlX": "",
+    "tipoLocalId": "679a59cde9592e4c021d5b38",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  //? Salud
+
+  {
+    "idLocal": "678aac7be13fc8f34e9538ec",
+    "nombre": "Hospital General San Felipe",
+    "descripcion": "El Hospital General San Felipe, es uno de los más antiguos y completos hospitales de la república de Honduras.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      }
+    ],
+    "telefono": "2236-7917",
+    "direccion": "",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/San+Felipe.jpg",
+    "email": "",
+    "latitud": "",
+    "longitud": "",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "6745ed5e74ae572e50d72f73",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+  {
+    "nombre": "Hospital y Clínicas Viera",
+    "descripcion": "Tegucigalpa, Alcaldia Municipal, Barrio La Ronda 5° calle, contiguo a la, 11101 Tegucigalpa",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      }
+    ],
+    "telefono": "2216-6400",
+    "direccion": "de Tegucigalpa, Alcaldia Municipal, Barrio La Ronda 5° calle, contiguo a la, 11101 Tegucigalpa",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/Hospital-y-clinicas-Viera.png",
+    "email": "",
+    "latitud": "14.106233177091951",
+    "longitud": "-87.20139418650722",
+    "urlWeb": "https://hospitalyclinicasviera.hn/",
+    "urlWhatsapp": "https://wa.me/50432826610",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/hospitalvierahn/",
+    "urlFacebook": "https://www.facebook.com/hospitalviera/",
+    "urlX": "",
+    "tipoLocalId": "6745ed5e74ae572e50d72f73",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  },
+
+
+  //? Agencias de Viajes
+
+  {
+    "nombre": "CITY TRAVEL Tegucigalpa",
+    "descripcion": "Frente a seguros CREFISA, Edificio Interamericana, Ramón Ernesto Cruz, 11101 Tegucigalpa, Francisco Morazán",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "8:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "8:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "8:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "8:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "8:00 A.M",
+        "cierre": "5:00 P.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "8:00 A.M",
+        "cierre": "12:00 P.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "Cerrado",
+        "cierre": "Cerrado"
+      }
+    ],
+    "telefono": "+(504)2516-1013 / +(504)8792-8823",
+    "direccion": "Frente a seguros CREFISA, Edificio Interamericana, Ramón Ernesto Cruz",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/CITY+TRAVEL+Tegucigalpa.jpg",
+    "email": "reservaciones@citytravelhn.com",
+    "latitud": "14.099875329002279",
+    "longitud": "-87.18809279140523",
+    "urlWeb": "http://www.citytravelhn.com",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "https://www.instagram.com/agenciacitytraveltours/",
+    "urlFacebook": "https://www.facebook.com/CityTravelToursAgencia",
+    "urlX": "",
+    "tipoLocalId": "6745ed5574ae572e50d72f72",
+    "lugaresIds": [
+    "67489dc4f9ddd7c49b650aa7",
+    "67489e53f9ddd7c49b650aa8",
+    "67489e69f9ddd7c49b650aaa",
+    "67489e72f9ddd7c49b650aab",
+    "67489ea3f9ddd7c49b650aac",
+    "67489eb4f9ddd7c49b650aad",
+    "67489ebcf9ddd7c49b650aae",
+    "67535b5e615056336a962533"
+  ]
+  }
+
+
+
+
+  ///* PUEBLOS LOCALES
+
+  //? Parques
+
+  {
+    "nombre": "Parque Central de Cantarranas",
+    "descripcion": "El Parque Central de Cantarranas es el corazón vibrante de la ciudad, un lugar donde se entrelazan la historia, la cultura y la vida cotidiana de los habitantes. Este espacio verde está rodeado de edificios históricos y calles adoquinadas que invitan a pasear y disfrutar del entorno. Los visitantes pueden encontrar una gran variedad de plantas y flores que adornan el parque, las esculturas en el parque rinden homenaje a figuras importantes y eventos históricos del pueblo.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      }
+    ],
+    "telefono": "",
+    "direccion": "Cantarranas, Francisco Morazán",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg",
+    "email": "",
+    "latitud": "14.262955948533268",
+    "longitud": "-87.02820091534068",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "",
+    "tipoLocalId": "67aa100f5d5f14c6c52c0dbb",
+    "lugaresIds": ["67ae2338d2047d7846b8fcba"]
+  }
+
+  //? Murales
+  {
+    "nombre": "Murales de Cantarranas",
+    "descripcion": "El Parque Central de Cantarranas es el corazón vibrante de la ciudad, un lugar donde se entrelazan la historia, la cultura y la vida cotidiana de los habitantes. Este espacio verde está rodeado de edificios históricos y calles adoquinadas que invitan a pasear y disfrutar del entorno. Los visitantes pueden encontrar una gran variedad de plantas y flores que adornan el parque, las esculturas en el parque rinden homenaje a figuras importantes y eventos históricos del pueblo.",
+    "horario": [
+      {
+        "dia": "lunes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "martes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "miercoles",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "jueves",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "viernes",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "sabado",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      },
+      {
+        "dia": "domingo",
+        "apertura": "12:00 A.M",
+        "cierre": "12:00 A.M"
+      }
+    ],
+    "telefono": "",
+    "direccion": "Cantarranas, Francisco Morazán",
+    "banerLocal": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg",
+    "email": "",
+    "latitud": "14.261882773535644",
+    "longitud": "-87.0275776269856",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "pueblitos",
+    "tipoLocalId": "67ae2efd0d46324f80919abe",
+    "lugaresIds": ["67ae2338d2047d7846b8fcba"]
+  }
+
+		

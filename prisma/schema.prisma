@@ -106,8 +106,8 @@ model LocalRel {
   id              String           @id @default(auto()) @map("_id") @db.ObjectId
   lugarTuristico  LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
   lugarTuristicoId String          @db.ObjectId
-  local           Local            @relation(fields: [localId], references: [idLocal])
-  localId         String           @db.ObjectId
+  local           Local?            @relation(fields: [localId], references: [idLocal]) // Permitir null
+  localId         String?           @db.ObjectId  // También permitir null
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
 

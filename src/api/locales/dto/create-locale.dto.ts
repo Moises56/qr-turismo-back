@@ -1,4 +1,4 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, IsArray } from 'class-validator';
 
 export class CreateLocaleDto {
   @IsString()
@@ -64,7 +64,9 @@ export class CreateLocaleDto {
   @IsOptional()
   urlX?: string;
 
-  lugares?: { lugarTuristicoId: string }[]; // Relación many-to-many con LugaresTuristicos
+  @IsArray()
+  @IsOptional()
+  lugaresIds?: string[];
 }
 
 export class UpdateLocaleDto extends CreateLocaleDto {}
