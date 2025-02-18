@@ -1,0 +1,107 @@
+//? Lugares
+
+//* Cantarranas
+
+{
+  "key": "10",
+  "nombre": "Cantarranas",
+  "ubicacion": "Está situado en la margen derecha del Río Chiquito, al sur del Valle de Talanga.",
+  "latitud": "14.260436560516872",
+  "longitud": "-87.0260739121845",
+  "descripcion": "Cantarranas es un municipio del departamento de Francisco Morazán en la República de Honduras",
+  "dias": "Lunes a Domingo",
+  "horarioEntrada": "12:00 AM", 
+  "horarioSalida": "12:00 AM",
+  "historia": "El Municipio de Cantarranas, el cual se encuentra en el departamento de Francisco Morazán en Honduras, se caracteriza por sus hermosas calles de piedra y coloridas esquinas. El municipio se fundó en el año 1667 con el nombre de Cantarranas, debido a que sus primeros pobladores provenían de un barrio de la ciudad de Madrid llamado con ese mismo nombre. Entre los atractivos se encuentra la casa donde nació y vivió el expresidente Francisco Ferrera, la cual tiene más de 200 años. Cantarranas es un municipio lleno de arte y cultura. En cuatro de sus esquinas, se pueden observar impresionantes murales llenos de color y símbolos que reflejan la cultura hondureña. El pueblo se ha dado a conocer por ser promotor de los alimentos tradicionales tales como las rosquillas en miel y los deliciosos dulces de leche.",
+  "baner": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg",
+  "email": "",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "",
+  "urlFacebook": "",
+  "urlX": "",
+  "locales": [],
+  "eventos": [],
+  "galeria": []
+}
+
+
+
+//* Santa Lucía
+{
+  "key": "11",
+  "nombre": "Santa Lucía",
+  "ubicacion": "Santa Lucía es un municipio del departamento de Francisco Morazán en la República de Honduras",
+  "latitud": "14.115844444444",
+  "longitud": "-87.113130555556",
+  "descripcion": "Santa Lucia lugar donde el turista puede disfrutar de cafés, bares, restaurantes, puestos de ventas de comidas populares, dulces y frutas.",
+  "dias": "Lunes a Domingo",
+  "horarioEntrada": "12:00 AM", 
+  "horarioSalida": "12:00 AM",
+  "historia": "El Municipio de Santa Lucía también conocido como 'Rincón de flores', tiene un estilo colonial, con casas blancas, balcones de hierro y calles de piedra, sin faltar en cada casa un jardín, por pequeño que sea. Muchos turistas nacionales y extranjeros visitan Santa Lucía por su clima agradable. Rosas, geranios, claveles, lirios, anturios, diversas especies de cáctus, margaritas, crisantemos, orquídeas y muchas otras adornan el ambiente de Santa Lucía, donde el turista también puede disfrutar de cafés, bares, restaurantes, puestos de ventas de comidas populares, dulces y frutas. Se sabe que es uno de los poblados más antiguos, antes de la llegada de los españoles, la minería inició en 1580. Santa Lucía fue fundada como municipio el 12 de noviembre de 1820. Su nombre primitivo fue 'Surcagua' que significa 'Lugar de ranas'. Su nombre actual es en honor a Lucia de Siracusa, Santa de la iglesia Católica.",
+  "baner": "https://amdchn.s3.us-east-1.amazonaws.com/santaLucia.jpg",
+  "email": "santaluciahnfm@gmail.com",
+  "urlWeb": "https://santalucia.hn/",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "https://www.instagram.com/santalucia_hn/?e=05f1c963-1399-4e26-bc18-493b8c8004ad&g=5",
+  "urlFacebook": "https://www.facebook.com/santaluciahnfm",
+  "urlX": "pueblitos",
+  "locales": [],
+  "eventos": [],
+  "galeria": []
+}
+
+
+//* Valle de Ángeles
+{
+  "key": "12",
+  "nombre": "Valle de Ángeles",
+  "ubicacion": "Valle de Ángeles es un municipio del departamento de Francisco Morazán en la República de Honduras.",
+  "latitud": "14.160607321461338",
+  "longitud": "-87.03957072148137",
+  "descripcion": "Valle de Ángeles es un municipio del departamento de Francisco Morazán en la República de Honduras.",
+  "dias": "Lunes a Domingo",
+  "horarioEntrada": "12:00 AM",
+  "horarioSalida": "12:00 AM",
+  "historia": "El Municipio de Valle de Ángeles rodeado de pinos, flores y bellos paisajes, Valle de Ángeles es considerada una tierra bendecida no solo por su riqueza natural, sino por la calidez de su gente. La región formó parte de la historia minera de Honduras, con explotaciones como la de Las Animas y El Socorro; que dieron oro, estaño, plata, cobre, plomo y zinc. Es la cuna de los artesanos y alfareros, el destino predilecto de los capitalinos, un destino donde los visitantes pueden disfrutar de variedad de restaurantes, actividades al aire libre y muchas artesanías de barro, madera y piel. En Valle de Ángeles es típico disfrutar de las famosas pupusas, carne asada y los deliciosos elotes al estilo hondureño (elote con mantequilla y queso). Entre sus atracciones turísticas también encontramos su arquitectura colonial y campesina, excursiones de senderismo, arte contemporaneo y espeleología.",
+  "baner": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg",
+  "email": "",
+  "urlWeb": "",
+  "urlWhatsapp": "",
+  "urlTiktok": "",
+  "urlInstagram": "https://www.instagram.com/valledeangeles_hn/?hl=es",
+  "urlFacebook": "https://es-la.facebook.com/valledeangeles",
+  "urlX": "pueblitos",
+}				
+
+											
+//* Ojojona
+{
+  "key": "13",
+  "nombre": "Ojojona",
+  "ubicacion": "Ojojona Se ubica a 32 km al sur de la capital Tegucigalpa.",
+  "latitud": "13.937253483801923",
+  "longitud": "-87.29431631245536",
+  "descripcion": "El Municipio de Ojojona o Xoxonal como se cree que le decían las antiguas civilizaciones indígenas que vivían en la zona, significa 'Lugar de agua verdosa'.",
+    "dias": "Lunes a Domingo",
+    "horarioEntrada": "12:00 AM",
+    "horarioSalida": "12:00 AM",
+    "historia": "El Municipio de Ojojona es un lugar lleno de historia y tradición, es conocido por su arquitectura colonial y por ser un lugar de descanso para los capitalinos. Ojojona es un lugar lleno de historia y tradición, es conocido por su arquitectura colonial y por ser un lugar de descanso para los capitalinos. En Ojojona se pueden encontrar artesanías de barro, madera y cuero, así como también se pueden disfrutar de deliciosos platillos típicos de la región. Ojojona es un lugar lleno de historia y tradición, es conocido por su arquitectura colonial y por ser un lugar de descanso para los capitalinos. En Ojojona se pueden encontrar artesanías de barro, madera y cuero, así como también se pueden disfrutar de deliciosos platillos típicos de la región.",
+    "baner": "https://amdchn.s3.us-east-1.amazonaws.com/ojojona.webp",
+    "email": "",
+    "urlWeb": "",
+    "urlWhatsapp": "",
+    "urlTiktok": "",
+    "urlInstagram": "",
+    "urlFacebook": "",
+    "urlX": "pueblitos",
+    "locales": [],
+    "eventos": [],
+    "galeria": []
+}
+
+
+											
+											

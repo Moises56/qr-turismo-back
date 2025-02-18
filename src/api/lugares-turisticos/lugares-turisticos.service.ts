@@ -23,11 +23,11 @@ export class LugaresTuristicosService {
         baner: createDto.baner,
         email: createDto.email,
         urlWeb: createDto.urlWeb,
-        urlWhatsapp: createDto.urlWeb,
-        urlTiktok: createDto.urlWeb,
-        urlInstagram: createDto.urlWeb,
-        urlFacebook: createDto.urlWeb,
-        urlX: createDto.urlWeb,
+        urlWhatsapp: createDto.urlWhatsapp,
+        urlTiktok: createDto.urlTiktok,
+        urlInstagram: createDto.urlInstagram,
+        urlFacebook: createDto.urlFacebook,
+        urlX: createDto.urlX,
 
         // Crear las relaciones con locales (usando LocalRel)
         locales: {
@@ -108,7 +108,7 @@ export class LugaresTuristicosService {
     limit?: number;
     search?: string;
   }) {
-    const { page = 1, limit = 10, search = '' } = queryParams;
+    const { page = 1, limit = 20, search = '' } = queryParams;
 
     // Validación
     if (page < 1) throw new BadRequestException('La página debe ser mayor a 0');
