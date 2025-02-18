@@ -9,6 +9,9 @@ import {
   Query,
   DefaultValuePipe,
   ParseIntPipe,
+  NotFoundException,
+  BadRequestException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { LugaresTuristicosService } from './lugares-turisticos.service';
 import { CreateLugaresTuristicoDto } from './dto/create-lugares-turistico.dto';
@@ -84,5 +87,23 @@ export class LugaresTuristicosController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.lugaresTuristicosService.remove(id);
+  }
+
+  //findByUrlX // buscar por urlX = 'pueblitos'
+  @Get('urlX/:urlX')
+  async getLugaresByUrlX(@Param('urlX') urlX: string) {
+    try {
+      return await this.lugaresTuristicosService.findByUrlX(urlX);
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw new NotFoundException(error.message);
+      }
+      if (error instanceof BadRequestException) {
+        throw new BadRequestException(error.message);
+      }
+      throw new InternalServerErrorException(
+        'Error al buscar lugares turísticos',
+      );
+    }
   }
 }

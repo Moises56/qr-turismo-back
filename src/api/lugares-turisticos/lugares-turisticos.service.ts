@@ -1,7 +1,8 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { CreateLugaresTuristicoDto } from './dto/create-lugares-turistico.dto';
 import { UpdateLugaresTuristicoDto } from './dto/update-lugares-turistico.dto';
 import { PrismaService } from '../../prisma/prisma.service';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 @Injectable()
 export class LugaresTuristicosService {
@@ -209,5 +210,63 @@ export class LugaresTuristicosService {
 
   async remove(id: string) {
     return this.prisma.lugaresTuristicos.delete({ where: { id } });
+  }
+
+  // buscar por urlX = 'pueblitos'
+  async findByUrlX(urlX: string) {
+    try {
+      // Validar que urlX no esté vacío
+      if (!urlX) {
+        throw new BadRequestException('El urlX es requerido');
+      }
+
+      const lugares = await this.prisma.lugaresTuristicos.findMany({
+        where: {
+          urlX: {
+            equals: urlX,
+            mode: 'insensitive', // Búsqueda insensible a mayúsculas/minúsculas
+          },
+        },
+        include: {
+          galeria: true,
+          locales: {
+            include: {
+              local: true,
+            },
+          },
+          eventos: {
+            include: {
+              evento: true,
+            },
+          },
+        },
+        orderBy: {
+          nombre: 'asc', // Ordenar por nombre ascendente
+        },
+      });
+
+      if (lugares.length === 0) {
+        throw new NotFoundException(
+          `No se encontraron lugares con urlX: ${urlX}`,
+        );
+      }
+
+      // Retornar con estructura similar a findAll
+      return {
+        data: lugares,
+        meta: {
+          total: lugares.length,
+          urlX,
+          found: true,
+        },
+      };
+    } catch (error) {
+      if (error instanceof PrismaClientKnownRequestError) {
+        throw new InternalServerErrorException(
+          `Error de base de datos: ${error.message}`,
+        );
+      }
+      throw error;
+    }
   }
 }
