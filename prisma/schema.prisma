@@ -23,6 +23,7 @@ model LugaresTuristicos {
   locales        LocalRel[] // Relación explícita con modelo intermedio
   eventos        EventoRel[] // Relación explícita con modelo intermedio
   galeria        ImageItem[]  // Nueva relación con ImageItem
+  attractions    Attraction[]
   email          String?
   urlWeb         String?
   urlWhatsapp    String?   
@@ -153,4 +154,15 @@ model Suscripcion {
   urlX          String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+}
+
+model Attraction {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  nombre        String?
+  descripcion   String?
+  imgAtractions String?
+  lugarId       String?
+  lugar         LugaresTuristicos? @relation(fields: [lugarId], references: [id])
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
 }

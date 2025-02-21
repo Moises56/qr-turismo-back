@@ -1598,4 +1598,134 @@ ALOJAMIENTOS,
     "lugaresIds": ["67ae2338d2047d7846b8fcba"]
   }
 
+
+
+
+
+  //* Cantarranas
+    {
+      "nombre": "Parque Central de Cantarranas",
+      "descripcion": "El Parque Central de Cantarranas es el corazón vibrante de la ciudad, un lugar donde se entrelazan la historia, la cultura y la vida cotidiana de los habitantes. Este espacio verde está rodeado de edificios históricos y calles adoquinadas que invitan a pasear y disfrutar del entorno. Los visitantes pueden encontrar una gran variedad de plantas y flores que adornan el parque, las esculturas en el parque rinden homenaje a figuras importantes y eventos históricos del pueblo.",
+      "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg", 
+      "lugarId": "67ae2338d2047d7846b8fcba"
+    },
+    {
+      "nombre": "Murales de Cantarranas",
+      "descripcion": "Cantarranas es conocido por su vibrante colección de murales que adornan las paredes de edificios y espacios públicos a lo largo de la ciudad. Creados por artistas locales e internacionales, son una explosión de color y creatividad que reflejan la identidad cultural y las historias del lugar. Algunos murales representan escenas de la vida cotidiana, mientras que otros abordan temas más profundos como la conservación del medio ambiente y los derechos humanos.",
+      "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg", 
+      "lugarId": "67ae2338d2047d7846b8fcba"
+    },
+    {
+      "nombre": "Iglesia de San Juan Bautista",
+      "descripcion": "Es una impresionante estructura religiosa que se erige como un testimonio del pasado colonial de Cantarranas. Construida en 1622, esta iglesia es un ejemplo destacado de la arquitectura colonial española, con su fachada blanca y detalles barrocos que capturan la atención de todos los visitantes. Al ingresar puede admirar el altar mayor adornado con intrincadas tallas de madera y figuras religiosas, así como vitrales que filtran la luz creando un ambiente sereno.",
+      "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg", 
+      "lugarId": "67ae2338d2047d7846b8fcba"
+    },
+    {
+      "nombre": "Museo de Cantarranas",
+      "descripcion": "Es una joya cultural que ofrece una profunda inmersión en la historia y tradiciones de la región. Ubicado en un edificio histórico, el museo alberga una vasta colección de artefactos, fotografías y documentos que narran la evolución de Cantarranas a lo largo de los siglos. Se encuentran exhibiciones de la época precolombina hasta el período colonial y tiempos modernos. Es un lugar ideal para comprender mejor la identidad y la historia de Cantarranas.",
+      "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/cantarranas.jpeg", 
+      "lugarId": "67ae2338d2047d7846b8fcba"
+    },
+
+    											
+    
+
+
+
+  //* Santa Lucía
+
+  {
+    "nombre": "Laguna Natural de Santa Lucía", 
+    "descripcion": "Es un atractivo turístico que adorna y complementa el hermoso paisaje del pueblo. Los visitantes tienen la oportunidad de disfrutar de paseos en botes de remos disponibles en la zona y deleitarse con esta joya natural. Es un lugar encantador donde puede disfrutar de momentos de relajación, conversación y lectura. Es un espacio perfecto para desconectar y pasar un tiempo agradable. La laguna está llena de vida donde patos y tortugas pasean tranquilamente.", 
+    "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/LagunaSantaLuc%C3%ADa.jpg", 
+    "lugarId": "67b3a0c893cfcdf27712eb80"
+    },
+
+  {
+    "nombre": "Mirador de Santa Lucía", 
+    "descripcion": "Ubicado en las cercanías del parque, es un nuevo punto de observación que brinda a los visitantes una experiencia única. Al subir al mirador, se pueden apreciar unas letras iluminadas con el nombre del pueblo, las cuales resaltan en la noche y crean un ambiente mágico, añadiendo un toque especial al lugar. Ofrece la oportunidad para admirar la panorámica de la localidad y disfrutar de momentos de tranquilidad y asombro ante la majestuosidad del entorno.", 
+    "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/LagunaSantaLuc%C3%ADa.jpg", 
+    "lugarId": "67b3a0c893cfcdf27712eb80"
+    }
+  {
+    "nombre": "Parque de Santa Lucía", 
+    "descripcion": "Un oasis de tranquilidad y diversión al aire libre ubicado en el corazón de la encantadora ciudad de Santa Lucía, ofrece un amplio espacio para disfrutar y relajarse en medio de un entorno natural. Este parque se ha convertido en un punto de encuentro popular para los residentes locales y visitantes de todas las edades. El parque está rodeado de majestuosos árboles que proporcionan sombra y una sensación de frescura, siendo el hogar para una variedad de aves.", 
+    "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/LagunaSantaLuc%C3%ADa.jpg", 
+    "lugarId": "67b3a0c893cfcdf27712eb80"
+    }
+  {
+    "nombre": "Iglesia Cristo Señor de las Mercedes", 
+    "descripcion": "La iglesia de estilo colonial, que en sus inicios fue una pequeña ermita construida en el siglo XVI, ha experimentado modificaciones en su estructura a lo largo del tiempo, siendo las últimas realizadas a finales del siglo XIX y principios del siglo XX. La imagen más venerada es un Cristo que anteriormente era negro, que tras una restauración y limpieza cambió de color. Fue un obsequio del rey de España Felipe II en el año 1572, ya que él era un empecinado defensor del catolicismo.", 
+    "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/LagunaSantaLuc%C3%ADa.jpg", 
+    "lugarId": "67b3a0c893cfcdf27712eb80"
+    }
+
+
+    //* Valle de angeles
+  {
+    "nombre": "Parque Central de Valle de Ángeles", 
+    "descripcion": "Es el punto neurálgico del centro y en donde se concentran muchas de las actividades de Valle de Ángeles. Los fines de semana este espacio se llena de color y música para recibir a los visitantes. Tienen lugar las diferentes presentaciones musicales y exposiciones de obras artísticas del pueblo. Además, alrededor de él se alzan muchos edificios coloniales que son parte de la historia del municipio como la Parroquia San Francisco de Asís, construida en el año 1879.", 
+    "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+    "lugarId": "67b3a58f93cfcdf27712eb81"
+    }
 		
+    {
+      "nombre": "Galería Sixtina", 
+      "descripcion": "Un espacio dedicado al conocido artista hondureño, Julio Vizquerra. Se encuentra en la calle principal del pueblo y es una visita muy interesante. Los fines de semana puede tomar clases de arte y pintura y ver distintas las distintas exposiciones de artistas hondureños.", 
+      "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+      "lugarId": "67b3a58f93cfcdf27712eb81"
+      }
+
+    {
+      "nombre": "Sendero Las Golondrinas", 
+      "descripcion": "Canopy y Sendero Las Golondrinas es un destino al aire libre que ofrece senderos naturales, una impresionante cascada y actividades emocionantes como el canopy. Los visitantes pueden disfrutar de caminatas, acampar junto a una laguna, y relajarse en medio de la naturaleza. Además, cuenta con un restaurante con un menú variado y exquisito, por lo que permite que toda la familia pueda disfrutar y relajarse.", 
+      "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+      "lugarId": "67b3a58f93cfcdf27712eb81"
+      }
+
+      {
+        "nombre": "Cañon del Torno", 
+        "descripcion": "El Cañon del Torno forma parte de los cañones más hermosos que tiene Honduras, donde puede aventurarse a lo extremo y descubrirlo. El lugar se encuentra rodeado de abundante naturaleza, donde puede hacer rappel, senderismo e incluso puede saltar del peldaño más alto y disfrutar de hermosas aguas cristalinas. Y ya que se puede contar con formaciones rocosas, encontrará un pequeño río, donde se dará un buen chapuzón.", 
+        "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+        "lugarId": "67b3a58f93cfcdf27712eb81"
+        }
+
+    //* Ojojona
+  
+      {
+        "nombre": "Mirador del Ocotillo", 
+        "descripcion": "Es una loma llena de pinos en las afueras de Ojojona donde se tiene una vista maravillosa y se puede visualizar el pueblo desde lo alto o tener un día de campo. Además, existe una cueva natural de regular profundidad.", 
+        "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+        "lugarId": "67b3abe9cbe1387f398641d6"
+        }
+      {
+        "nombre": "Laguna Aventure Park", 
+        "descripcion": "Es uno de los destinos encantadores que el visitante puede encontrar en el pintoresco municipio, refleja la serenidad y belleza natural, siendo un escape perfecto. Puede disfrutar de tranquilos paseos en bote, practicar la pesca, a su alrededor puede encontrar varios senderos, para observación de aves y fotografía. Las orillas de La Laguna son perfectas para disfrutar de un día de picnic con familia y amigos o acampar bajo las estrellas.", 
+        "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+        "lugarId": "67b3abe9cbe1387f398641d6"
+        }
+      {
+        "nombre": "Iglesia de San Juan Bautista", 
+        "descripcion": "Es la iglesia principal del pueblo de Ojojona y una de las últimas obras arquitectónicas en el país durante el periodo colonial. En 1801, la arquidiócesis de Tegucigalpa ordenó la construcción de una nueva iglesia en el pueblo dedicada al santo patrono San Juan El Bautista, el cual se le celebra una feria patronal cada 24 de junio en el municipio. Alrededor de la iglesia puede disfrutar de áreas verdes, un pequeño riachuelo y un puente que lo cruza, ideal para fotografías.", 
+        "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+        "lugarId": "67b3abe9cbe1387f398641d6"
+        }
+      {
+        "nombre": "Negocios de productos artesanales", 
+        "descripcion": "La artesanía es tradición en nuestro país, por eso muchas personas aprovechan su talento para crear estas bellezas. Las artesanías se han transformado en los adornos favoritos de las visitas, como ser gallos, ranas, jarrones, floreros, mariposas, entre otras figuras. Visitar las tiendas de artesanías no solo es una oportunidad para adquirir auténticas piezas hechas a mano, sino sumergirse en la rica cultura y tradición que Honduras tiene para ofrecer.", 
+        "imgAtractions": "https://amdchn.s3.us-east-1.amazonaws.com/valle.jpg", 
+        "lugarId": "67b3abe9cbe1387f398641d6"
+        }
+  
+        
+        											
+        
+
+        											
+                  
+                            
+											
+                 
+											
+        
