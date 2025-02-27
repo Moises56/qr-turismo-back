@@ -8,8 +8,8 @@ datasource db {
 }
 
 model LugaresTuristicos {
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
-  key            String   @unique
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  key            String       @unique
   nombre         String?
   ubicacion      String?
   latitud        String?
@@ -20,149 +20,187 @@ model LugaresTuristicos {
   horarioSalida  String?
   historia       String?
   baner          String?
-  locales        LocalRel[] // Relación explícita con modelo intermedio
-  eventos        EventoRel[] // Relación explícita con modelo intermedio
-  galeria        ImageItem[]  // Nueva relación con ImageItem
+  locales        LocalRel[]
+  eventos        EventoRel[]
+  galeria        ImageItem[]
   attractions    Attraction[]
   email          String?
   urlWeb         String?
-  urlWhatsapp    String?   
-  urlTiktok      String?  
-  urlInstagram   String?      
-  urlFacebook    String?    
+  urlWhatsapp    String?
+  urlTiktok      String?
+  urlInstagram   String?
+  urlFacebook    String?
   urlX           String?
+  rutas          RutaRel[] // Relación opcional con rutas turísticas
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
 
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
+// Modelo para Rutas Turísticas
+model RutasTuristicas {
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
+  nombre     String // Nombre de la ruta (e.g., "Escapada Histórica")
+  lugares    LugarRuta[] @relation("RutaLugares") // Lugares embebidos en la ruta
+  lugaresRel RutaRel[] // Relación opcional con LugaresTuristicos
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+}
+
+// Modelo embebido para lugares propios de la ruta
+model LugarRuta {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  nombre      String // Nombre del lugar (e.g., "Parque La Leona")
+  lat         Float // Latitud
+  lng         Float // Longitud
+  description String? // Descripción opcional
+  coverImage  String? // Imagen de portada
+  gallery     String[] // Array de URLs de la galería
+  rutaId      String          @db.ObjectId
+  ruta        RutasTuristicas @relation("RutaLugares", fields: [rutaId], references: [id])
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+// Modelo intermedio para relación opcional con LugaresTuristicos
+model RutaRel {
+  id               String             @id @default(auto()) @map("_id") @db.ObjectId
+  ruta             RutasTuristicas    @relation(fields: [rutaId], references: [id])
+  rutaId           String             @db.ObjectId
+  lugarTuristico   LugaresTuristicos? @relation(fields: [lugarTuristicoId], references: [id])
+  lugarTuristicoId String?            @db.ObjectId // Opcional
+  orden            Int? // Orden opcional del lugar en la ruta
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+
+  @@index([rutaId])
+  @@index([lugarTuristicoId])
 }
 
 model ImageItem {
-  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  id          String            @id @default(auto()) @map("_id") @db.ObjectId
   url         String
   name        String
   description String?
   lugarId     String
   lugar       LugaresTuristicos @relation(fields: [lugarId], references: [id])
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
 }
 
 model Local {
-  idLocal       String   @id @default(auto()) @map("_id") @db.ObjectId
-  nombre        String?
-  descripcion   String?
-  horario       Json? 
-  telefono      String?
-  direccion     String?
-  banerLocal    String?
-  email         String?
-  latitud       String?
-  longitud      String?
-  urlWeb        String?
-  urlWhatsapp   String?   
-  urlTiktok     String?  
-  urlInstagram  String?      
-  urlFacebook   String?    
-  urlX          String?
-  tipoLocal     TipoLocal @relation(fields: [tipoLocalId], references: [id])
-  tipoLocalId   String    @db.ObjectId
-  lugares       LocalRel[] // Relación explícita con modelo intermedio
-  
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
+  idLocal      String     @id @default(auto()) @map("_id") @db.ObjectId
+  nombre       String?
+  descripcion  String?
+  horario      Json?
+  telefono     String?
+  direccion    String?
+  banerLocal   String?
+  email        String?
+  latitud      String?
+  longitud     String?
+  urlWeb       String?
+  urlWhatsapp  String?
+  urlTiktok    String?
+  urlInstagram String?
+  urlFacebook  String?
+  urlX         String?
+  tipoLocal    TipoLocal  @relation(fields: [tipoLocalId], references: [id])
+  tipoLocalId  String     @db.ObjectId
+  lugares      LocalRel[] // Relación explícita con modelo intermedio
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model TipoLocal {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   nombreTipo  String?
   icoTipo     String?
   descripcion String?
   locales     Local[]
-  updatedAt   DateTime    @updatedAt
-  createdAt   DateTime    @default(now())
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
 
   @@index([descripcion])
-  
 }
 
 model Evento {
-  idEvento        String   @id @default(auto()) @map("_id") @db.ObjectId
-  nombreEvento    String?
+  idEvento          String      @id @default(auto()) @map("_id") @db.ObjectId
+  nombreEvento      String?
   descripcionEvento String?
-  fechaEvento     DateTime?
-  tipoEvento      String?
-  email           String?
-  organizador     String?
-  invitados       String?
-  banerEvento     String?
-  direccionEvento String?
-  latitud         String?
-  longitud        String?
-  lugares         EventoRel[] // Relación explícita con modelo intermedio
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
+  fechaEvento       DateTime?
+  tipoEvento        String?
+  email             String?
+  organizador       String?
+  invitados         String?
+  banerEvento       String?
+  direccionEvento   String?
+  latitud           String?
+  longitud          String?
+  lugares           EventoRel[] // Relación explícita con modelo intermedio
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
 }
 
 model LocalRel {
-  id              String           @id @default(auto()) @map("_id") @db.ObjectId
-  lugarTuristico  LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
-  lugarTuristicoId String          @db.ObjectId
-  local           Local?            @relation(fields: [localId], references: [idLocal]) // Permitir null
-  localId         String?           @db.ObjectId  // También permitir null
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
+  id               String            @id @default(auto()) @map("_id") @db.ObjectId
+  lugarTuristico   LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
+  lugarTuristicoId String            @db.ObjectId
+  local            Local?            @relation(fields: [localId], references: [idLocal]) // Permitir null
+  localId          String?           @db.ObjectId // También permitir null
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
 
   @@index([lugarTuristicoId])
   @@index([localId])
 }
 
 model EventoRel {
-  id              String           @id @default(auto()) @map("_id") @db.ObjectId
-  lugarTuristico  LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
-  lugarTuristicoId String          @db.ObjectId
-  evento          Evento           @relation(fields: [eventoId], references: [idEvento])
-  eventoId        String           @db.ObjectId
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
+  id               String            @id @default(auto()) @map("_id") @db.ObjectId
+  lugarTuristico   LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
+  lugarTuristicoId String            @db.ObjectId
+  evento           Evento            @relation(fields: [eventoId], references: [idEvento])
+  eventoId         String            @db.ObjectId
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
 
   @@index([lugarTuristicoId])
   @@index([eventoId])
 }
 
-
 model Suscripcion {
-  id            String   @id @default(auto()) @map("_id") @db.ObjectId
-  firstName     String?
-  lastName      String?
-  email         String?
-  phone         String?
-  artisticName  String?
-  dni           String?
-  artistType    String?
-  lugarEvento   String?
-  address       String?
-  eventDate     DateTime?
-  eventTime     String?
-  banerEvent    String?
-  latitud       String?
-  longitud      String?
-  urlWeb        String?
-  urlWhatsapp   String?   
-  urlTiktok     String?  
-  urlInstagram  String?      
-  urlFacebook   String?    
-  urlX          String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  firstName    String?
+  lastName     String?
+  email        String?
+  phone        String?
+  artisticName String?
+  dni          String?
+  artistType   String?
+  lugarEvento  String?
+  address      String?
+  eventDate    DateTime?
+  eventTime    String?
+  banerEvent   String?
+  latitud      String?
+  longitud     String?
+  urlWeb       String?
+  urlWhatsapp  String?
+  urlTiktok    String?
+  urlInstagram String?
+  urlFacebook  String?
+  urlX         String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }
 
 model Attraction {
-  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  id            String             @id @default(auto()) @map("_id") @db.ObjectId
   nombre        String?
   descripcion   String?
   imgAtractions String?
   lugarId       String?
   lugar         LugaresTuristicos? @relation(fields: [lugarId], references: [id])
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
 }

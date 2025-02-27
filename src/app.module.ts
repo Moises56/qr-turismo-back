@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
+import { APP_PIPE } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LugaresTuristicosModule } from './api/lugares-turisticos/lugares-turisticos.module';
@@ -9,6 +10,7 @@ import { PrismaService } from './prisma/prisma.service';
 import { ImageItemModule } from './api/image-item/image-item.module';
 import { SuscribeModule } from './api/suscribe/suscribe.module';
 import { AttractionModule } from './api/attraction/attraction.module';
+import { RutasTuristicasModule } from './api/rutas-turisticas/rutas-turisticas.module';
 
 @Module({
   imports: [
@@ -19,8 +21,15 @@ import { AttractionModule } from './api/attraction/attraction.module';
     ImageItemModule,
     SuscribeModule,
     AttractionModule,
+    RutasTuristicasModule,
   ],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [
+    AppService,
+    PrismaService,
+    {
+      provide: APP_PIPE,
+      useClass: ValidationPipe,
+    },],
 })
 export class AppModule {}
