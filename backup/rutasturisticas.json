@@ -1,0 +1,410 @@
+// ruta 1
+{
+  "nombre": "Escapada Histórica",
+  "lugares": [
+    {
+      "nombre": "Parque La Leona",
+      "lat": 14.108928753317924,
+      "lng": -87.20287941349449,
+      "description": "Un parque histórico con vistas panorámicas de Tegucigalpa.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741120168748-892927764-Park_leonaBaner.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741183926869-827857270-Park_leona2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741184513489-368322234-Park_leona3.jpeg",
+        "https://gestorimg.amdc.hn/uploads/1741194427524-484726674-leona.webp"
+      ]
+    },
+    {
+      "nombre": "Restaurante Duncan Maya",
+      "lat": 14.10615508743771,
+      "lng": -87.20331966036238,
+      "description": "Restaurante tradicional con comida típica hondureña.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741191106965-804159808-RestauranteDuncanMayabaner.JPG",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741191069692-865325965-RestauranteDuncanMaya1.jpeg","https://gestorimg.amdc.hn/uploads/1741191136801-11280590-RestauranteDuncanMaya2.JPG","https://gestorimg.amdc.hn/uploads/1741191160194-260371358-RestauranteDuncanMaya3.JPG"
+      ]
+    },
+    {
+      "nombre": "Museo Militar Francisco Morazán",
+      "lat": 14.105911692986188,
+      "lng": -87.20195837016445,
+      "description": "Museo dedicado a la historia militar de Honduras.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741191553479-570447506-muesoBaner.jpg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741191584489-595903750-militar.jpg","https://gestorimg.amdc.hn/uploads/1741191604132-822938670-militar2.jpg","https://gestorimg.amdc.hn/uploads/1741191631884-999048527-militar3.jpg"]
+    },
+    {
+      "nombre": "Iglesia San Francisco",
+      "lat": 14.106575350777415,
+      "lng": -87.20059271638398,
+      "description": "Iglesia histórica en el corazón de la ciudad.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741192187698-139962818-iglesiaSF2.jpg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741192163335-425216228-iglesiaSF.jpg","https://gestorimg.amdc.hn/uploads/1741192137375-27779237-iglesiaSFBaner.webp","https://gestorimg.amdc.hn/uploads/1741192223695-341687556-iglesiaSF3.jpg"]
+    },
+    {
+      "nombre": "Parque Valle",
+      "lat": 14.105995474919679,
+      "lng": -87.20271911987895,
+      "description": "Un parque tranquilo para relajarse.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741192512850-968169574-valleBaner.jpg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741192543704-726877887-valle.jpg","https://gestorimg.amdc.hn/uploads/1741192568909-242694511-valle2.jpg","https://gestorimg.amdc.hn/uploads/1741192588852-47531387-valle3.jpg"]
+    },
+    {
+      "nombre": "Biblioteca Nacional Juan Ramón Molina",
+      "lat": 14.105214217241725,
+      "lng": -87.20311070453828,
+      "description": "Biblioteca con una vasta colección de libros.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741192937639-968483580-baner.jpeg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741193076128-736270503-bnJRmolina.jpg","https://gestorimg.amdc.hn/uploads/1741193097293-112733013-bnJRmolina2.jpg","https://gestorimg.amdc.hn/uploads/1741193115980-97805892-bnJRmolina3.jpg"]
+    },
+    {
+      "nombre": "Avenida Miguel de Cervantes",
+      "lat": 14.105526120119418,
+      "lng": -87.20429728976865,
+      "description": "Avenida cultural con edificios históricos.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741193468360-107794391-AvMigueldeCervantesBaner.jpg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741193490422-16408912-AvMigueldeCervantes.jpg","https://gestorimg.amdc.hn/uploads/1741193510559-92081963-AvMigueldeCervantes2.jpg","https://gestorimg.amdc.hn/uploads/1741193537100-568546491-AvMigueldeCervantes3.jpg"]
+    },
+    {
+      "nombre": "Café Paradiso",
+      "lat": 14.105268093574086,
+      "lng": -87.19951617016447,
+      "description": "Cafetería acogedora con excelente café.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741193897124-324622712-cafeParadisoBaner1.jpg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741193924566-766100418-CafeParadiso2.jpeg","https://gestorimg.amdc.hn/uploads/1741193947847-683190694-cafeParadisoBaner.jpg","https://gestorimg.amdc.hn/uploads/1741193969001-865990263-cafeParadiso.jpg"]
+    },
+    {
+      "nombre": "Parque Finlay",
+      "lat": 14.106266671380762,
+      "lng": -87.20034614871408,
+      "description": "Parque histórico con áreas verdes.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741194182102-974491810-ParqueFinlay3.jpg",
+      "gallery": ["https://gestorimg.amdc.hn/uploads/1741194202548-902464286-ParqueFinlay1.jpg","https://gestorimg.amdc.hn/uploads/1741194219881-352883233-ParqueFinlay.jpg","https://gestorimg.amdc.hn/uploads/1741194247244-192261277-ParqueFinlay2.jpg"]
+    }
+  ]
+}
+
+
+//* ruta 2
+{
+  "nombre": "Corazón de Tegus",
+  "lugares": [
+    {
+      "nombre": "Antigua Casa Presidencial",
+      "lat": 14.104219110905424,
+      "lng": -87.20593787116482,
+      "description": "Edificio histórico que albergó la presidencia de Honduras.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741288613752-156967746-casaPresidencial3.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741288529949-830313396-casaPresidencial.jpeg",
+        "https://gestorimg.amdc.hn/uploads/1741288559338-130439939-casaPresidencial2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741288593199-835458301-casaPresidencial4.jpg"
+      ]
+    },
+    {
+      "nombre": "Anexo Banco Central de Honduras",
+      "lat": 14.105861202177794,
+      "lng": -87.19625468662775,
+      "description": "Anexo del banco central con arquitectura notable.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741288959665-812840960-anexoBCH2.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741288939010-444028761-anexoBCH1.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741288981084-724638212-anexoBCH3.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741288998760-58870672-anexoBCH4.jpg"
+      ]
+    },
+    {
+      "nombre": "Congreso Nacional",
+      "lat": 14.10403010565895,
+      "lng": -87.20444610242852,
+      "description": "Sede del poder legislativo de Honduras.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741289397643-421005316-congreso3.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741289377664-607774925-congreso.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741289416857-131321466-congreso2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741289436726-455093001-congreso4.jpg"
+      ]
+    },
+    {
+      "nombre": "Plaza La Merced",
+      "lat": 14.45737655279462,
+      "lng": -87.63964486009834,
+      "description": "Plaza histórica cerca de la Iglesia La Merced.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741290005514-214142186-PlazaLaMerced3.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741289940477-963322821-PlazaLaMerced.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741289961832-17276098-PlazaLaMerced2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741289984952-707583502-PlazaLaMerced4.jpg"
+      ]
+    },
+    {
+      "nombre": "Centro de Cultura (Paraninfo) UNAH",
+      "lat": 14.104304227060952,
+      "lng": -87.20433593495234,
+      "description": "Espacio cultural de la Universidad Nacional.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741290383456-515712679-ParaninfoUniversitarioUNAH4.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741290317255-454581003-ParaninfoUniversitarioUNAH.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741290336488-868888635-ParaninfoUniversitarioUNAH2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741290355620-451177351-ParaninfoUniversitarioUNAH3.jpg"
+      ]
+    },
+    {
+      "nombre": "Iglesia La Merced",
+      "lat": 14.104437783682263,
+      "lng": -87.20390839684154,
+      "description": "Iglesia colonial con rica historia.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741291505129-542880372-Iglesiadelamerced.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741291442530-961153814-Iglesiadelamerced2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741291463177-616512505-Iglesiadelamerced3.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741291484564-695382885-Iglesiadelamerced4.jpg3"
+      ]
+    },
+    {
+      "nombre": "Palacio Municipal",
+      "lat": 14.105277788452547,
+      "lng": -87.20372917359362,
+      "description": "Sede del gobierno municipal de Tegucigalpa.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741291892069-45914177-palaciomunicipal.webp",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741291830586-602387228-palacioMunicipal.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741291851043-170877327-palacioMunicipal4.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741291874229-335698321-palacioMunicipal4.jpg"
+      ]
+    },
+    {
+      "nombre": "Iglesia Catedral San Miguel Arcángel",
+      "lat": 14.10561246680673,
+      "lng": -87.20412532145711,
+      "description": "Catedral principal de la ciudad.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741292209258-418992868-SanMiguelArcangel3.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741292173555-430986922-SanMiguelArcangel4.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741292192022-971583613-IglesiaSanMiguelArcangel2.jpeg",
+        "https://gestorimg.amdc.hn/uploads/1741292226610-692137237-IglesiaSanMiguelArcangel1.jpeg"
+      ]
+    },
+    {
+      "nombre": "Parque Central de Tegucigalpa",
+      "lat": 14.106003971573209,
+      "lng": -87.2043257223481,
+      "description": "Corazón verde del centro de la ciudad.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741292566714-43340353-ParqueCentralTgu2.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741292546984-514849649-ParqueCentralTgu.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741294176428-55542836-ParqueCentralTgu3.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741294176428-55542836-ParqueCentralTgu3.jpg"
+      ]
+    },
+    {
+      "nombre": "Museo Casa de Morazán",
+      "lat": 14.106668245747727,
+      "lng": -87.20530117170608,
+      "description": "Museo dedicado a Francisco Morazán.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741297608746-963159875-CasaMorazan1.jpeg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741297700889-999143439-CasaMorazan4.jpeg",
+        "https://gestorimg.amdc.hn/uploads/1741297634981-227159800-CasaMorazan2.jpeg",
+        "https://gestorimg.amdc.hn/uploads/1741297677534-420225323-CasaMorazan3.jpeg"
+      ]
+    },
+    {
+      "nombre": "Bar Tito Aguacate",
+      "lat": 14.10642579290062,
+      "lng": -87.20357460796187,
+      "description": "Bar popular con ambiente local.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741298192903-989188551-titoAgucate4.webp",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741298216375-280104887-titoAgucate1.webp",
+        "https://gestorimg.amdc.hn/uploads/1741298233230-583473329-titoAgucate2.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741298250332-236464184-titoAgucate.jpg"
+      ]
+    },
+    {
+      "nombre": "Cafetería Chinda Díaz",
+      "lat": 14.105398477644286,
+      "lng": -87.20346900611743,
+      "description": "Cafetería acogedora con especialidades locales.",
+      "coverImage": "https://gestorimg.amdc.hn/uploads/1741298697480-403585355-drChindaDiaz2.jpg",
+      "gallery": [
+        "https://gestorimg.amdc.hn/uploads/1741298658712-536333672-drChindaDiaz4.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741298678896-798160972-drChindaDiaz3.jpg",
+        "https://gestorimg.amdc.hn/uploads/1741298712360-561382560-drChindaDiaz.webp"
+      ]
+    }
+  ]
+}
+
+//* ruta3
+{
+  "nombre": "Joyas Escondidas",
+  "lugares": [
+    {
+      "nombre": "Paseo Liquidámbar",
+      "lat": 14.1050,
+      "lng": -87.2040,
+      "description": "Calle peatonal con encanto histórico.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Paseo+Liquidámbar",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Mini Cafetería Burritas y Pancitos",
+      "lat": 14.1052,
+      "lng": -87.2038,
+      "description": "Pequeña cafetería con delicias locales.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Mini+Cafetería",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Correo Nacional de Honduras",
+      "lat": 14.1054,
+      "lng": -87.2036,
+      "description": "Edificio histórico del correo.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Correo+Nacional",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Galería Nacional de Arte",
+      "lat": 14.1056,
+      "lng": -87.2034,
+      "description": "Espacio dedicado al arte hondureño.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Galería+Nacional",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Museo de Identidad Nacional",
+      "lat": 14.1058,
+      "lng": -87.2032,
+      "description": "Museo que explora la identidad hondureña.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Museo+Identidad",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Parque Herrera",
+      "lat": 14.1060,
+      "lng": -87.2030,
+      "description": "Parque tranquilo en el centro de la ciudad.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Parque+Herrera",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Teatro Nacional Manuel Bonilla",
+      "lat": 14.1062,
+      "lng": -87.2028,
+      "description": "Teatro icónico con rica historia cultural.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Teatro+Manuel+Bonilla",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Parque La Concordia",
+      "lat": 14.1064,
+      "lng": -87.2026,
+      "description": "Parque con réplicas de ruinas mayas.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Parque+La+Concordia",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Palacio de Telecomunicaciones",
+      "lat": 14.1066,
+      "lng": -87.2024,
+      "description": "Edificio histórico de telecomunicaciones.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Palacio+Telecomunicaciones",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Hoyo de Merriam",
+      "lat": 14.1068,
+      "lng": -87.2022,
+      "description": "Curiosidad geológica en la ciudad.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Hoyo+de+Merriam",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Mercado Los Dolores",
+      "lat": 14.1070,
+      "lng": -87.2020,
+      "description": "Mercado tradicional con productos locales.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Mercado+Los+Dolores",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Iglesia Santa María de Los Dolores",
+      "lat": 14.1072,
+      "lng": -87.2018,
+      "description": "Iglesia colonial cerca del mercado.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Iglesia+Los+Dolores",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Plaza Los Dolores",
+      "lat": 14.1074,
+      "lng": -87.2016,
+      "description": "Plaza animada junto a la iglesia.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Plaza+Los+Dolores",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    },
+    {
+      "nombre": "Souvenir Tipicos Los Inditos/Bazar Milla",
+      "lat": 14.1076,
+      "lng": -87.2014,
+      "description": "Tienda de recuerdos y artesanías locales.",
+      "coverImage": "https://via.placeholder.com/800x400?text=Souvenir+Los+Inditos",
+      "gallery": [
+        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://via.placeholder.com/400x300?text=Imagen+2",
+        "https://via.placeholder.com/400x300?text=Imagen+3"
+      ]
+    }
+  ]
+}
