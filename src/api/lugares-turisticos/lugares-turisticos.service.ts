@@ -1,4 +1,10 @@
-import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+// src/api/lugares-turisticos/lugares-turisticos.service.ts
+import {
+  BadRequestException,
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateLugaresTuristicoDto } from './dto/create-lugares-turistico.dto';
 import { UpdateLugaresTuristicoDto } from './dto/update-lugares-turistico.dto';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -29,22 +35,16 @@ export class LugaresTuristicosService {
         urlInstagram: createDto.urlInstagram,
         urlFacebook: createDto.urlFacebook,
         urlX: createDto.urlX,
-
-        // Crear las relaciones con locales (usando LocalRel)
         locales: {
           create: createDto.locales?.map((local) => ({
-            localId: local.localId, // Crear relación con el ID del local
+            localId: local.localId,
           })),
         },
-
-        // Crear las relaciones con eventos (usando EventoRel)
         eventos: {
           create: createDto.eventos?.map((evento) => ({
-            eventoId: evento.eventoId, // Crear relación con el ID del evento
+            eventoId: evento.eventoId,
           })),
         },
-
-        // Crear relaciones con imágenes
         galeria: {
           create: createDto.galeria?.map((image) => ({
             url: image.url,
@@ -57,52 +57,6 @@ export class LugaresTuristicosService {
 
     return lugar;
   }
-
-  // async findAll() {
-  //   return this.prisma.lugaresTuristicos.findMany({
-  //     include: {
-  //       locales: {
-  //         include: {
-  //           local: true,
-  //         },
-  //       },
-  //       eventos: {
-  //         include: {
-  //           evento: true,
-  //         },
-  //       },
-  //       galeria: true, // Incluir las imágenes de la galería
-  //     },
-  //   });
-  // }
-
-  // async findAll(queryParams: {
-  //   page?: number;
-  //   limit?: number;
-  //   search?: string;
-  // }) {
-  //   const { page = 1, limit = 10, search = '' } = queryParams;
-  //   const skip = (page - 1) * limit;
-
-  //   return this.prisma.lugaresTuristicos.findMany({
-  //     where: {
-  //       OR: search
-  //         ? [
-  //             { nombre: { contains: search, mode: 'insensitive' } },
-  //             { ubicacion: { contains: search, mode: 'insensitive' } },
-  //             { descripcion: { contains: search, mode: 'insensitive' } },
-  //           ]
-  //         : undefined,
-  //     },
-  //     skip,
-  //     take: limit,
-  //     include: {
-  //       locales: { include: { local: true } },
-  //       eventos: { include: { evento: true } },
-  //       galeria: true,
-  //     },
-  //   });
-  // }
 
   async findAll(queryParams: {
     page?: number;
@@ -134,7 +88,7 @@ export class LugaresTuristicosService {
       this.prisma.lugaresTuristicos.findMany({
         where: whereConditions,
         skip,
-        take: limit,
+        take: Number(limit), // Convertir limit a número
         include: {
           locales: { include: { local: true } },
           eventos: { include: { evento: true } },
@@ -169,7 +123,7 @@ export class LugaresTuristicosService {
             evento: true,
           },
         },
-        galeria: true, // Incluir las imágenes de la galería
+        galeria: true,
       },
     });
   }
@@ -182,19 +136,17 @@ export class LugaresTuristicosService {
         locales: updateDto.locales
           ? {
               connect: updateDto.locales.map((local) => ({
-                id: local.localId, // Aquí nos aseguramos de que estamos usando el ID del local para conectar
+                id: local.localId,
               })),
             }
           : undefined,
-
         eventos: updateDto.eventos
           ? {
               connect: updateDto.eventos.map((evento) => ({
-                id: evento.eventoId, // Aquí usamos el ID del evento para conectarlo
+                id: evento.eventoId,
               })),
             }
           : undefined,
-
         galeria: updateDto.galeria
           ? {
               create: updateDto.galeria.map((image) => ({
@@ -212,10 +164,8 @@ export class LugaresTuristicosService {
     return this.prisma.lugaresTuristicos.delete({ where: { id } });
   }
 
-  // buscar por urlX = 'pueblitos'
   async findByUrlX(urlX: string) {
     try {
-      // Validar que urlX no esté vacío
       if (!urlX) {
         throw new BadRequestException('El urlX es requerido');
       }
@@ -224,7 +174,7 @@ export class LugaresTuristicosService {
         where: {
           urlX: {
             equals: urlX,
-            mode: 'insensitive', // Búsqueda insensible a mayúsculas/minúsculas
+            mode: 'insensitive',
           },
         },
         include: {
@@ -241,7 +191,7 @@ export class LugaresTuristicosService {
           },
         },
         orderBy: {
-          nombre: 'asc', // Ordenar por nombre ascendente
+          nombre: 'asc',
         },
       });
 
@@ -251,7 +201,6 @@ export class LugaresTuristicosService {
         );
       }
 
-      // Retornar con estructura similar a findAll
       return {
         data: lugares,
         meta: {

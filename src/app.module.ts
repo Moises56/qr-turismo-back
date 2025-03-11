@@ -1,5 +1,7 @@
+// src/app.module.ts
 import { Module, ValidationPipe } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LugaresTuristicosModule } from './api/lugares-turisticos/lugares-turisticos.module';
@@ -11,9 +13,16 @@ import { ImageItemModule } from './api/image-item/image-item.module';
 import { SuscribeModule } from './api/suscribe/suscribe.module';
 import { AttractionModule } from './api/attraction/attraction.module';
 import { RutasTuristicasModule } from './api/rutas-turisticas/rutas-turisticas.module';
+import { AuthModule } from './api/auth/auth.module';
+import { UsersModule } from './api/users/users.module';
+import { LogsModule } from './api/logs/logs.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // Hace que las variables de entorno estén disponibles globalmente
+      envFilePath: '.env', // Ruta al archivo .env
+    }),
     LugaresTuristicosModule,
     LocalesModule,
     TipoLocalModule,
@@ -22,6 +31,9 @@ import { RutasTuristicasModule } from './api/rutas-turisticas/rutas-turisticas.m
     SuscribeModule,
     AttractionModule,
     RutasTuristicasModule,
+    AuthModule,
+    UsersModule,
+    LogsModule,
   ],
   controllers: [AppController],
   providers: [
@@ -30,6 +42,7 @@ import { RutasTuristicasModule } from './api/rutas-turisticas/rutas-turisticas.m
     {
       provide: APP_PIPE,
       useClass: ValidationPipe,
-    },],
+    },
+  ],
 })
 export class AppModule {}

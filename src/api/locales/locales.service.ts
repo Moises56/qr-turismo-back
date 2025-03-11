@@ -1,40 +1,33 @@
-import { Injectable } from '@nestjs/common';
+// Corrección para locales.service.ts
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaService } from '../../prisma/prisma.service';
 import { CreateLocaleDto } from './dto/create-locale.dto';
 import { UpdateLocaleDto } from './dto/update-locale.dto';
-import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
 export class LocalesService {
   constructor(private prisma: PrismaService) {}
 
-  async create(createLocalDto: CreateLocaleDto) {
+  async create(createLocaleDto: CreateLocaleDto) {
+    const { tipoLocalId, lugaresIds, ...restData } = createLocaleDto;
+
     return this.prisma.local.create({
       data: {
-        tipoLocal: { connect: { id: createLocalDto.tipoLocalId } }, // Conecta la relación con TipoLocal usando el ID
-        nombre: createLocalDto.nombre,
-        descripcion: createLocalDto.descripcion,
-        horario: createLocalDto.horario,
-        telefono: createLocalDto.telefono,
-        direccion: createLocalDto.direccion,
-        banerLocal: createLocalDto.banerLocal,
-        email: createLocalDto.email,
-        latitud: createLocalDto.latitud,
-        longitud: createLocalDto.longitud,
-        urlWeb: createLocalDto.urlWeb,
-        urlWhatsapp: createLocalDto.urlWhatsapp,
-        urlFacebook: createLocalDto.urlFacebook,
-        urlInstagram: createLocalDto.urlInstagram,
-        urlTiktok: createLocalDto.urlTiktok,
-        urlX: createLocalDto.urlX,
-        // relación con LugaresTuristicos (a través de LocalRel)
-        lugares: {
-          create: createLocalDto.lugaresIds?.map((id) => ({
-            lugarTuristico: { connect: { id } },
-          })),
-        },
+        ...restData,
+        tipoLocal: { connect: { id: tipoLocalId } },
+        ...(lugaresIds && lugaresIds.length > 0
+          ? {
+              lugares: {
+                create: lugaresIds.map((id) => ({
+                  lugarTuristico: { connect: { id } },
+                })),
+              },
+            }
+          : {}),
       },
       include: {
-        lugares: true, // Incluir los registros creados en EventoRel
+        tipoLocal: true,
+        lugares: { include: { lugarTuristico: true } },
       },
     });
   }
@@ -43,60 +36,86 @@ export class LocalesService {
     return this.prisma.local.findMany({
       include: {
         tipoLocal: true,
-        lugares: {
-          include: {
-            lugarTuristico: true,
-          },
-        },
+        lugares: { include: { lugarTuristico: true } },
       },
     });
   }
 
   async findOne(id: string) {
-    return this.prisma.local.findUnique({
+    const local = await this.prisma.local.findUnique({
       where: { idLocal: id },
       include: {
         tipoLocal: true,
-        lugares: {
-          include: {
-            lugarTuristico: true,
-          },
-        },
+        lugares: { include: { lugarTuristico: true } },
       },
     });
+    if (!local) throw new NotFoundException(`Local con ID ${id} no encontrado`);
+    return local;
   }
 
-  async update(id: string, updateLocalDto: UpdateLocaleDto) {
-    return this.prisma.local.update({
+  async update(id: string, updateLocaleDto: UpdateLocaleDto) {
+    await this.findOne(id);
+
+    const { tipoLocalId, lugaresIds, ...restData } = updateLocaleDto;
+
+    // Para actualizar las relaciones con lugares, necesitamos un enfoque diferente
+    const updateData: any = {
+      ...restData,
+      ...(tipoLocalId ? { tipoLocal: { connect: { id: tipoLocalId } } } : {}),
+    };
+
+    // Primero hacemos el update básico sin tocar las relaciones
+    const updatedLocal = await this.prisma.local.update({
       where: { idLocal: id },
-      data: {
-        tipoLocal: { connect: { id: updateLocalDto.tipoLocalId } }, // Conecta la relación con TipoLocal
-        nombre: updateLocalDto.nombre,
-        descripcion: updateLocalDto.descripcion,
-        horario: updateLocalDto.horario,
-        telefono: updateLocalDto.telefono,
-        direccion: updateLocalDto.direccion,
-        banerLocal: updateLocalDto.banerLocal,
-        lugares: {
-          connect: updateLocalDto.lugaresIds.map((id) => ({ id: id })),
-        },
+      data: updateData,
+      include: {
+        tipoLocal: true,
+        lugares: { include: { lugarTuristico: true } },
       },
     });
+
+    // Si hay lugaresIds, manejamos las relaciones por separado
+    if (lugaresIds && lugaresIds.length > 0) {
+      // Primero eliminamos todas las relaciones existentes
+      await this.prisma.localRel.deleteMany({
+        where: { localId: id },
+      });
+
+      // Luego creamos las nuevas relaciones
+      for (const lugarId of lugaresIds) {
+        await this.prisma.localRel.create({
+          data: {
+            lugarTuristico: { connect: { id: lugarId } },
+            local: { connect: { idLocal: id } },
+          },
+        });
+      }
+
+      // Volvemos a obtener el local con las relaciones actualizadas
+      return this.findOne(id);
+    }
+
+    return updatedLocal;
   }
 
   async remove(id: string) {
+    await this.findOne(id);
+
+    // Primero eliminamos las relaciones
+    await this.prisma.localRel.deleteMany({
+      where: { localId: id },
+    });
+
+    // Luego eliminamos el local
     return this.prisma.local.delete({ where: { idLocal: id } });
   }
 
-  // Método para buscar locales por tipoLocalId
   async findByTipoLocal(tipoLocalId: string) {
     return this.prisma.local.findMany({
-      where: {
-        tipoLocalId: tipoLocalId,
-      },
+      where: { tipoLocalId },
       include: {
-        tipoLocal: true, // Incluir información del tipoLocal
-        lugares: true, // Opcional: incluir la relación con lugares
+        tipoLocal: true,
+        lugares: { include: { lugarTuristico: true } },
       },
     });
   }

@@ -9,6 +9,18 @@ mongorestore --host localhost --port 27017 --db qrturismodb C:\LEs\db\qrturismod
 
 
 
+//* en el Server
+//crear
+mongodump --host localhost --port 27017 --db qrturismodb --out ./backup
+mongodump --host localhost --port 27017 --db qrturismodb --out C:\LEs\BackupDBQRturismo
+
+
+//* restaurar
+mongorestore --host localhost --port 27017 --db qrturismodb ./backup/qrturismodb
+mongorestore --host localhost --port 27017 --db qrturismodb C:/LEs/BackupDBQRturismo/qrturismodb
+mongorestore --host localhost --port 27017 --db qrturismodb C:\LEs\db\qrturismodb
+
+
 ///////////////////************************************
 
 

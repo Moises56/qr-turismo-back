@@ -42,7 +42,7 @@ export class TipoLocalService {
   // get filter-by-description
 
   async filterByDescription(descripcion: string) {
-    console.log(descripcion);
+    // console.log(descripcion);
     const searchTerm = descripcion.trim();
 
     try {
