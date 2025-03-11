@@ -1,3 +1,4 @@
+// schema.prisma
 generator client {
   provider = "prisma-client-js"
 }
@@ -31,44 +32,41 @@ model LugaresTuristicos {
   urlInstagram   String?
   urlFacebook    String?
   urlX           String?
-  rutas          RutaRel[] // Relación opcional con rutas turísticas
+  rutas          RutaRel[]
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
 }
 
-// Modelo para Rutas Turísticas
 model RutasTuristicas {
   id         String      @id @default(auto()) @map("_id") @db.ObjectId
-  nombre     String // Nombre de la ruta (e.g., "Escapada Histórica")
-  lugares    LugarRuta[] @relation("RutaLugares") // Lugares embebidos en la ruta
-  lugaresRel RutaRel[] // Relación opcional con LugaresTuristicos
+  nombre     String
+  lugares    LugarRuta[] @relation("RutaLugares")
+  lugaresRel RutaRel[]
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
 }
 
-// Modelo embebido para lugares propios de la ruta
 model LugarRuta {
   id          String          @id @default(auto()) @map("_id") @db.ObjectId
-  nombre      String // Nombre del lugar (e.g., "Parque La Leona")
-  lat         Float // Latitud
-  lng         Float // Longitud
-  description String? // Descripción opcional
-  coverImage  String? // Imagen de portada
-  gallery     String[] // Array de URLs de la galería
+  nombre      String
+  lat         Float
+  lng         Float
+  description String?
+  coverImage  String?
+  gallery     String[]
   rutaId      String          @db.ObjectId
   ruta        RutasTuristicas @relation("RutaLugares", fields: [rutaId], references: [id])
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt
 }
 
-// Modelo intermedio para relación opcional con LugaresTuristicos
 model RutaRel {
   id               String             @id @default(auto()) @map("_id") @db.ObjectId
   ruta             RutasTuristicas    @relation(fields: [rutaId], references: [id])
   rutaId           String             @db.ObjectId
   lugarTuristico   LugaresTuristicos? @relation(fields: [lugarTuristicoId], references: [id])
-  lugarTuristicoId String?            @db.ObjectId // Opcional
-  orden            Int? // Orden opcional del lugar en la ruta
+  lugarTuristicoId String?            @db.ObjectId
+  orden            Int?
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
 
@@ -106,10 +104,9 @@ model Local {
   urlX         String?
   tipoLocal    TipoLocal  @relation(fields: [tipoLocalId], references: [id])
   tipoLocalId  String     @db.ObjectId
-  lugares      LocalRel[] // Relación explícita con modelo intermedio
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  lugares      LocalRel[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
 }
 
 model TipoLocal {
@@ -137,7 +134,7 @@ model Evento {
   direccionEvento   String?
   latitud           String?
   longitud          String?
-  lugares           EventoRel[] // Relación explícita con modelo intermedio
+  lugares           EventoRel[]
   createdAt         DateTime    @default(now())
   updatedAt         DateTime    @updatedAt
 }
@@ -146,8 +143,8 @@ model LocalRel {
   id               String            @id @default(auto()) @map("_id") @db.ObjectId
   lugarTuristico   LugaresTuristicos @relation(fields: [lugarTuristicoId], references: [id])
   lugarTuristicoId String            @db.ObjectId
-  local            Local?            @relation(fields: [localId], references: [idLocal]) // Permitir null
-  localId          String?           @db.ObjectId // También permitir null
+  local            Local?            @relation(fields: [localId], references: [idLocal])
+  localId          String?           @db.ObjectId
   createdAt        DateTime          @default(now())
   updatedAt        DateTime          @updatedAt
 
@@ -205,14 +202,13 @@ model Attraction {
   updatedAt     DateTime           @updatedAt
 }
 
-// schema.prisma
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   nombre    String
   email     String   @unique
   password  String
   rol       String   @default("usuario")
-  empleado  String   //# de empleado
+  empleado  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   logs      Log[]
@@ -220,8 +216,11 @@ model User {
 
 model Log {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  usuarioId String   @db.ObjectId
-  usuario   User     @relation(fields: [usuarioId], references: [id])
-  accion    String
-  fecha     DateTime @default(now())
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
 }

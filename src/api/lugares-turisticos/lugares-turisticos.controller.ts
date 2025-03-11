@@ -1,4 +1,4 @@
-// src/lugares-turisticos/lugares-turisticos.controller.ts
+// src/api/lugares-turisticos/lugares-turisticos.controller.ts
 import {
   Controller,
   Get,
@@ -62,7 +62,7 @@ export class LugaresTuristicosController {
   @ApiQuery({ name: 'search', required: false, type: String })
   async findAll(
     @Query('page') page: number = 1,
-    @Query('limit') limit: number = 10, // Ajustado a 10 para consistencia
+    @Query('limit') limit: number = 10,
     @Query('search') search: string = '',
   ) {
     return this.lugaresTuristicosService.findAll({ page, limit, search });
@@ -70,7 +70,7 @@ export class LugaresTuristicosController {
 
   @Get(':id')
   @ApiOperation({ summary: 'Obtener un lugar turístico por ID (público)' })
-  findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string) {
     return this.lugaresTuristicosService.findOne(id);
   }
 
@@ -111,9 +111,16 @@ export class LugaresTuristicosController {
 
   @Get('urlX/:urlX')
   @ApiOperation({ summary: 'Buscar lugares turísticos por urlX (público)' })
-  async getLugaresByUrlX(@Param('urlX') urlX: string) {
+  async getLugaresByUrlX(@Param('urlX') urlX: string, @Request() req) {
     try {
-      return await this.lugaresTuristicosService.findByUrlX(urlX);
+      const result = await this.lugaresTuristicosService.findByUrlX(urlX);
+      if (req.user?.id) {
+        await this.logsService.createLog(
+          req.user.id,
+          `Buscó lugares con urlX: ${urlX}`,
+        );
+      }
+      return result;
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw new NotFoundException(error.message);

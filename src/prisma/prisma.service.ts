@@ -8,6 +8,9 @@ export class PrismaService
 {
   constructor() {
     super();
+    // super({
+    //   log: ['query', 'info', 'warn', 'error'], // Habilita logs detallados
+    // });
   }
   async onModuleInit() {
     await this.$connect();
