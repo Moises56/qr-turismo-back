@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTipoLocalDto } from './dto/create-tipo-local.dto';
 import { UpdateTipoLocalDto } from './dto/update-tipo-local.dto';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -27,10 +27,17 @@ export class TipoLocalService {
   }
 
   async update(id: string, updateTipoLocalDto: UpdateTipoLocalDto) {
-    return await this.prisma.tipoLocal.update({
-      where: { id },
-      data: updateTipoLocalDto,
-    });
+    try {
+      return await this.prisma.tipoLocal.update({
+        where: { id },
+        data: updateTipoLocalDto,
+      });
+    } catch (error) {
+      if (error.code === 'P2025') {
+        throw new NotFoundException(`Tipo de local con ID ${id} no encontrado`);
+      }
+      throw error;
+    }
   }
 
   async remove(id: string) {

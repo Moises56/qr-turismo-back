@@ -1,14 +1,15 @@
-// src/tipo-local/tipo-local.controller.ts
 import {
   Controller,
   Get,
   Post,
   Body,
   Patch,
+  Put,
   Param,
   Delete,
   UseGuards,
   Request,
+  NotFoundException,
 } from '@nestjs/common';
 import { TipoLocalService } from './tipo-local.service';
 import { CreateTipoLocalDto } from './dto/create-tipo-local.dto';
@@ -54,6 +55,7 @@ export class TipoLocalController {
   }
 
   @Patch(':id')
+  @Put(':id') // Añadimos soporte para PUT
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   @ApiBearerAuth()
@@ -63,15 +65,22 @@ export class TipoLocalController {
     @Body() updateTipoLocalDto: UpdateTipoLocalDto,
     @Request() req,
   ) {
-    const tipoLocal = await this.tipoLocalService.update(
-      id,
-      updateTipoLocalDto,
-    );
-    await this.logsService.createLog(
-      req.user.id,
-      `Actualizó tipo de local: ${tipoLocal.nombreTipo}`,
-    );
-    return tipoLocal;
+    try {
+      const tipoLocal = await this.tipoLocalService.update(
+        id,
+        updateTipoLocalDto,
+      );
+      await this.logsService.createLog(
+        req.user.id,
+        `Actualizó tipo de local: ${tipoLocal.nombreTipo}`,
+      );
+      return tipoLocal;
+    } catch (error) {
+      if (error.code === 'P2025') {
+        throw new NotFoundException(`Tipo de local con ID ${id} no encontrado`);
+      }
+      throw error;
+    }
   }
 
   @Delete(':id')
