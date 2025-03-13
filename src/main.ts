@@ -8,16 +8,17 @@ import { ConfigService } from '@nestjs/config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // habilitar cors
-  app.enableCors();
+  // Configuración explícita de CORS
+  app.enableCors({
+    origin: 'https://qr-turismo.amdc.hn', // Origen permitido
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Métodos permitidos
+    allowedHeaders: 'Content-Type, Authorization', // Encabezados permitidos
+    credentials: true, // Si usas cookies o tokens
+  });
 
-  // Obtén el ConfigService para leer variables de entorno
   const configService = app.get(ConfigService);
-
-  // Configura filtros globales
   app.useGlobalFilters(new HttpExceptionFilter());
 
-  // Configuración de Swagger
   const config = new DocumentBuilder()
     .setTitle('API Turismo')
     .setDescription('API para gestión de turismo')
@@ -27,8 +28,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  // Usa el puerto desde las variables de entorno o 3000 por defecto
-  const port = configService.get<number>('PORT') || 3000;
+  const port = configService.get<number>('PORT') || 3004;
   await app.listen(port);
   console.log(`Aplicación corriendo en: http://localhost:${port}`);
   console.log(`Documentación Swagger: http://localhost:${port}/api`);
