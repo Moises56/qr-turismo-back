@@ -10,10 +10,10 @@ async function bootstrap() {
 
   // Configuración explícita de CORS
   app.enableCors({
-    origin: 'https://qr-turismo.amdc.hn', // Origen permitido
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Métodos permitidos
-    allowedHeaders: 'Content-Type, Authorization', // Encabezados permitidos
-    credentials: true, // Si usas cookies o tokens
+    origin: ['http://localhost:4200', 'https://qr-turismo.amdc.hn'], // Orígenes permitidos como elementos separados
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
+    credentials: true,
   });
 
   const configService = app.get(ConfigService);
@@ -28,7 +28,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  const port = configService.get<number>('PORT') || 3004;
+  const port = configService.get('PORT') || 3004;
   await app.listen(port);
   console.log(`Aplicación corriendo en: http://localhost:${port}`);
   console.log(`Documentación Swagger: http://localhost:${port}/api`);
