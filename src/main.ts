@@ -10,7 +10,18 @@ async function bootstrap() {
 
   // Configuración explícita de CORS
   app.enableCors({
-    origin: ['http://localhost:4200', 'https://qr-turismo.amdc.hn'], // Orígenes permitidos como elementos separados
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        'http://localhost:4200',
+        'https://qr-turismo.amdc.hn',
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true,
