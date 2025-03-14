@@ -16,6 +16,7 @@ async function bootstrap() {
   const allowedOrigins = [
     'http://localhost:4200',
     'https://qr-turismo.amdc.hn',
+    'https://welcometotegus.netlify.app',
   ];
 
   // Configuración de CORS con validación dinámica de origen
