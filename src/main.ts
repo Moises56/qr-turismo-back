@@ -18,7 +18,7 @@ async function bootstrap() {
     preflightContinue: false,
     optionsSuccessStatus: 204,
   };
-  
+
   app.enableCors(corsOptions);
 
   const configService = app.get(ConfigService);
