@@ -1,31 +1,25 @@
-// src/main.ts
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { ConfigService } from '@nestjs/config';
+import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Configuración explícita de CORS
-  app.enableCors({
-    origin: (origin, callback) => {
-      const allowedOrigins = [
-        'http://localhost:4200',
-        'https://qr-turismo.amdc.hn',
-      ];
-
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, origin);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
+  // Configuración más explícita de CORS para desarrollo
+  const corsOptions: CorsOptions = {
+    origin: ['http://localhost:4200', 'https://qr-turismo.amdc.hn'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type, Authorization',
+    allowedHeaders: 'Content-Type,Authorization,Accept',
+    exposedHeaders: 'Authorization',
     credentials: true,
-  });
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  };
+  
+  app.enableCors(corsOptions);
 
   const configService = app.get(ConfigService);
   app.useGlobalFilters(new HttpExceptionFilter());
