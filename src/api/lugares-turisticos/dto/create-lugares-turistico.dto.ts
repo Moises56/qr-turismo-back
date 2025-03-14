@@ -6,19 +6,19 @@ export class CreateLugaresTuristicoDto {
 
   @IsString()
   @IsOptional()
-  nombre: string;
+  nombre?: string;
 
   @IsString()
   @IsOptional()
-  ubicacion: string;
+  ubicacion?: string;
 
   @IsString()
   @IsOptional()
-  latitud: string;
+  latitud?: string;
 
   @IsString()
   @IsOptional()
-  longitud: string;
+  longitud?: string;
 
   @IsString()
   @IsOptional()
@@ -59,32 +59,31 @@ export class CreateLugaresTuristicoDto {
   @IsOptional()
   galeria?: { url: string; name: string; description?: string }[];
 
-  @IsArray()
+  @IsString()
   @IsOptional()
   email?: string;
 
-  //redeSocial
-  @IsArray()
+  @IsString()
   @IsOptional()
   urlWeb?: string;
 
-  @IsArray()
+  @IsString()
   @IsOptional()
   urlWhatsapp?: string;
 
-  @IsArray()
+  @IsString()
   @IsOptional()
   urlTiktok?: string;
 
-  @IsArray()
+  @IsString()
   @IsOptional()
   urlInstagram?: string;
 
-  @IsArray()
+  @IsString()
   @IsOptional()
   urlFacebook?: string;
 
-  @IsArray()
+  @IsString()
   @IsOptional()
   urlX?: string;
 }

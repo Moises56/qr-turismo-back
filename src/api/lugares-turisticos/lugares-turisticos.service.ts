@@ -210,4 +210,113 @@ export class LugaresTuristicosService {
       throw error;
     }
   }
+
+  // src/api/lugares-turisticos/lugares-turisticos.service.ts
+  async findByUrlXDash(urlX: string, page: string = '1', limit: string = '10') {
+    try {
+      if (!urlX) {
+        throw new BadRequestException('El urlX es requerido');
+      }
+
+      // Convertir page y limit a enteros
+      const pageNum = parseInt(page, 10); // Base 10 para evitar problemas
+      const limitNum = parseInt(limit, 10);
+
+      // Validar que los valores sean números válidos
+      if (isNaN(pageNum) || isNaN(limitNum) || pageNum < 1 || limitNum < 1) {
+        throw new BadRequestException(
+          'Los parámetros page y limit deben ser números positivos válidos',
+        );
+      }
+
+      const skip = (pageNum - 1) * limitNum;
+
+      const [lugares, total] = await Promise.all([
+        this.prisma.lugaresTuristicos.findMany({
+          where: { urlX: { equals: urlX, mode: 'insensitive' } },
+          include: {
+            galeria: true,
+            locales: { include: { local: true } },
+            eventos: { include: { evento: true } },
+          },
+          orderBy: { key: 'asc' }, // Cambio aquí: ordenar por 'key' ascendente
+          skip,
+          take: limitNum,
+        }),
+        this.prisma.lugaresTuristicos.count({
+          where: { urlX: { equals: urlX, mode: 'insensitive' } },
+        }),
+      ]);
+
+      if (lugares.length === 0) {
+        throw new NotFoundException(
+          `No se encontraron lugares con urlX: ${urlX}`,
+        );
+      }
+
+      return {
+        data: lugares,
+        meta: {
+          total,
+          page: pageNum,
+          limit: limitNum,
+          totalPages: Math.ceil(total / limitNum),
+        },
+      };
+    } catch (error) {
+      console.error('Error in findByUrlXDash:', error);
+      if (error instanceof PrismaClientKnownRequestError) {
+        throw new InternalServerErrorException(
+          `Error de base de datos: ${error.message}`,
+        );
+      }
+      throw error;
+    }
+  }
+
+  // Obtener el último registro de la tabla y mostrar solo el key
+  async getUltimoRegistro(): Promise<{ key: string } | null> {
+    try {
+      const lugar = await this.prisma.lugaresTuristicos.findFirst({
+        select: { key: true },
+        orderBy: { createdAt: 'desc' },
+        take: 1,
+      });
+
+      return lugar;
+    } catch (error) {
+      console.error('Error al obtener el último registro:', error);
+      throw new InternalServerErrorException(
+        'Error al obtener el último registro',
+      );
+    }
+  }
+
+  // Obtener el siguiente key disponible
+  async getNextKey() {
+    try {
+      const ultimoRegistro = await this.getUltimoRegistro();
+
+      // Si no hay registros, devolver "1"
+      if (!ultimoRegistro || !ultimoRegistro.key) {
+        return { nextKey: '1' };
+      }
+
+      // Convertir el último key a número y sumar 1
+      const ultimoKey = parseInt(ultimoRegistro.key, 10);
+      if (isNaN(ultimoKey)) {
+        throw new InternalServerErrorException(
+          `El último key (${ultimoRegistro.key}) no es un número válido`,
+        );
+      }
+
+      const nextKey = (ultimoKey + 1).toString();
+      return { nextKey };
+    } catch (error) {
+      console.error('Error al obtener el siguiente key:', error);
+      throw new InternalServerErrorException(
+        `Error al obtener el siguiente key: ${error.message}`,
+      );
+    }
+  }
 }

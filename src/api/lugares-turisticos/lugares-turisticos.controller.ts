@@ -68,6 +68,22 @@ export class LugaresTuristicosController {
     return this.lugaresTuristicosService.findAll({ page, limit, search });
   }
 
+  @Get('ultimo')
+  @ApiOperation({
+    summary: 'Obtener el último lugar turístico creado (público)',
+  })
+  async getUltimoRegistro() {
+    const ultimoRegistro =
+      await this.lugaresTuristicosService.getUltimoRegistro();
+    return ultimoRegistro ? { key: ultimoRegistro.key } : { key: null };
+  }
+
+  @Get('next-key')
+  @ApiOperation({ summary: 'Obtener el siguiente key disponible (público)' })
+  async getNextKey() {
+    return this.lugaresTuristicosService.getNextKey();
+  }
+
   @Get(':id')
   @ApiOperation({ summary: 'Obtener un lugar turístico por ID (público)' })
   async findOne(@Param('id') id: string) {
@@ -133,4 +149,46 @@ export class LugaresTuristicosController {
       );
     }
   }
+
+  // para el dashboard
+  @Get('urlX-dash/:urlX')
+  @ApiOperation({
+    summary: 'Buscar lugares turísticos por urlX con paginación (público)',
+  })
+  @ApiQuery({ name: 'page', required: false, type: Number })
+  @ApiQuery({ name: 'limit', required: false, type: Number })
+  async getLugaresByUrlXDash(
+    @Param('urlX') urlX: string,
+    @Query('page') page: string = '1', // Cambiar a string para consistencia
+    @Query('limit') limit: string = '10', // Cambiar a string para consistencia
+    @Request() req,
+  ) {
+    try {
+      const result = await this.lugaresTuristicosService.findByUrlXDash(
+        urlX,
+        page,
+        limit,
+      );
+      if (req.user?.id) {
+        await this.logsService.createLog(
+          req.user.id,
+          `Buscó lugares con urlX: ${urlX} (paginado)`,
+        );
+      }
+      return result;
+    } catch (error) {
+      console.error('Error in getLugaresByUrlXDash:', error);
+      if (error instanceof NotFoundException) {
+        throw new NotFoundException(error.message);
+      }
+      if (error instanceof BadRequestException) {
+        throw new BadRequestException(error.message);
+      }
+      throw new InternalServerErrorException(
+        'Error al buscar lugares turísticos con paginación',
+      );
+    }
+  }
 }
+
+// export { LugaresTuristicosController };
