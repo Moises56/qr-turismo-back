@@ -252,12 +252,12 @@
     },
     {
       "nombre": "Mini Cafetería Burritas y Pancitos",
-      "lat": 14.1052,
-      "lng": -87.2038,
+      "lat": 14.107519524379907,
+      "lng": -87.20869656226961,
       "description": "Pequeña cafetería con delicias locales.",
-      "coverImage": "https://via.placeholder.com/800x400?text=Mini+Cafetería",
+      "coverImage": "https://res.cloudinary.com/diz6psxs6/image/upload/f_auto,q_auto/v1/eu/bn7ssytqtcw7rgsij4wg",
       "gallery": [
-        "https://via.placeholder.com/400x300?text=Imagen+1",
+        "https://res.cloudinary.com/diz6psxs6/image/upload/f_auto,q_auto/v1/eu/ydxtzz99zko66pz6biyx",
         "https://via.placeholder.com/400x300?text=Imagen+2",
         "https://via.placeholder.com/400x300?text=Imagen+3"
       ]
