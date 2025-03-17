@@ -23,13 +23,15 @@ export class EventosService {
       }
     }
 
+    // Create a copy of the DTO and remove lugaresIds
+    const { lugaresIds, ...eventoData } = createEventoDto;
+
     return this.prisma.evento.create({
       data: {
-        ...createEventoDto,
-        // Eliminar lugaresIds como argumento independiente
+        ...eventoData,
         lugares: {
           create:
-            createEventoDto.lugaresIds?.map((id) => ({
+            lugaresIds?.map((id) => ({
               lugarTuristico: { connect: { id } },
             })) || [],
         },
@@ -39,8 +41,21 @@ export class EventosService {
   }
 
   // Obtener todos los eventos
-  async findAll() {
+  async findAll(nombre?: string, fecha?: string, tipo?: string) {
+    const whereClause: any = {};
+
+    if (nombre) {
+      whereClause.nombreEvento = { contains: nombre, mode: 'insensitive' };
+    }
+    if (fecha) {
+      whereClause.fechaEvento = new Date(fecha);
+    }
+    if (tipo) {
+      whereClause.tipoEvento = { equals: tipo, mode: 'insensitive' };
+    }
+
     return this.prisma.evento.findMany({
+      where: whereClause,
       include: { lugares: { include: { lugarTuristico: true } } },
     });
   }
@@ -61,9 +76,9 @@ export class EventosService {
   async update(id: string, updateEventoDto: UpdateEventoDto) {
     await this.findOne(id);
 
-    // Si se proporcionan nuevos lugaresIds, actualizamos las relaciones
+    // If lugaresIds is provided, update relationships
     if (updateEventoDto.lugaresIds) {
-      // Validar que los lugares existan
+      // Validate places exist
       for (const lugarId of updateEventoDto.lugaresIds) {
         const lugarExists = await this.prisma.lugaresTuristicos.findUnique({
           where: { id: lugarId },
@@ -75,18 +90,21 @@ export class EventosService {
         }
       }
 
-      // Eliminar las relaciones existentes
+      // Delete existing relationships
       await this.prisma.eventoRel.deleteMany({
         where: { eventoId: id },
       });
 
-      // Crear nuevas relaciones
+      // Extract lugaresIds from the DTO
+      const { lugaresIds, ...updateData } = updateEventoDto;
+
+      // Create new relationships
       return this.prisma.evento.update({
         where: { idEvento: id },
         data: {
-          ...updateEventoDto,
+          ...updateData,
           lugares: {
-            create: updateEventoDto.lugaresIds.map((lugarId) => ({
+            create: lugaresIds.map((lugarId) => ({
               lugarTuristico: { connect: { id: lugarId } },
             })),
           },
@@ -95,12 +113,10 @@ export class EventosService {
       });
     }
 
-    // Si no se proporcionan lugaresIds, solo actualizamos los demás campos
+    // If lugaresIds is not provided, only update other fields
     return this.prisma.evento.update({
       where: { idEvento: id },
-      data: {
-        ...updateEventoDto,
-      },
+      data: updateEventoDto,
       include: { lugares: { include: { lugarTuristico: true } } },
     });
   }
@@ -108,6 +124,30 @@ export class EventosService {
   // Eliminar un evento
   async remove(id: string) {
     await this.findOne(id);
-    return this.prisma.evento.delete({ where: { idEvento: id } });
+
+    // Eliminar primero las relaciones en EventoRel
+    await this.prisma.eventoRel.deleteMany({
+      where: { eventoId: id },
+    });
+
+    // Luego eliminar el evento
+    return this.prisma.evento.delete({
+      where: { idEvento: id },
+    });
+  }
+
+  // Nuevo método para obtener los tipos de eventos únicos
+  async getEventTypes(): Promise<string[]> {
+    const eventos = await this.prisma.evento.findMany({
+      select: {
+        tipoEvento: true,
+      },
+      distinct: ['tipoEvento'], // Obtener valores únicos de tipoEvento
+    });
+
+    // Filtrar valores nulos y mapear a una lista de strings
+    return eventos
+      .map((evento) => evento.tipoEvento)
+      .filter((tipo): tipo is string => tipo !== null && tipo !== undefined);
   }
 }

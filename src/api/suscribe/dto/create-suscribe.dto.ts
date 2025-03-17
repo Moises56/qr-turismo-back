@@ -1,5 +1,3 @@
-// export class CreateSuscribeDto {}
-
 import {
   IsNotEmpty,
   IsEmail,
@@ -45,7 +43,6 @@ export class CreateSuscribeDto {
   @IsNotEmpty()
   address: string;
 
-
   @IsDateString()
   eventDate: string;
 
@@ -79,4 +76,12 @@ export class CreateSuscribeDto {
   @IsString()
   @IsOptional()
   urlX?: string;
+
+  @IsString()
+  @IsOptional()
+  eventoId?: string; // Nuevo campo para asociar a un evento
+
+  @IsString()
+  @IsOptional()
+  status?: string; // Nuevo campo para el estado (pending, approved, rejected)
 }

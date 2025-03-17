@@ -122,7 +122,7 @@ model TipoLocal {
 }
 
 model Evento {
-  idEvento          String      @id @default(auto()) @map("_id") @db.ObjectId
+  idEvento          String        @id @default(auto()) @map("_id") @db.ObjectId
   nombreEvento      String?
   descripcionEvento String?
   fechaEvento       DateTime?
@@ -135,8 +135,9 @@ model Evento {
   latitud           String?
   longitud          String?
   lugares           EventoRel[]
-  createdAt         DateTime    @default(now())
-  updatedAt         DateTime    @updatedAt
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  Suscripcion       Suscripcion[]
 }
 
 model LocalRel {
@@ -187,6 +188,9 @@ model Suscripcion {
   urlInstagram String?
   urlFacebook  String?
   urlX         String?
+  status       String?   @default("pending") // Nuevo campo: pending, approved, rejected
+  eventoId     String?   @db.ObjectId // Relación con Evento
+  evento       Evento?   @relation(fields: [eventoId], references: [idEvento])
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 }

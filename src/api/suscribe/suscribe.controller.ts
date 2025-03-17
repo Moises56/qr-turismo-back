@@ -1,4 +1,3 @@
-// src/suscribe/suscribe.controller.ts
 import {
   Controller,
   Get,
@@ -28,24 +27,23 @@ export class SuscribeController {
   ) {}
 
   @Post()
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Roles('admin')
-  // @ApiBearerAuth()
-  // @ApiOperation({ summary: 'Crear una suscripción (solo admin)' })
+  @ApiOperation({ summary: 'Crear una suscripción (público)' })
   async create(@Body() createSuscribeDto: CreateSuscribeDto, @Request() req) {
     const suscripcion = await this.suscribeService.create(createSuscribeDto);
+    // Registrar log incluso para usuarios no autenticados
+    const userId = req.user?.id || 'anonymous';
     await this.logsService.createLog(
-      req.user.id,
-      `Creó suscripción para: ${suscripcion.email}`,
+      userId,
+      `Creó suscripción para: ${suscripcion.email} (${suscripcion.artisticName || 'Sin nombre artístico'})`,
     );
     return suscripcion;
   }
 
   @Get()
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Roles('admin')
-  // @ApiBearerAuth()
-  // @ApiOperation({ summary: 'Listar todas las suscripciones (solo admin)' })
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Listar todas las suscripciones (solo admin)' })
   findAll() {
     return this.suscribeService.findAll();
   }
@@ -75,7 +73,7 @@ export class SuscribeController {
     );
     await this.logsService.createLog(
       req.user.id,
-      `Actualizó suscripción para: ${suscripcion.email}`,
+      `Actualizó suscripción para: ${suscripcion.email} (${suscripcion.artisticName || 'Sin nombre artístico'}) - Nuevo estado: ${suscripcion.status}`,
     );
     return suscripcion;
   }
@@ -89,7 +87,7 @@ export class SuscribeController {
     const suscripcion = await this.suscribeService.remove(id);
     await this.logsService.createLog(
       req.user.id,
-      `Eliminó suscripción para: ${suscripcion.email}`,
+      `Eliminó suscripción para: ${suscripcion.email} (${suscripcion.artisticName || 'Sin nombre artístico'})`,
     );
     return suscripcion;
   }

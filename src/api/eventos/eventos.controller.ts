@@ -50,6 +50,14 @@ export class EventosController {
     return this.eventosService.findAll();
   }
 
+  @Get('tipos')
+  @ApiOperation({
+    summary: 'Obtener los tipos de eventos disponibles (público)',
+  })
+  getEventTypes() {
+    return this.eventosService.getEventTypes();
+  }
+
   @Get(':id')
   @ApiOperation({ summary: 'Obtener un evento por ID (público)' })
   findOne(@Param('id') id: string) {
