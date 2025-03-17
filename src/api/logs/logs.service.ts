@@ -28,14 +28,30 @@ export class LogsService {
     const [total, logs] = await Promise.all([
       this.prisma.log.count(),
       this.prisma.log.findMany({
-        skip: skip, // Asegurarse de que skip sea un número
-        take: limit, // Asegurarse de que take sea un número
+        skip,
+        take: limit,
         orderBy: { createdAt: 'desc' },
+        include: {
+          user: {
+            select: {
+              nombre: true, // Solo incluir el campo nombre del usuario
+            },
+          },
+        },
       }),
     ]);
 
+    // Mapear los logs para incluir el nombre del usuario
+    const formattedLogs = logs.map((log) => ({
+      id: log.id,
+      userId: log.userId,
+      userName: log.user?.nombre || 'Usuario Desconocido', // Usar el nombre del usuario o "Usuario Desconocido" si no existe
+      message: log.message,
+      createdAt: log.createdAt,
+    }));
+
     return {
-      data: logs,
+      data: formattedLogs,
       meta: {
         total,
         page,

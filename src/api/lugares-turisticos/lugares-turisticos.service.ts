@@ -107,7 +107,30 @@ export class LugaresTuristicosService {
     };
   }
 
+  // async findOne(id: string) {
+  //   const lugar = await this.prisma.lugaresTuristicos.findUnique({
+  //     where: { id },
+  //     include: {
+  //       locales: { include: { local: true } },
+  //       eventos: { include: { evento: true } },
+  //       galeria: true,
+  //     },
+  //   });
+
+  //   if (!lugar) {
+  //     throw new NotFoundException(`Lugar turístico con ID ${id} no encontrado`);
+  //   }
+
+  //   return lugar;
+  // }
+
   async findOne(id: string) {
+    // Validar si el id es un ObjectId válido (24 caracteres hexadecimales)
+    const isValidObjectId = /^[0-9a-fA-F]{24}$/.test(id);
+    if (!isValidObjectId) {
+      throw new BadRequestException(`El ID "${id}" no es un ObjectId válido`);
+    }
+
     const lugar = await this.prisma.lugaresTuristicos.findUnique({
       where: { id },
       include: {
@@ -316,6 +339,24 @@ export class LugaresTuristicosService {
       console.error('Error al obtener el siguiente key:', error);
       throw new InternalServerErrorException(
         `Error al obtener el siguiente key: ${error.message}`,
+      );
+    }
+  }
+
+  //* lugares turisticos sin paginacion
+  async getLugaresT() {
+    try {
+      const lugares = await this.prisma.lugaresTuristicos.findMany({
+        include: {
+          locales: { include: { local: true } },
+          eventos: { include: { evento: true } },
+          galeria: true,
+        },
+      });
+      return lugares;
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Error al obtener todos los lugares turísticos',
       );
     }
   }

@@ -11,9 +11,12 @@ export class LocalesService {
   async create(createLocaleDto: CreateLocaleDto) {
     const { tipoLocalId, lugaresIds, ...restData } = createLocaleDto;
 
+    // MongoDB with Prisma should handle the array directly
+    // No need to stringify the horario field
+
     return this.prisma.local.create({
       data: {
-        ...restData,
+        ...restData, // Include horario as-is
         tipoLocal: { connect: { id: tipoLocalId } },
         ...(lugaresIds && lugaresIds.length > 0
           ? {

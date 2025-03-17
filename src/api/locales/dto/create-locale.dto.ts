@@ -1,3 +1,4 @@
+import { Transform } from 'class-transformer';
 import { IsString, IsOptional, IsArray } from 'class-validator';
 
 export class CreateLocaleDto {
@@ -9,9 +10,12 @@ export class CreateLocaleDto {
   @IsOptional()
   descripcion?: string;
 
-  @IsString()
   @IsOptional()
-  horario?: string;
+  @Transform(({ value }) => {
+    // If the value is already a valid Prisma Json input, return it
+    return value; // Let Prisma handle the conversion
+  })
+  horario?: any;
 
   @IsString()
   @IsOptional()

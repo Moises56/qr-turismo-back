@@ -68,6 +68,13 @@ export class LugaresTuristicosController {
     return this.lugaresTuristicosService.findAll({ page, limit, search });
   }
 
+  // findAllLuguares sin paginacion
+  @Get('getLugaresT')
+  @ApiOperation({ summary: 'Listar todos los lugares turísticos (público)' })
+  async getLugaresT() {
+    return this.lugaresTuristicosService.getLugaresT();
+  }
+
   @Get('ultimo')
   @ApiOperation({
     summary: 'Obtener el último lugar turístico creado (público)',
