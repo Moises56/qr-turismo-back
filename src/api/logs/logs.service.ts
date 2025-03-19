@@ -1,4 +1,3 @@
-// src/logs/logs.service.ts
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 
@@ -7,7 +6,15 @@ export class LogsService {
   constructor(private prisma: PrismaService) {}
 
   async createLog(userId: string, message: string) {
-    return this.prisma.log.create({ data: { userId, message } });
+    // Si userId es 'anonymous', no lo asignamos (dejamos userId como null)
+    const logData =
+      userId === 'anonymous'
+        ? { message, createdAt: new Date() }
+        : { userId, message, createdAt: new Date() };
+
+    return this.prisma.log.create({
+      data: logData,
+    });
   }
 
   async findAll(queryParams: { page?: number; limit?: number }) {
@@ -45,7 +52,7 @@ export class LogsService {
     const formattedLogs = logs.map((log) => ({
       id: log.id,
       userId: log.userId,
-      userName: log.user?.nombre || 'Usuario Desconocido', // Usar el nombre del usuario o "Usuario Desconocido" si no existe
+      userName: log.user?.nombre || 'Usuario Anónimo', // Cambiar a "Usuario Anónimo" para logs sin usuario
       message: log.message,
       createdAt: log.createdAt,
     }));

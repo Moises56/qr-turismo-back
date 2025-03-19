@@ -45,7 +45,10 @@ export class LogsController {
   @ApiOperation({ summary: 'Eliminar un log por ID (solo admin)' })
   async remove(@Param('id') id: string, @Request() req) {
     const log = await this.logsService.remove(id);
-    await this.logsService.createLog(req.user.id, `Eliminó log con ID: ${id}`);
+    await this.logsService.createLog(
+      req.user.id, // userId siempre estará presente porque este endpoint requiere autenticación
+      `Eliminó log con ID: ${id}`,
+    );
     return log;
   }
 }

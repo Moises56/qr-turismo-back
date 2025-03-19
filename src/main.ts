@@ -25,8 +25,8 @@ async function bootstrap() {
 
   // Lista de orígenes permitidos
   const allowedOrigins = [
+    'https://welcometotegus.amdc.hn/',
     'http://localhost:4200',
-    'https://qr-turismo.amdc.hn',
     'https://welcometotegus.netlify.app',
   ];
 
@@ -105,8 +105,8 @@ async function bootstrap() {
 
   const port = configService.get('PORT') || 3004;
   await app.listen(port);
-  logger.log(`Aplicación corriendo en: http://localhost:${port}`);
-  logger.log(`Documentación Swagger: http://localhost:${port}/api`);
+  logger.log(`App Dev: http://localhost:${port}`);
+  logger.log(`Documentación Dev Swagger: http://localhost/:${port}/api`);
 }
 
 bootstrap();

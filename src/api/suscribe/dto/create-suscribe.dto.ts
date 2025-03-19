@@ -55,6 +55,14 @@ export class CreateSuscribeDto {
 
   @IsString()
   @IsOptional()
+  latitude?: string;
+
+  @IsString()
+  @IsOptional()
+  longitude?: string;
+
+  @IsString()
+  @IsOptional()
   urlWeb?: string;
 
   @IsString()
