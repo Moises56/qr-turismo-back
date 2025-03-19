@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { ConfigService } from '@nestjs/config';
+import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { Logger, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
@@ -22,30 +23,35 @@ async function bootstrap() {
     }),
   );
 
-  // Lista de orígenes permitidos - CORREGIDO: quitado el slash final
+  // Lista de orígenes permitidos
   const allowedOrigins = [
     'https://welcometotegus.amdc.hn',
     'http://localhost:4200',
     'https://welcometotegus.netlify.app',
   ];
 
-  // Configuración de CORS simplificada
-  app.enableCors({
-    origin: allowedOrigins,
+  // Configuración de CORS con validación dinámica de origen
+  const corsOptions: CorsOptions = {
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization,Accept',
     exposedHeaders: 'Authorization',
     credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204,
-  });
+  };
+
+  app.enableCors(corsOptions);
 
   // Crear un logger personalizado para depurar CORS
   const logger = new Logger('Bootstrap');
-  logger.log(
-    'Configuración de CORS aplicada con orígenes permitidos:',
-    allowedOrigins,
-  );
+  logger.log('Configuración de CORS aplicada:', corsOptions);
 
   // Middleware para loguear todas las solicitudes entrantes
   app.use((req, res, next) => {
@@ -55,7 +61,35 @@ async function bootstrap() {
     next();
   });
 
-  // Eliminado el middleware personalizado de CORS para evitar conflictos
+  // Middleware personalizado para forzar encabezados CORS en todas las respuestas
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+      res.header('Access-Control-Allow-Origin', origin); // Usar el origen específico
+    } else {
+      res.header('Access-Control-Allow-Origin', ''); // O vacío si no está permitido
+    }
+    res.header(
+      'Access-Control-Allow-Methods',
+      'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    );
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Content-Type,Authorization,Accept',
+    );
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Expose-Headers', 'Authorization');
+
+    // Loguear los encabezados de respuesta para depuración
+    res.on('finish', () => {
+      logger.debug(`Respuesta enviada para ${req.method} ${req.url}:`, {
+        status: res.statusCode,
+        headers: res.getHeaders(),
+      });
+    });
+
+    next();
+  });
 
   const configService = app.get(ConfigService);
   app.useGlobalFilters(new HttpExceptionFilter());
@@ -71,8 +105,8 @@ async function bootstrap() {
 
   const port = configService.get('PORT') || 3004;
   await app.listen(port);
-  logger.log(`App Dev: http://localhost:${port}`);
-  logger.log(`Documentación Dev Swagger: http://localhost/:${port}/api`);
+  logger.log(`Aplicación corriendo en: http://localhost:${port}`);
+  logger.log(`Documentación Swagger: http://localhost:${port}/api`);
 }
 
 bootstrap();
