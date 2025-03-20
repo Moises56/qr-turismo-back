@@ -3,16 +3,13 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { ConfigService } from '@nestjs/config';
-import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { Logger, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  // Habilitar logs detallados en NestJS
   const app = await NestFactory.create(AppModule, {
     logger: ['error', 'warn', 'log', 'verbose', 'debug'],
   });
 
-  // Add this to your bootstrap function after creating the app
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -30,11 +27,11 @@ async function bootstrap() {
     'https://welcometotegus.netlify.app',
   ];
 
-  // Configuración de CORS con validación dinámica de origen
-  const corsOptions: CorsOptions = {
+  // Configuración de CORS
+  app.enableCors({
     origin: (origin, callback) => {
       if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, origin);
+        callback(null, true); // Permitir el origen
       } else {
         callback(new Error('Not allowed by CORS'));
       }
@@ -45,49 +42,16 @@ async function bootstrap() {
     credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204,
-  };
+  });
 
-  app.enableCors(corsOptions);
-
-  // Crear un logger personalizado para depurar CORS
   const logger = new Logger('Bootstrap');
-  logger.log('Configuración de CORS aplicada:', corsOptions);
+  logger.log('Configuración de CORS aplicada:', { allowedOrigins });
 
-  // Middleware para loguear todas las solicitudes entrantes
+  // Middleware para loguear solicitudes entrantes
   app.use((req, res, next) => {
     logger.debug(
       `Solicitud recibida: ${req.method} ${req.url} desde ${req.headers.origin}`,
     );
-    next();
-  });
-
-  // Middleware personalizado para forzar encabezados CORS en todas las respuestas
-  app.use((req, res, next) => {
-    const origin = req.headers.origin;
-    if (allowedOrigins.includes(origin)) {
-      res.header('Access-Control-Allow-Origin', origin); // Usar el origen específico
-    } else {
-      res.header('Access-Control-Allow-Origin', ''); // O vacío si no está permitido
-    }
-    res.header(
-      'Access-Control-Allow-Methods',
-      'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    );
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Content-Type,Authorization,Accept',
-    );
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Expose-Headers', 'Authorization');
-
-    // Loguear los encabezados de respuesta para depuración
-    res.on('finish', () => {
-      logger.debug(`Respuesta enviada para ${req.method} ${req.url}:`, {
-        status: res.statusCode,
-        headers: res.getHeaders(),
-      });
-    });
-
     next();
   });
 
