@@ -1,10 +1,11 @@
 // src/auth/auth.controller.ts
-import { Controller, Post, Body, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, UseGuards, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { ApiTags, ApiResponse } from '@nestjs/swagger';
 import { JwtAuthGuard } from './jwt-auth.guard';
+import { Request } from 'express'; // Importa el tipo Request
 
 @ApiTags('auth')
 @Controller('auth')
@@ -70,7 +71,12 @@ export class AuthController {
     description:
       'El correo electrónico no está registrado o la contraseña es incorrecta',
   })
-  login(@Body() loginDto: LoginDto) {
+  async login(@Req() req: Request, @Body() loginDto: LoginDto) {
+    console.log('Solicitud recibida en /auth/login');
+    console.log('Origen:', req.headers.origin);
+    console.log('Cuerpo:', loginDto);
+    console.log('Cookies:', req.headers.cookie);
+    console.log('Authorization:', req.headers.authorization);
     return this.authService.login(loginDto);
   }
 
