@@ -68,26 +68,50 @@ export class AuthService {
     };
   }
 
+  private generateTokens(user: any) {
+    const payload = { sub: user.id, email: user.email, rol: user.rol };
+    return {
+      accessToken: this.jwtService.sign(payload, {
+        secret:
+          this.configService.get<string>('JWT_SECRET') ||
+          'tu_secreto_super_seguro',
+        expiresIn: '1h',
+      }),
+      refreshToken: this.jwtService.sign(payload, {
+        secret:
+          this.configService.get<string>('JWT_REFRESH_SECRET') ||
+          'tu_secreto_refresco_super_seguro',
+        expiresIn: '7d',
+      }),
+    };
+  }
+
   async login(loginDto: LoginDto) {
     const { email, password } = loginDto;
+    console.log('DESDE-login>', loginDto);
 
     const user = await this.prisma.user.findUnique({
       where: { email },
     });
     if (!user) {
+      console.log('Usuario no encontrado:', email);
       throw new UnauthorizedException(
         'El correo electrónico no está registrado',
       );
     }
+    console.log('Usuario encontrado:', user);
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
+    console.log('¿Contraseña válida?', isPasswordValid);
     if (!isPasswordValid) {
+      console.log('Contraseña incorrecta para:', email);
       throw new UnauthorizedException('La contraseña es incorrecta');
     }
 
     const tokens = this.generateTokens(user);
+    console.log('Tokens generados:', tokens);
 
-    return {
+    const response = {
       status: 'success',
       message: 'Inicio de sesión exitoso',
       data: {
@@ -105,6 +129,8 @@ export class AuthService {
         },
       },
     };
+    console.log('Respuesta generada:', response);
+    return response;
   }
 
   async refreshToken(refreshToken: string) {
@@ -142,23 +168,5 @@ export class AuthService {
         'El refresh token es inválido o ha expirado',
       );
     }
-  }
-
-  private generateTokens(user: any) {
-    const payload = { sub: user.id, email: user.email, rol: user.rol };
-    return {
-      accessToken: this.jwtService.sign(payload, {
-        secret:
-          this.configService.get<string>('JWT_SECRET') ||
-          'tu_secreto_super_seguro',
-        expiresIn: '1h',
-      }),
-      refreshToken: this.jwtService.sign(payload, {
-        secret:
-          this.configService.get<string>('JWT_REFRESH_SECRET') ||
-          'tu_secreto_refresco_super_seguro',
-        expiresIn: '7d',
-      }),
-    };
   }
 }
