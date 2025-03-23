@@ -24,14 +24,13 @@ async function bootstrap() {
   const allowedOrigins = [
     'https://welcometotegus.amdc.hn',
     'http://localhost:4200',
-    'https://welcometotegus.netlify.app',
   ];
 
   // Configuración de CORS
   app.enableCors({
     origin: (origin, callback) => {
       if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true); // Permitir el origen
+        callback(null, origin); // Devuelve solo el origen permitido
       } else {
         callback(new Error('Not allowed by CORS'));
       }
@@ -40,12 +39,12 @@ async function bootstrap() {
     allowedHeaders: 'Content-Type,Authorization,Accept',
     exposedHeaders: 'Authorization',
     credentials: true,
-    preflightContinue: false,
     optionsSuccessStatus: 204,
   });
 
   const logger = new Logger('Bootstrap');
-  logger.log('Configuración de CORS aplicada:', { allowedOrigins });
+
+  logger.log(`CORS configurado para: ${allowedOrigins.join(', ')}`);
 
   // Middleware para loguear solicitudes entrantes
   app.use((req, res, next) => {
