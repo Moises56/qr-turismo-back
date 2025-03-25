@@ -3,6 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateLocaleDto } from './dto/create-locale.dto';
 import { UpdateLocaleDto } from './dto/update-locale.dto';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class LocalesService {
@@ -33,6 +34,51 @@ export class LocalesService {
         lugares: { include: { lugarTuristico: true } },
       },
     });
+  }
+
+  async filterLocales(
+    filters: {
+      tipoLocalId?: string;
+      nombre?: string;
+      urlX?: string;
+      page?: number;
+      pageSize?: number;
+    } = {},
+  ) {
+    const { tipoLocalId, nombre, urlX, page = 1, pageSize = 10 } = filters;
+
+    const skip = (page - 1) * pageSize; // Calcular el offset
+
+    // Definir el filtro where compatible con MongoDB
+    const where: Prisma.LocalWhereInput = {
+      ...(tipoLocalId ? { tipoLocalId } : {}),
+      ...(nombre
+        ? {
+            nombre: {
+              // Usar contains con mode: 'insensitive' para búsqueda case-insensitive
+              contains: nombre,
+              mode: 'insensitive',
+            },
+          }
+        : {}),
+      ...(urlX ? { urlX } : {}),
+    };
+
+    // Obtener los locales paginados
+    const locales = await this.prisma.local.findMany({
+      where,
+      skip,
+      take: pageSize,
+      include: {
+        tipoLocal: true,
+        lugares: { include: { lugarTuristico: true } },
+      },
+    });
+
+    // Contar el total de locales que coinciden con los filtros
+    const total = await this.prisma.local.count({ where });
+
+    return { locales, total };
   }
 
   async findAll() {

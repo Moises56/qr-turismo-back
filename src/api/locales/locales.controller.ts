@@ -12,6 +12,7 @@ import {
   HttpCode,
   HttpStatus,
   NotFoundException,
+  Query,
 } from '@nestjs/common';
 import { LocalesService } from './locales.service';
 import { CreateLocaleDto } from './dto/create-locale.dto';
@@ -64,6 +65,56 @@ export class LocalesController {
       if (error instanceof Error) {
         throw new Error(`Error al crear el local: ${error.message}`);
       }
+      return {
+        statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+        message: 'Error interno del servidor',
+        error: error.message || 'Error desconocido',
+      };
+    }
+  }
+
+  @Get('filter')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({
+    summary:
+      'Filtrar locales por tipo, nombre y URL X con paginación (público)',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Lista de locales filtrados obtenida',
+  })
+  @ApiResponse({ status: 500, description: 'Error interno del servidor' })
+  async filterLocales(
+    @Query('tipoLocalId') tipoLocalId?: string,
+    @Query('nombre') nombre?: string,
+    @Query('urlX') urlX?: string,
+    @Query('page') page: string = '1',
+    @Query('pageSize') pageSize: string = '10',
+  ) {
+    try {
+      const pageNum = parseInt(page, 10) || 1;
+      const size = parseInt(pageSize, 10) || 10;
+
+      const { locales, total } = await this.localesService.filterLocales({
+        tipoLocalId,
+        nombre,
+        urlX,
+        page: pageNum,
+        pageSize: size,
+      });
+
+      return {
+        statusCode: HttpStatus.OK,
+        message: 'Locales filtrados obtenidos exitosamente',
+        data: locales,
+        pagination: {
+          page: pageNum,
+          pageSize: size,
+          totalItems: total,
+          totalPages: Math.ceil(total / size),
+        },
+      };
+    } catch (error) {
       return {
         statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
         message: 'Error interno del servidor',
