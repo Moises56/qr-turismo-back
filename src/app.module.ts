@@ -16,6 +16,7 @@ import { RutasTuristicasModule } from './api/rutas-turisticas/rutas-turisticas.m
 import { AuthModule } from './api/auth/auth.module';
 import { UsersModule } from './api/users/users.module';
 import { LogsModule } from './api/logs/logs.module';
+import { SuscripcionLocalModule } from './api/suscripcion-local/suscripcion-local.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { LogsModule } from './api/logs/logs.module';
     AuthModule,
     UsersModule,
     LogsModule,
+    SuscripcionLocalModule,
   ],
   controllers: [AppController],
   providers: [

@@ -110,13 +110,14 @@ model Local {
 }
 
 model TipoLocal {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  nombreTipo  String?
-  icoTipo     String?
-  descripcion String?
-  locales     Local[]
-  updatedAt   DateTime @updatedAt
-  createdAt   DateTime @default(now())
+  id                String             @id @default(auto()) @map("_id") @db.ObjectId
+  nombreTipo        String?
+  icoTipo           String?
+  descripcion       String?
+  locales           Local[]
+  suscripcionLocal  SuscripcionLocal[]
+  updatedAt         DateTime           @updatedAt
+  createdAt         DateTime           @default(now())
 
   @@index([descripcion])
 }
@@ -200,7 +201,7 @@ model Attraction {
   nombre        String?
   descripcion   String?
   imgAtractions String?
-  lugarId       String?
+  lugarId       String?            @db.ObjectId
   lugar         LugaresTuristicos? @relation(fields: [lugarId], references: [id])
   createdAt     DateTime           @default(now())
   updatedAt     DateTime           @updatedAt
@@ -227,4 +228,32 @@ model Log {
 
   @@index([userId])
   @@index([createdAt])
+}
+
+model SuscripcionLocal {
+  id                 String    @id @default(auto()) @map("_id") @db.ObjectId
+  nombreLocal        String?
+  tipoLocal          String?   // comida, viajes, bar, etc.
+  latitud            String?
+  longitud           String?
+  direccion          String?
+  rtnDni             String?   // RTN (14 dígitos) o DNI (13 dígitos)
+  permisoOperacion   String?   // Podría ser un ID o referencia al documento
+  telefonoLocal      String?
+  nombrePropietario  String?
+  telefonoPropietario String?
+  email              String?
+  urlWeb             String?
+  urlWhatsapp        String?
+  urlTiktok          String?
+  urlInstagram       String?
+  urlFacebook        String?
+  urlX               String?
+  status             String?   @default("pending") // pending, approved, rejected
+  tipoLocalId        String?   @db.ObjectId // Para relacionar con el modelo TipoLocal si es necesario
+  tipoLocalRef       TipoLocal? @relation(fields: [tipoLocalId], references: [id])
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@index([tipoLocalId])
 }
