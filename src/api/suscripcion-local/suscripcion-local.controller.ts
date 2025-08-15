@@ -58,7 +58,7 @@ export class SuscripcionLocalController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @Patch(':id')
   async update(
     @Param('id') id: string,
@@ -75,7 +75,7 @@ export class SuscripcionLocalController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @Delete(':id')
   async remove(@Param('id') id: string) {
     await this.suscripcionLocalService.remove(id);
@@ -86,7 +86,7 @@ export class SuscripcionLocalController {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @Patch(':id/status')
   async updateStatus(@Param('id') id: string, @Body('status') status: string) {
     if (!status || !['pending', 'approved', 'rejected'].includes(status)) {

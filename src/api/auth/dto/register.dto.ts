@@ -11,7 +11,7 @@ export class RegisterDto {
   @IsString()
   password: string;
 
-  @IsEnum(['usuario', 'admin'])
+  @IsEnum(['usuario', 'admin', 'turismo'])
   @IsOptional()
   rol?: string;
 

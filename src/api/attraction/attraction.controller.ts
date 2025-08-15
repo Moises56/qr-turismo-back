@@ -34,9 +34,9 @@ export class AttractionController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear una nueva atracción (solo admin)' })
+  @ApiOperation({ summary: 'Crear una nueva atracción (admin y turismo)' })
   @ApiResponse({ status: 201, description: 'Atracción creada' })
   @ApiResponse({ status: 403, description: 'No autorizado' })
   async create(
@@ -68,9 +68,9 @@ export class AttractionController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar una atracción (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar una atracción (admin y turismo)' })
   @ApiResponse({ status: 200, description: 'Atracción actualizada' })
   @ApiResponse({ status: 403, description: 'No autorizado' })
   async update(
@@ -91,9 +91,9 @@ export class AttractionController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar una atracción (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar una atracción (admin y turismo)' })
   @ApiResponse({ status: 200, description: 'Atracción eliminada' })
   @ApiResponse({ status: 403, description: 'No autorizado' })
   async remove(@Param('id') id: string, @Request() req) {

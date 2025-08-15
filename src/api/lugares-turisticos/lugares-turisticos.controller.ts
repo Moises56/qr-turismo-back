@@ -38,9 +38,9 @@ export class LugaresTuristicosController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear un lugar turístico (solo admin)' })
+  @ApiOperation({ summary: 'Crear un lugar turístico (admin y turismo)' })
   async create(
     @Body() createLugaresTuristicoDto: CreateLugaresTuristicoDto,
     @Request() req,
@@ -99,9 +99,9 @@ export class LugaresTuristicosController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar un lugar turístico (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar un lugar turístico (admin y turismo)' })
   async update(
     @Param('id') id: string,
     @Body() updateLugaresTuristicoDto: UpdateLugaresTuristicoDto,
@@ -120,9 +120,9 @@ export class LugaresTuristicosController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar un lugar turístico (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar un lugar turístico (admin y turismo)' })
   async remove(@Param('id') id: string, @Request() req) {
     const lugar = await this.lugaresTuristicosService.remove(id);
     await this.logsService.createLog(

@@ -38,10 +38,10 @@ export class LocalesController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @HttpCode(HttpStatus.CREATED) // 201 para creación exitosa
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear un local (solo admin)' })
+  @ApiOperation({ summary: 'Crear un local (admin y turismo)' })
   @ApiResponse({ status: 201, description: 'Local creado exitosamente' })
   @ApiResponse({ status: 400, description: 'Datos inválidos' })
   @ApiResponse({ status: 401, description: 'No autorizado' })
@@ -176,10 +176,10 @@ export class LocalesController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @HttpCode(HttpStatus.OK)
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar un local (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar un local (admin y turismo)' })
   @ApiResponse({ status: 200, description: 'Local actualizado' })
   @ApiResponse({ status: 400, description: 'Datos inválidos' })
   @ApiResponse({ status: 401, description: 'No autorizado' })
@@ -217,10 +217,10 @@ export class LocalesController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @HttpCode(HttpStatus.OK)
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar un local (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar un local (admin y turismo)' })
   @ApiResponse({ status: 200, description: 'Local eliminado' })
   @ApiResponse({ status: 401, description: 'No autorizado' })
   @ApiResponse({ status: 404, description: 'Local no encontrado' })

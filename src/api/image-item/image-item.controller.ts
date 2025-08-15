@@ -29,9 +29,9 @@ export class ImageItemController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear un item de imagen (solo admin)' })
+  @ApiOperation({ summary: 'Crear un item de imagen (admin y turismo)' })
   async create(@Body() createImageItemDto: CreateImageItemDto, @Request() req) {
     const imageItem = await this.imageItemService.create(createImageItemDto);
     await this.logsService.createLog(
@@ -55,9 +55,9 @@ export class ImageItemController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar un item de imagen (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar un item de imagen (admin y turismo)' })
   async update(
     @Param('id') id: string,
     @Body() updateImageItemDto: UpdateImageItemDto,
@@ -76,9 +76,9 @@ export class ImageItemController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar un item de imagen (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar un item de imagen (admin y turismo)' })
   async remove(@Param('id') id: string, @Request() req) {
     const imageItem = await this.imageItemService.remove(id);
     await this.logsService.createLog(

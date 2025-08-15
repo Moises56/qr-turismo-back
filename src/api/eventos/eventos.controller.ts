@@ -29,9 +29,9 @@ export class EventosController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear un evento (solo admin)' })
+  @ApiOperation({ summary: 'Crear un evento (admin y turismo)' })
   async create(@Body() createEventoDto: CreateEventoDto, @Request() req) {
     if (typeof createEventoDto.fechaEvento === 'string') {
       createEventoDto.fechaEvento = new Date(createEventoDto.fechaEvento);
@@ -66,9 +66,9 @@ export class EventosController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar un evento (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar un evento (admin y turismo)' })
   async update(
     @Param('id') id: string,
     @Body() updateEventoDto: UpdateEventoDto,
@@ -84,9 +84,9 @@ export class EventosController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar un evento (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar un evento (admin y turismo)' })
   async remove(@Param('id') id: string, @Request() req) {
     const evento = await this.eventosService.remove(id);
     await this.logsService.createLog(

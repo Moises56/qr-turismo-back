@@ -29,9 +29,9 @@ export class RutasTuristicasController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear una ruta turística (solo admin)' })
+  @ApiOperation({ summary: 'Crear una ruta turística (admin y turismo)' })
   async create(
     @Body() createRutasTuristicaDto: CreateRutasTuristicaDto,
     @Request() req,
@@ -60,9 +60,9 @@ export class RutasTuristicasController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar una ruta turística (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar una ruta turística (admin y turismo)' })
   async update(
     @Param('id') id: string,
     @Body() updateRutasTuristicaDto: UpdateRutasTuristicaDto,
@@ -81,9 +81,9 @@ export class RutasTuristicasController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar una ruta turística (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar una ruta turística (admin y turismo)' })
   async remove(@Param('id') id: string, @Request() req) {
     const ruta = await this.rutasTuristicasService.remove(id);
     await this.logsService.createLog(

@@ -14,6 +14,6 @@ export class CreateUserDto {
   @IsString()
   password: string;
 
-  @IsEnum(['usuario', 'admin'])
+  @IsEnum(['usuario', 'admin', 'turismo'])
   rol: string;
 }

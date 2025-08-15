@@ -41,27 +41,27 @@ export class SuscribeController {
 
   @Get()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Listar todas las suscripciones (solo admin)' })
+  @ApiOperation({ summary: 'Listar todas las suscripciones (admin y turismo)' })
   findAll() {
     return this.suscribeService.findAll();
   }
 
   @Get(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Obtener una suscripción por ID (solo admin)' })
+  @ApiOperation({ summary: 'Obtener una suscripción por ID (admin y turismo)' })
   findOne(@Param('id') id: string) {
     return this.suscribeService.findOne(id);
   }
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar una suscripción (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar una suscripción (admin y turismo)' })
   async update(
     @Param('id') id: string,
     @Body() updateSuscribeDto: UpdateSuscribeDto,
@@ -80,9 +80,9 @@ export class SuscribeController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar una suscripción (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar una suscripción (admin y turismo)' })
   async remove(@Param('id') id: string, @Request() req) {
     const suscripcion = await this.suscribeService.remove(id);
     await this.logsService.createLog(

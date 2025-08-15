@@ -195,6 +195,31 @@ export class LugaresTuristicosService {
       throw new NotFoundException(`Lugar turístico con ID ${id} no encontrado`);
     }
 
+    // Verificar relaciones existentes antes de eliminar
+    const [eventos, locales, rutas, imagenes, atracciones] = await Promise.all([
+      this.prisma.eventoRel.count({ where: { lugarTuristicoId: id } }),
+      this.prisma.localRel.count({ where: { lugarTuristicoId: id } }),
+      this.prisma.rutaRel.count({ where: { lugarTuristicoId: id } }),
+      this.prisma.imageItem.count({ where: { lugarId: id } }),
+      this.prisma.attraction.count({ where: { lugarId: id } }),
+    ]);
+
+    // Crear mensaje informativo sobre las relaciones
+    const relaciones = [];
+    if (eventos > 0) relaciones.push(`${eventos} evento(s)`);
+    if (locales > 0) relaciones.push(`${locales} local(es)`);
+    if (rutas > 0) relaciones.push(`${rutas} ruta(s) turística(s)`);
+    if (imagenes > 0) relaciones.push(`${imagenes} imagen(es)`);
+    if (atracciones > 0) relaciones.push(`${atracciones} atracción(es)`);
+
+    if (relaciones.length > 0) {
+      throw new BadRequestException(
+        `No se puede eliminar el lugar turístico "${existingLugar.nombre}" porque tiene ${relaciones.join(', ')} relacionado(s). ` +
+        `Para eliminarlo, primero debe eliminar estas relaciones o contacte al administrador del sistema.`
+      );
+    }
+
+    // Si no hay relaciones, proceder con la eliminación
     return this.prisma.lugaresTuristicos.delete({ where: { id } });
   }
 

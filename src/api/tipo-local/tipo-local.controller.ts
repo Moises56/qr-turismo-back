@@ -30,9 +30,9 @@ export class TipoLocalController {
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Crear un tipo de local (solo admin)' })
+  @ApiOperation({ summary: 'Crear un tipo de local (admin y turismo)' })
   async create(@Body() createTipoLocalDto: CreateTipoLocalDto, @Request() req) {
     const tipoLocal = await this.tipoLocalService.create(createTipoLocalDto);
     await this.logsService.createLog(
@@ -57,9 +57,9 @@ export class TipoLocalController {
   @Patch(':id')
   @Put(':id') // Añadimos soporte para PUT
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Actualizar un tipo de local (solo admin)' })
+  @ApiOperation({ summary: 'Actualizar un tipo de local (admin y turismo)' })
   async update(
     @Param('id') id: string,
     @Body() updateTipoLocalDto: UpdateTipoLocalDto,
@@ -85,9 +85,9 @@ export class TipoLocalController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin')
+  @Roles('admin', 'turismo')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Eliminar un tipo de local (solo admin)' })
+  @ApiOperation({ summary: 'Eliminar un tipo de local (admin y turismo)' })
   async remove(@Param('id') id: string, @Request() req) {
     const tipoLocal = await this.tipoLocalService.remove(id);
     await this.logsService.createLog(
