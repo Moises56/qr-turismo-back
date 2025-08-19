@@ -38,12 +38,34 @@ model LugaresTuristicos {
 }
 
 model RutasTuristicas {
-  id         String      @id @default(auto()) @map("_id") @db.ObjectId
-  nombre     String
-  lugares    LugarRuta[] @relation("RutaLugares")
-  lugaresRel RutaRel[]
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  nombre          String
+  lugares         LugarRuta[]     @relation("RutaLugares")
+  lugaresRel      RutaRel[]
+  // Nuevos campos opcionales
+  imagen          String?         // URL de la imagen de la ruta
+  responsables    String?         // Nombres de los responsables
+  telefono        String?         // Número de contacto
+  urlWeb          String?         // Página web de la ruta
+  tiempoEstimado  String?         // Tiempo estimado (ej: "4-6 horas")
+  cantidadPersonas String?        // Cantidad de personas (ej: "2-10 personas")
+  costo           String?         // Precio estimado
+  horarios        Json?           // Horarios flexibles en formato JSON
+  requisitos      RequisitoRuta[] // Relación con requisitos
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model RequisitoRuta {
+  id        String          @id @default(auto()) @map("_id") @db.ObjectId
+  tipo      String          // "vestimenta", "accesibilidad", "equipo", etc.
+  detalle   String          // Descripción específica del requisito
+  rutaId    String          @db.ObjectId
+  ruta      RutasTuristicas @relation(fields: [rutaId], references: [id], onDelete: Cascade)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([rutaId])
 }
 
 model LugarRuta {
@@ -79,7 +101,7 @@ model ImageItem {
   url         String
   name        String
   description String?
-  lugarId     String
+  lugarId     String            @db.ObjectId
   lugar       LugaresTuristicos @relation(fields: [lugarId], references: [id])
   createdAt   DateTime          @default(now())
   updatedAt   DateTime          @updatedAt

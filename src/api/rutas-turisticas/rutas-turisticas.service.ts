@@ -9,10 +9,12 @@ export class RutasTuristicasService {
   constructor(private prisma: PrismaService) {}
 
   async create(createRutasTuristicaDto: CreateRutasTuristicaDto) {
-    const { nombre, lugares, lugaresRelIds } = createRutasTuristicaDto;
+    const { nombre, lugares, lugaresRelIds, requisitos, ...nuevosCampos } =
+      createRutasTuristicaDto;
     return this.prisma.rutasTuristicas.create({
       data: {
         nombre,
+        ...nuevosCampos, // Incluye todos los nuevos campos opcionales
         lugares: { create: lugares },
         lugaresRel: lugaresRelIds
           ? {
@@ -22,9 +24,18 @@ export class RutasTuristicasService {
               })),
             }
           : undefined,
+        requisitos: requisitos
+          ? {
+              create: requisitos.map((req) => ({
+                tipo: req.tipo,
+                detalle: req.detalle,
+              })),
+            }
+          : undefined,
       },
       include: {
         lugares: true,
+        requisitos: true,
         lugaresRel: {
           include: { lugarTuristico: { include: { galeria: true } } },
         },
@@ -36,6 +47,7 @@ export class RutasTuristicasService {
     return this.prisma.rutasTuristicas.findMany({
       include: {
         lugares: true,
+        requisitos: true,
         lugaresRel: {
           include: { lugarTuristico: { include: { galeria: true } } },
         },
@@ -48,6 +60,7 @@ export class RutasTuristicasService {
       where: { id },
       include: {
         lugares: true,
+        requisitos: true,
         lugaresRel: {
           include: { lugarTuristico: { include: { galeria: true } } },
         },
@@ -55,13 +68,22 @@ export class RutasTuristicasService {
     });
     if (!ruta)
       throw new NotFoundException(`Ruta turística con ID ${id} no encontrada`);
-    return ruta;
+    
+    // Calcular cantidad de lugares dinámicamente
+    const cantidadLugaresCalculada =
+      (ruta.lugares?.length || 0) + (ruta.lugaresRel?.length || 0);
+    
+    return {
+      ...ruta,
+      cantidadLugaresCalculada,
+    };
   }
 
   async update(id: string, updateRutasTuristicaDto: UpdateRutasTuristicaDto) {
     await this.findOne(id);
 
-    const { lugaresRelIds, lugares, ...restData } = updateRutasTuristicaDto;
+    const { lugaresRelIds, lugares, requisitos, ...restData } =
+      updateRutasTuristicaDto;
 
     // Primero actualiza los datos básicos y los lugares embebidos
     const updateData: any = {
@@ -69,10 +91,21 @@ export class RutasTuristicasService {
       ...(lugares && lugares.length > 0
         ? {
             lugares: {
-              // Aquí podrías decidir si quieres reemplazar todos o crear/actualizar específicos
-              // La estrategia depende de tu caso de uso
+              // Reemplazar todos los lugares embebidos
               deleteMany: {},
               create: lugares,
+            },
+          }
+        : {}),
+      ...(requisitos && requisitos.length > 0
+        ? {
+            requisitos: {
+              // Reemplazar todos los requisitos
+              deleteMany: {},
+              create: requisitos.map((req) => ({
+                tipo: req.tipo,
+                detalle: req.detalle,
+              })),
             },
           }
         : {}),
@@ -84,6 +117,7 @@ export class RutasTuristicasService {
       data: updateData,
       include: {
         lugares: true,
+        requisitos: true,
         lugaresRel: {
           include: { lugarTuristico: { include: { galeria: true } } },
         },
@@ -123,12 +157,35 @@ export class RutasTuristicasService {
       where: { rutaId: id },
     });
 
-    // También deberías eliminar los lugares embebidos (si es que no se eliminan en cascada)
+    // Eliminar los requisitos
+    await this.prisma.requisitoRuta.deleteMany({
+      where: { rutaId: id },
+    });
+
+    // También elimina los lugares embebidos (si es que no se eliminan en cascada)
     await this.prisma.lugarRuta.deleteMany({
       where: { rutaId: id },
     });
 
     // Finalmente elimina la ruta
     return this.prisma.rutasTuristicas.delete({ where: { id } });
+  }
+
+  // Método adicional para gestionar requisitos
+  async addRequisito(rutaId: string, tipo: string, detalle: string) {
+    await this.findOne(rutaId); // Verificar que la ruta existe
+    return this.prisma.requisitoRuta.create({
+      data: {
+        tipo,
+        detalle,
+        rutaId,
+      },
+    });
+  }
+
+  async removeRequisito(requisitoId: string) {
+    return this.prisma.requisitoRuta.delete({
+      where: { id: requisitoId },
+    });
   }
 }
