@@ -19,6 +19,8 @@ export class SuscripcionLocalEntity implements SuscripcionLocal {
   urlInstagram: string | null;
   urlFacebook: string | null;
   urlX: string | null;
+  registroNacionalTurismo: string | null;
+  urlImagenRegistroTurismo: string | null;
   status: string | null;
   tipoLocalId: string | null;
   createdAt: Date;

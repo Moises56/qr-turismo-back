@@ -253,29 +253,31 @@ model Log {
 }
 
 model SuscripcionLocal {
-  id                 String    @id @default(auto()) @map("_id") @db.ObjectId
-  nombreLocal        String?
-  tipoLocal          String?   // comida, viajes, bar, etc.
-  latitud            String?
-  longitud           String?
-  direccion          String?
-  rtnDni             String?   // RTN (14 dígitos) o DNI (13 dígitos)
-  permisoOperacion   String?   // Podría ser un ID o referencia al documento
-  telefonoLocal      String?
-  nombrePropietario  String?
-  telefonoPropietario String?
-  email              String?
-  urlWeb             String?
-  urlWhatsapp        String?
-  urlTiktok          String?
-  urlInstagram       String?
-  urlFacebook        String?
-  urlX               String?
-  status             String?   @default("pending") // pending, approved, rejected
-  tipoLocalId        String?   @db.ObjectId // Para relacionar con el modelo TipoLocal si es necesario
-  tipoLocalRef       TipoLocal? @relation(fields: [tipoLocalId], references: [id])
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id                        String     @id @default(auto()) @map("_id") @db.ObjectId
+  nombreLocal               String?
+  tipoLocal                 String?    // comida, viajes, bar, etc.
+  latitud                   String?
+  longitud                  String?
+  direccion                 String?
+  rtnDni                    String?    // RTN (14 dígitos) o DNI (13 dígitos)
+  permisoOperacion          String?    // Podría ser un ID o referencia al documento
+  telefonoLocal             String?
+  nombrePropietario         String?
+  telefonoPropietario       String?
+  email                     String?
+  urlWeb                    String?
+  urlWhatsapp               String?
+  urlTiktok                 String?
+  urlInstagram              String?
+  urlFacebook               String?
+  urlX                      String?
+  registroNacionalTurismo   String?    // Número o ID del registro nacional de turismo
+  urlImagenRegistroTurismo  String?    // URL de la imagen del registro nacional de turismo
+  status                    String?    @default("pending") // pending, approved, rejected
+  tipoLocalId               String?    @db.ObjectId // Para relacionar con el modelo TipoLocal si es necesario
+  tipoLocalRef              TipoLocal? @relation(fields: [tipoLocalId], references: [id])
+  createdAt                 DateTime   @default(now())
+  updatedAt                 DateTime   @updatedAt
 
   @@index([tipoLocalId])
 }

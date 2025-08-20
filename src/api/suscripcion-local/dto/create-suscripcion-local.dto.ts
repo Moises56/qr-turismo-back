@@ -4,6 +4,7 @@ import {
   IsString,
   MaxLength,
   MinLength,
+  IsUrl,
 } from 'class-validator';
 
 export class CreateSuscripcionLocalDto {
@@ -76,6 +77,14 @@ export class CreateSuscripcionLocalDto {
   @IsString()
   @IsOptional()
   urlX?: string;
+
+  @IsString()
+  @IsOptional()
+  registroNacionalTurismo?: string; // Número o ID del registro nacional de turismo
+
+  @IsUrl()
+  @IsOptional()
+  urlImagenRegistroTurismo?: string; // URL de la imagen del registro nacional de turismo
 
   @IsString()
   @IsOptional()
