@@ -42,6 +42,8 @@ export class SuscripcionLocalService {
           urlInstagram: createDto.urlInstagram,
           urlFacebook: createDto.urlFacebook,
           urlX: createDto.urlX,
+          registroNacionalTurismo: createDto.registroNacionalTurismo,
+          urlImagenRegistroTurismo: createDto.urlImagenRegistroTurismo,
           tipoLocalId: createDto.tipoLocalId,
           status: 'pending', // Por defecto es pendiente
         },
