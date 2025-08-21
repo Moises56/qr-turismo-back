@@ -9,23 +9,41 @@ export class SuscribeService {
 
   async create(createSuscribeDto: CreateSuscribeDto) {
     // Validar si el evento existe (si se proporciona un eventoId)
-    if (createSuscribeDto.eventoId) {
-      const eventoExists = await this.prisma.evento.findUnique({
-        where: { idEvento: createSuscribeDto.eventoId },
-      });
-      if (!eventoExists) {
-        throw new NotFoundException(
-          `Evento con ID ${createSuscribeDto.eventoId} no encontrado`,
-        );
+    let eventoIdToSave: string | undefined = undefined;
+    if (
+      createSuscribeDto.eventoId &&
+      typeof createSuscribeDto.eventoId === 'string' &&
+      createSuscribeDto.eventoId.trim() !== ''
+    ) {
+      // Validar formato de ObjectId (24 caracteres hexadecimales)
+      if (/^[a-fA-F0-9]{24}$/.test(createSuscribeDto.eventoId)) {
+        const eventoExists = await this.prisma.evento.findUnique({
+          where: { idEvento: createSuscribeDto.eventoId },
+        });
+        if (!eventoExists) {
+          throw new NotFoundException(
+            `Evento con ID ${createSuscribeDto.eventoId} no encontrado`,
+          );
+        }
+        eventoIdToSave = createSuscribeDto.eventoId;
+      } else {
+        // Si el formato no es válido, ignorar el eventoId
+        eventoIdToSave = undefined;
       }
     }
 
+    // Construir el objeto data sin eventoId si no es válido
+    const dataToSave: any = { ...createSuscribeDto };
+    // Eliminar eventoId si no es válido
+    if (eventoIdToSave) {
+      dataToSave.eventoId = eventoIdToSave;
+    } else {
+      delete dataToSave.eventoId;
+    }
+    dataToSave.eventDate = new Date(createSuscribeDto.eventDate);
+    dataToSave.status = createSuscribeDto.status || 'pending';
     return this.prisma.suscripcion.create({
-      data: {
-        ...createSuscribeDto,
-        eventDate: new Date(createSuscribeDto.eventDate),
-        status: createSuscribeDto.status || 'pending', // Establecer estado por defecto
-      },
+      data: dataToSave,
       include: {
         evento: true, // Incluir el evento relacionado
       },
